@@ -1,24 +1,11 @@
 const mongoose  = require('mongoose');
 const bcrypt    = require('bcrypt');
 
-const tripSchema = new mongoose.Schema({
-  location: { type: mongoose.Schema.ObjectId, ref: 'Location' },
-  startDate: { type: Date },
-  startAirport: { type: String },
-  endAirport: { type: String },
-  flightCost: { type: Number },
-  accomCost: { type: Number },
-  expenses: { type: Number },
-  duration: { type: Number },
-  totalSavings: { type: Number },
-  totalCost: { type: Number }
-});
-
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
   preferredAirport: { type: String },
-  trips: [tripSchema],
+  // trips: [tripSchema],
   passwordHash: { type: String }
 });
 

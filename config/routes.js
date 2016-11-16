@@ -2,6 +2,7 @@ const router = require('express').Router();
 const authController = require('../controllers/auth');
 const users = require('../controllers/users');
 const locations = require('../controllers/locations');
+const trips = require('../controllers/trips');
 // const secureRoute = require('../lib/secureRoute');
 
 router
@@ -32,5 +33,16 @@ router.route('/locations/:id')
   // .delete(secureRoute, locations.delete);
   .put(locations.update)
   .delete(locations.delete);
+
+router.route('/trips')
+  .get(trips.index)
+  .post(trips.create);
+
+router.route('/trips/:id')
+  .get(trips.show)
+  // .put(secureRoute, trips.update)
+  // .delete(secureRoute, trips.delete);
+  .put(trips.update)
+  .delete(trips.delete);
 
 module.exports = router;
