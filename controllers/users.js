@@ -15,7 +15,7 @@ function usersCreate(req, res) {
     return res.json(user);
   });
 }
-// SHOW
+// SHOW and search for reference and embedded data. searching location within user trip.
 function usersShow(req, res) {
   User.findById(req.params.id)
     .populate({

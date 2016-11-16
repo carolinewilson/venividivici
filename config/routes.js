@@ -2,7 +2,7 @@ const router = require('express').Router();
 const authController = require('../controllers/auth');
 const users = require('../controllers/users');
 const locations = require('../controllers/locations');
-const secureRoute = require('../lib/secureRoute');
+// const secureRoute = require('../lib/secureRoute');
 
 router
   .post('/login', authController.login)
