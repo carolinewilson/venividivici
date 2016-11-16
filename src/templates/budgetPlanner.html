@@ -1,0 +1,51 @@
+<h1>Budget Planner</h1>
+
+<div class="budgetSetup">
+  <section>
+    <h2>Total Cost: £{{ budgetPlanner.budget.flightCost + (budgetPlanner.budget.expenses * budgetPlanner.budget.duration) + budgetPlanner.budget.accom - budgetPlanner.budget.totalSavings }}</h2>
+  </section>
+  <section>
+    <h2>Flights</h2>
+    <form ng-submit="budgetPlanner.getFlights()">
+      <label for="">Month</label>
+      <input ng-model="budgetPlanner.budget.startDate" type="text" name="startDate" value="" placeholder="e.g. 'Jan'">
+
+      <label for="">Departure Airport</label>
+      <input ng-model="budgetPlanner.budget.startAirport" type="text" name="startAirport" value="" placeholder="e.g. 'LGW'">
+
+      <label for="">Arrival Airport</label>
+      <input ng-model="budgetPlanner.budget.endAirport" type="text" name="endAirport" value="{{ budgetPlanner.location.closestAirport }}" placeholder="e.g. 'LGW'">
+
+      <label for="">Duration</label>
+      <input ng-model="budgetPlanner.budget.duration" type="number" name="duration" value="" placeholder="How long for?">
+
+      <hr>
+      <button type="submit" name="button">Find flights</button>
+    </form>
+    <div ng-show="!!budgetPlanner.tempTrip.flightCost">
+      <label>Expected Flight Cost</label>
+      <input ng-model="budgetPlanner.budget.flightCost" type="number" name="flightCost" value="{{ budgetPlanner.tempTrip.flightCost }}">
+    </div>
+  </section>
+  <hr>
+  <section ng-show="!!budgetPlanner.tempTrip.flightCost">
+    <h2>Accommodation</h2>
+    <form ng-submit="budgetPlanner.create()">
+      <label>Cost</label>
+      <input ng-model="budgetPlanner.budget.accom" type="number" name="accom" value="" placeholder="Add expected cost">
+
+      <h2>Spending Money</h2>
+      <label>Per Day</label>
+      <input ng-model="budgetPlanner.budget.expenses" type="number" name="expenses" value="" placeholder="£ per day">
+
+      <h2>Current Savings</h2>
+      <label>Total saved</label>
+      <input ng-model="budgetPlanner.budget.totalSavings" type="number" name="totalSavings" value="" placeholder="£">
+      <hr>
+      <button>Save trip</button>
+    </form>
+  </section>
+</div>
+
+<div class="budgetBreakdown">
+</div>

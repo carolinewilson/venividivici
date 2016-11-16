@@ -15,7 +15,7 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/login',
       templateUrl: '/templates/login.html',
       controller: 'LoginController as login'
-    });
+    })
     // .state('home', {
     //   url: '/',
     //   templateUrl: '/templates/home.html',
@@ -36,11 +36,11 @@ function Router($stateProvider, $urlRouterProvider){
     //   templateUrl: '/templates/locationsEdit.html',
     //   controller: 'LocationsEditController as locationsEdit'
     // })
-    // .state('budgetPlanner', {
-    //   url: '/locations/:id/budget',
-    //   templateUrl: '/templates/budgetPlanner.html',
-    //   controller: 'BudgetPlannerController as budgetPlanner'
-    // });
+    .state('budgetPlanner', {
+      url: '/locations/:id/budget',
+      templateUrl: '/templates/budgetPlanner.html',
+      controller: 'BudgetPlannerController as budgetPlanner'
+    });
 
 
   $urlRouterProvider.otherwise('/');
