@@ -7,6 +7,7 @@ router
   .post('/register', authController.register);
 
 router.route('/users')
-  .get(users.index);
-  
+  .get(users.index)
+  .post(users.create);
+
 module.exports = router;
