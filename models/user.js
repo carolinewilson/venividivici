@@ -2,7 +2,7 @@ const mongoose  = require('mongoose');
 const bcrypt    = require('bcrypt');
 
 const tripSchema = new mongoose.Schema({
-  location: [ { type: mongoose.Schema.ObjectId, ref: 'Location' }],
+  location: { type: mongoose.Schema.ObjectId, ref: 'Location' },
   startDate: { type: Date },
   startAirport: { type: String },
   endAirport: { type: String },
