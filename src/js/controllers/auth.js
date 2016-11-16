@@ -11,7 +11,7 @@ function RegisterController($auth, $state) {
   function submit() {
     $auth.signup(register.user)
       .then(() => {
-        $state.go('tripsIndex');
+        $state.go('login');
       });
   }
 
@@ -25,9 +25,10 @@ function LoginController($auth, $state) {
   login.credentials = {};
 
   function submit() {
+    console.log('login');
     $auth.login(login.credentials)
       .then(() => {
-        $state.go('tripsIndex');
+        $state.go('login');
       });
   }
 

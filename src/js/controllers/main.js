@@ -13,7 +13,7 @@ function MainController($auth, $state) {
   function logout() {
     $auth.logout()
       .then(() => {
-        $state.go('tripsIndex');
+        $state.go('login');
       });
   }
 
