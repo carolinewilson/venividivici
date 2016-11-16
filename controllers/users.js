@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Location = require('../models/location');
 
 // INDEX
 function usersIndex(req, res) {
@@ -16,11 +17,16 @@ function usersCreate(req, res) {
 }
 // SHOW
 function usersShow(req, res) {
-  User.findById(req.params.id, (err, user) => {
-    if(err) return res.status(500).json({ error: err });
-    if(!user) return res.status(404).json({ error: 'Not found' });
-    return res.json(user);
-  });
+  User.findById(req.params.id)
+    .populate({
+      path: 'trips.location',
+      model: Location
+    })
+    .exec((err, user) => {
+      if(err) return res.status(500).json({ error: err });
+      if(!user) return res.status(404).json({ error: 'Not found' });
+      return res.json(user);
+    });
 }
 // UPDATE
 function usersUpdate(req, res) {
