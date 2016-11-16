@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" href="/css/vendor.css">
+  <!-- <link rel="stylesheet" href="/css/vendor.css"> -->
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/vendor.js" charset="utf-8"></script>
   <script src="/js/app.js" charset="utf-8"></script>
@@ -17,6 +17,7 @@
         <!-- <li ng-if="main.isLoggedIn()"><a ui-sref="filmsNew" ui-sref-active="active">New Film</a></li> -->
         <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
         <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+        <li ng-if="!main.isLoggedIn()"><a ui-sref="home" ui-sref-active="active">Home</a></li>
         <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
       </ul>
     </nav>

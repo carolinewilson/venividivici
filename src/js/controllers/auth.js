@@ -1,6 +1,7 @@
 angular.module('travelApp')
   .controller('RegisterController', RegisterController)
   .controller('LoginController', LoginController);
+  // .controller('HomeController', HomeController);
 
 RegisterController.$inject = ['$auth', '$state'];
 function RegisterController($auth, $state) {
@@ -11,7 +12,7 @@ function RegisterController($auth, $state) {
   function submit() {
     $auth.signup(register.user)
       .then(() => {
-        $state.go('login');
+        $state.go('home');
       });
   }
 
@@ -28,7 +29,7 @@ function LoginController($auth, $state) {
     console.log('login');
     $auth.login(login.credentials)
       .then(() => {
-        $state.go('login');
+        $state.go('home');
       });
   }
 
