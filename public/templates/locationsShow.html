@@ -1,0 +1,15 @@
+<img ng-src="{{ locationsShow.location.mainImage }}">
+<section>
+  <div class="info">
+    <h1>Info here</h1>
+  </div>
+  <div class="images">
+    <div class="images-left">
+      <img ng-src="{{locationsShow.location.images[0]}}">
+    </div>
+    <div class="images-right">
+      <div ng-repeat="image in locationsShow.location.images"  class="images-right-img" style="background-image:url({{ image }})"></div>
+    </div>
+  </div>
+  <h2>{{ location.locationName }}</h2>
+</section>
