@@ -1,7 +1,11 @@
 <img ng-src="{{ locationsShow.location.mainImage }}">
 <section>
   <div class="info">
-    <h1>Info here</h1>
+
+      <h1>{{ locationsShow.location.locationName }}</h1>
+      <h3>Closest Airport: {{ locationsShow.location.closestAirport}}</h2>
+        <h3>Attactions: <span ng-repeat="attraction in locationsShow.location.attractions">{{ attraction }}, </span></h2>
+          <h3>Best time of the year: {{ locationsShow.location.bestTime}}</h2>
   </div>
   <div class="images">
     <div class="images-left">

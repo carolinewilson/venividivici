@@ -1,6 +1,6 @@
 <section>
   <ul>
-    <li ng-repeat="location in locationsIndex.all" class="four columns">
+    <li id="home-images" ng-repeat="location in locationsIndex.all" class="four columns">
       <a ui-sref="locationsShow({ id: location._id })">
         <img ng-src="{{location.mainImage}}" class="u-max-full-width">
         <p>{{ location.locationName}}</p>

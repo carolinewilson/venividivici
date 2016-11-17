@@ -4,7 +4,7 @@
 // @import "partials/forms";
 
 body {
-  background-color: teal;
+  background-color: ffffff;
 }
 
 img {
@@ -40,4 +40,8 @@ section {
       margin-bottom: $gutter;
     }
   }
+}
+#home-images {
+  @include span-columns(4);
+  @include omega(3n);
 }
