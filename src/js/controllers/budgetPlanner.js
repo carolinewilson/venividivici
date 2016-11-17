@@ -6,12 +6,11 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
   const budgetPlanner = this;
 
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
-
   budgetPlanner.location = Location.get($state.params);
-  budgetPlanner.budget = {};
+  budgetPlanner.newTrip = {};
 
   budgetPlanner.newTrip = {
-    location: budgetPlanner.location._id,
+    flightCost: 0,
     departDate: '2017-01-01',
     returnDate: '2017-01-20',
     origin: 'LGW',
@@ -23,71 +22,57 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     totalCost: 0
   };
 
-  budgetPlanner.budget.departDate = budgetPlanner.newTrip.departDate;
-  budgetPlanner.budget.origin = budgetPlanner.newTrip.origin;
-  budgetPlanner.budget.destination = budgetPlanner.newTrip.destination;
-  budgetPlanner.budget.duration = budgetPlanner.newTrip.duration;
-  budgetPlanner.budget.accomCost = budgetPlanner.newTrip.accomCost;
-  budgetPlanner.budget.expenses = budgetPlanner.newTrip.expenses;
-  budgetPlanner.budget.totalSavings = budgetPlanner.newTrip.totalSavings;
-
   function getFlights() {
-    budgetPlanner.newTrip.departDate = budgetPlanner.budget.departDate;
-    budgetPlanner.newTrip.origin = budgetPlanner.budget.origin;
-    budgetPlanner.newTrip.destination = budgetPlanner.budget.destination;
-    budgetPlanner.newTrip.duration = budgetPlanner.budget.duration;
-    budgetPlanner.budget.flightCost = budgetPlanner.newTrip.flightCost;
-    budgetPlanner.budget.totalCost = budgetPlanner.newTrip.flightCost;
-    budgetPlanner.newTrip.totalCost = budgetPlanner.newTrip.flightCost;
 
+    budgetPlanner.newTrip.flightCost = 500;
 
-    FlightService
-      .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destination, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
-      .then(
-        successResponse => {
-          budgetPlanner.newTrip.flightCost = successResponse.totalPrice;
-        },
-        errorResponse => {
-          console.log('Could not retrieve price:', errorResponse);
-        }
-    );
-
-
+    // FlightService
+    //   .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destination, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
+    //   .then(
+    //     successResponse => {
+    //       budgetPlanner.newTrip.flightCost = successResponse.totalPrice;
+    //     },
+    //     errorResponse => {
+    //       console.log('Could not retrieve price:', errorResponse);
+    //     }
+    // );
   }
 
-
   function createTrip() {
-    budgetPlanner.newTrip.departDate = budgetPlanner.budget.departDate;
-    budgetPlanner.newTrip.origin = budgetPlanner.budget.origin;
-    budgetPlanner.newTrip.destination = budgetPlanner.budget.destination;
-    budgetPlanner.newTrip.duration = budgetPlanner.budget.duration;
-    budgetPlanner.newTrip.flightCost = budgetPlanner.budget.flightCost;
-    budgetPlanner.newTrip.expenses = budgetPlanner.budget.expenses;
-    budgetPlanner.newTrip.accomCost = budgetPlanner.budget.accom;
-    budgetPlanner.newTrip.totalSavings = budgetPlanner.budget.totalSavings;
+    // Calculate total cost
+    budgetPlanner.newTrip.totalCost = budgetPlanner.newTrip.flightCost + budgetPlanner.newTrip.expenses + budgetPlanner.newTrip.accomCost - budgetPlanner.newTrip.totalSavings;
 
-    budgetPlanner.newTrip.totalCost = budgetPlanner.newTrip.flightCost + (budgetPlanner.budget.expenses * budgetPlanner.budget.duration) + budgetPlanner.budget.accom - budgetPlanner.budget.totalSavings;
+    // Get the location id
+    budgetPlanner.newTrip.location = budgetPlanner.location._id;
 
-    Trip.save(budgetPlanner.newTrip, () => {
-      console.log('saved!');
+    console.log(budgetPlanner.newTrip);
 
-      if (budgetPlanner.isLoggedIn) {
+    // Check if user is logged in
+    const loggedIn = budgetPlanner.isLoggedIn();
+    // Trip.save(budgetPlanner.newTrip, () => {
+    //   console.log('saved!');
+
+
+    console.log(loggedIn);
+      if (loggedIn) {
+        console.log('Logged in!');
         // if user is logged in, add reference to user
         budgetPlanner.newTrip.$update(() => {
           console.log(budgetPlanner.newTrip);
         });
       } else {
+        console.log('Logged out!');
         // if user isn't logged in, add trip id to local storage, get them to sign in, then add reference to user id to trip (id from local storage)
         TripService.saveTrip(budgetPlanner.newTrip);
         // now go to login/register
+        alert('You need to be signed in to save a trip');
+        $state.go('register');
       }
-    });
-    console.log(budgetPlanner.newTrip);
+    // });
 
   }
 
-
-  budgetPlanner.budget.totalCost = budgetPlanner.newTrip.flightCost + budgetPlanner.budget.expenses + budgetPlanner.budget.accom;
+  budgetPlanner.newTrip.totalCost = budgetPlanner.newTrip.flightCost + budgetPlanner.newTrip.expenses + budgetPlanner.newTrip.accomCost - budgetPlanner.newTrip.totalSavings;
 
   budgetPlanner.createTrip = createTrip;
   budgetPlanner.getFlights = getFlights;

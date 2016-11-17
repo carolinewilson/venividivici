@@ -2,29 +2,30 @@
 
 <div class="budgetSetup">
   <section>
-    <h2>Total Cost: £{{ budgetPlanner.budget.flightCost + (budgetPlanner.budget.expenses * budgetPlanner.budget.duration) + budgetPlanner.budget.accom - budgetPlanner.budget.totalSavings }}</h2>
+    <h2>Total Cost: £{{ budgetPlanner.newTrip.flightCost + budgetPlanner.newTrip.expenses + budgetPlanner.newTrip.accomCost - budgetPlanner.newTrip.totalSavings }}</h2>
   </section>
   <section>
     <h2>Flights</h2>
     <form ng-submit="budgetPlanner.getFlights()">
       <label for="">Month</label>
-      <input ng-model="budgetPlanner.budget.startDate" type="text" name="startDate" value="" placeholder="e.g. 'Jan'">
+      <input ng-model="budgetPlanner.newTrip.departDate" type="text" name="departDate" value="" placeholder="e.g. 'Jan'">
 
       <label for="">Departure Airport</label>
-      <input ng-model="budgetPlanner.budget.startAirport" type="text" name="startAirport" value="" placeholder="e.g. 'LGW'">
+      <input ng-model="budgetPlanner.newTrip.origin" type="text" name="origin" value="" placeholder="e.g. 'LGW'">
 
       <label for="">Arrival Airport</label>
-      <input ng-model="budgetPlanner.budget.endAirport" type="text" name="endAirport" value="{{ budgetPlanner.location.closestAirport }}" placeholder="e.g. 'LGW'">
+      <input ng-model="budgetPlanner.newTrip.destination" type="text" name="destination" value="{{ budgetPlanner.location.destination }}" placeholder="e.g. 'LAX'">
 
       <label for="">Duration</label>
-      <input ng-model="budgetPlanner.budget.duration" type="number" name="duration" value="" placeholder="How long for?">
+      <input ng-model="budgetPlanner.newTrip.duration" type="number" name="duration" value="" placeholder="How long for?">
+      <input ng-model="budgetPlanner.newTrip.returnDate" type="text" name="returnDate" value="{{ budgetPlanner.newTrip.departDate + duration }}">
 
       <hr>
       <button type="submit" name="button">Find flights</button>
     </form>
     <div ng-show="!!budgetPlanner.newTrip.flightCost">
       <label>Expected Flight Cost</label>
-      <input ng-model="budgetPlanner.budget.flightCost" type="number" name="flightCost" value="{{ budgetPlanner.newTrip.flightCost }}">
+      <input ng-model="budgetPlanner.newTrip.flightCost" type="number" name="flightCost" value="{{ budgetPlanner.newTrip.flightCost }}">
     </div>
   </section>
   <hr>
@@ -32,15 +33,15 @@
     <h2>Accommodation</h2>
     <form ng-submit="budgetPlanner.createTrip()">
       <label>Cost</label>
-      <input ng-model="budgetPlanner.budget.accom" type="number" name="accom" value="" placeholder="Add expected cost">
+      <input ng-model="budgetPlanner.newTrip.accomCost" type="number" name="accomCost" value="" placeholder="Add expected cost">
 
       <h2>Spending Money</h2>
-      <label>Per Day</label>
-      <input ng-model="budgetPlanner.budget.expenses" type="number" name="expenses" value="" placeholder="£ per day">
+      <label>Total</label>
+      <input ng-model="budgetPlanner.newTrip.expenses" type="number" name="expenses" value="" placeholder="£">
 
       <h2>Current Savings</h2>
       <label>Total saved</label>
-      <input ng-model="budgetPlanner.budget.totalSavings" type="number" name="totalSavings" value="" placeholder="£">
+      <input ng-model="budgetPlanner.newTrip.totalSavings" type="number" name="totalSavings" value="" placeholder="£">
       <hr>
       <button>Save trip</button>
     </form>
