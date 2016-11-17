@@ -15,17 +15,17 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/login',
       templateUrl: '/templates/login.html',
       controller: 'LoginController as login'
+    })
+    .state('home', {
+      url: '/',
+      templateUrl: '/templates/home.html',
+      controller: 'LocationsIndexController as locationsIndex'
+    })
+    .state('locationsShow', {
+      url: '/locations/:id',
+      templateUrl: '/templates/locationsShow.html',
+      controller: 'LocationsShowController as locationsShow'
     });
-    // .state('home', {
-    //   url: '/',
-    //   templateUrl: '/templates/home.html',
-    //   controller: 'HomeController as home'
-    // })
-    // .state('locationsShow', {
-    //   url: '/locations/:id',
-    //   templateUrl: '/templates/locationsShow.html',
-    //   controller: 'LocationsShowController as locationsShow'
-    // })
     // .state('locationsNew', {
     //   url: '/locations/new',
     //   templateUrl: '/templates/locationsNew.html',
