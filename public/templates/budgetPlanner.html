@@ -22,15 +22,15 @@
       <hr>
       <button type="submit" name="button">Find flights</button>
     </form>
-    <div ng-show="!!budgetPlanner.tempTrip.flightCost">
+    <div ng-show="!!budgetPlanner.newTrip.flightCost">
       <label>Expected Flight Cost</label>
-      <input ng-model="budgetPlanner.budget.flightCost" type="number" name="flightCost" value="{{ budgetPlanner.tempTrip.flightCost }}">
+      <input ng-model="budgetPlanner.budget.flightCost" type="number" name="flightCost" value="{{ budgetPlanner.newTrip.flightCost }}">
     </div>
   </section>
   <hr>
-  <section ng-show="!!budgetPlanner.tempTrip.flightCost">
+  <section ng-show="!!budgetPlanner.newTrip.flightCost">
     <h2>Accommodation</h2>
-    <form ng-submit="budgetPlanner.create()">
+    <form ng-submit="budgetPlanner.createTrip()">
       <label>Cost</label>
       <input ng-model="budgetPlanner.budget.accom" type="number" name="accom" value="" placeholder="Add expected cost">
 

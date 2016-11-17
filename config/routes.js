@@ -3,11 +3,13 @@ const authController = require('../controllers/auth');
 const users = require('../controllers/users');
 const locations = require('../controllers/locations');
 const trips = require('../controllers/trips');
+const skyscanner = require('../controllers/skyscanner');
 // const secureRoute = require('../lib/secureRoute');
 
 router
   .post('/login', authController.login)
-  .post('/register', authController.register);
+  .post('/register', authController.register)
+  .get('/flights', skyscanner.flights);
 
 router.route('/users')
   .get(users.index)

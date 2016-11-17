@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const tripSchema = new mongoose.Schema({
   location: { type: mongoose.Schema.ObjectId, ref: 'Location' },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  startDate: { type: Date },
-  startAirport: { type: String },
-  endAirport: { type: String },
+  departDate: { type: Date },
+  returnDate: { type: Date },
+  origin: { type: String },
+  destination: { type: String },
   flightCost: { type: Number },
   accomCost: { type: Number },
   expenses: { type: Number },
