@@ -6,21 +6,22 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
   const budgetPlanner = this;
 
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
-  budgetPlanner.location = Location.get($state.params);
   budgetPlanner.newTrip = {};
 
-  budgetPlanner.newTrip = {
-    flightCost: 0,
-    departDate: '2017-01-01',
-    returnDate: '2017-01-20',
-    origin: 'LGW',
-    destination: 'LAX',
-    duration: 1,
-    accomCost: 0,
-    expenses: 0,
-    totalSavings: 0,
-    totalCost: 0
-  };
+  Location.get($state.params, (location) => {
+    budgetPlanner.newTrip = {
+      departDate: '2017-01-01',
+      returnDate: '2017-01-20',
+      origin: 'LGW',
+      destination: location.closestAirport,
+      duration: 1,
+      flightCost: 0,
+      accomCost: 0,
+      expenses: 0,
+      totalSavings: 0,
+      totalCost: 0
+    };
+  });
 
   function getFlights() {
 
@@ -52,8 +53,6 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     // Trip.save(budgetPlanner.newTrip, () => {
     //   console.log('saved!');
 
-
-    console.log(loggedIn);
       if (loggedIn) {
         console.log('Logged in!');
         // if user is logged in, add reference to user
@@ -76,6 +75,4 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
 
   budgetPlanner.createTrip = createTrip;
   budgetPlanner.getFlights = getFlights;
-
-  // console.log(budgetPlanner.budget);
 }
