@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
   preferredAirport: { type: String },
-  // trips: [tripSchema],
   passwordHash: { type: String }
 });
 
