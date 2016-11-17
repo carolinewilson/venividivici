@@ -8,7 +8,21 @@
     <h2>Flights</h2>
     <form ng-submit="budgetPlanner.getFlights()">
       <label for="">Month</label>
-      <input ng-model="budgetPlanner.newTrip.departDate" type="text" name="departDate" placeholder="e.g. 'Jan'">
+      <!-- <input ng-model="budgetPlanner.newTrip.departDate" type="text" name="departDate" placeholder="e.g. 'Jan'"> -->
+      <select ng-model="budgetPlanner.newTrip.departDate" name="departDate">
+        <option>Jan 2017</option>
+        <option>Feb 2017</option>
+        <option>Mar 2017</option>
+        <option>Apr 2017</option>
+        <option>May 2017</option>
+        <option>Jun 2017</option>
+        <option>Jul 2017</option>
+        <option>Aug 2017</option>
+        <option>Sep 2017</option>
+        <option>Oct 2017</option>
+        <option>Nov 2017</option>
+        <option>Dec 2017</option>
+      </select>
 
       <label for="">Departure Airport</label>
       <input ng-model="budgetPlanner.newTrip.origin" type="text" name="origin" placeholder="e.g. 'LGW'">
@@ -22,6 +36,7 @@
 
       <hr>
       <button type="submit" name="button">Find flights</button>
+      {{ budgetPlanner.newTrip.departDate + 7 }}
     </form>
     <div ng-show="!!budgetPlanner.newTrip.flightCost">
       <label>Expected Flight Cost</label>
