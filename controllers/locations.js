@@ -23,19 +23,28 @@ function locationsShow(req, res) {
   });
 }
 // UPDATE
+// function locationsUpdate(req, res) {
+//   Location.findById(req.params.id, (err, location) => {
+//     if(err) return res.status(500).json({ error: err });
+//     if(!location) return res.status(404).json({ error: 'Not found' });
+//     for(const key in req.body) {
+//       location[key] = req.body[key];
+//     }
+//     location.save((err, location) => {
+//       if(err) return res.status(400).json({ error: err });
+//       res.json(location);
+//     });
+//   });
+// }
+
 function locationsUpdate(req, res) {
-  Location.findById(req.params.id, (err, location) => {
-    if(err) return res.status(500).json({ error: err });
-    if(!location) return res.status(404).json({ error: 'Not found' });
-    for(const key in req.body) {
-      location[key] = req.body[key];
-    }
-    location.save((err, location) => {
-      if(err) return res.status(400).json({ error: err });
-      res.json(location);
-    });
+  Location.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, location) => {
+    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+    if (!location) return res.status(404).json({ message: 'No location found.' });
+    return res.status(200).json(location);
   });
 }
+
 // DELETE
 function locationsDelete(req, res) {
   Location.findById(req.params.id, (err, location) => {

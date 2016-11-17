@@ -13,11 +13,11 @@
     <h1>Project 3</h1>
     <nav>
       <ul>
-        <!-- <li><a ui-sref="filmsIndex" ui-sref-active="active">Films</a></li> -->
-        <!-- <li ng-if="main.isLoggedIn()"><a ui-sref="filmsNew" ui-sref-active="active">New Film</a></li> -->
         <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
         <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
         <li ng-if="!main.isLoggedIn()"><a ui-sref="home" ui-sref-active="active">Home</a></li>
+        <li><a ui-sref="locationsNew" class="heading" ui-sref-active="active">Discover Places</a></li>
+        <li><a ui-sref="locationsEdit" class="heading" ui-sref-active="active">Edit Location</a></li>
         <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
       </ul>
     </nav>

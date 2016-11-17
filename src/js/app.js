@@ -15,7 +15,7 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/login',
       templateUrl: '/templates/login.html',
       controller: 'LoginController as login'
-    });
+    })
     // .state('home', {
     //   url: '/',
     //   templateUrl: '/templates/home.html',
@@ -26,16 +26,16 @@ function Router($stateProvider, $urlRouterProvider){
     //   templateUrl: '/templates/locationsShow.html',
     //   controller: 'LocationsShowController as locationsShow'
     // })
-    // .state('locationsNew', {
-    //   url: '/locations/new',
-    //   templateUrl: '/templates/locationsNew.html',
-    //   controller: 'LocationsNewController as locationsNew'
-    // })
-    // .state('locationsEdit', {
-    //   url: '/locations/:id/edit',
-    //   templateUrl: '/templates/locationsEdit.html',
-    //   controller: 'LocationsEditController as locationsEdit'
-    // })
+    .state('locationsNew', {
+      url: '/locations/new',
+      templateUrl: '/templates/locationsNew.html',
+      controller: 'LocationsNewController as locationsNew'
+    })
+    .state('locationsEdit', {
+      url: '/locations/:id/edit',
+      templateUrl: '/templates/locationsEdit.html',
+      controller: 'LocationsEditController as locationsEdit'
+    });
     // .state('budgetPlanner', {
     //   url: '/locations/:id/budget',
     //   templateUrl: '/templates/budgetPlanner.html',
