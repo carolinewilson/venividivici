@@ -15,6 +15,11 @@ section {
   @include outer-container;
 }
 
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .images {
   &-left {
     @include span-columns(6);

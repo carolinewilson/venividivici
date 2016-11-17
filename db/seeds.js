@@ -13,7 +13,7 @@ Trip.collection.drop();
 Location.create([{
   locationName: 'Kilimanjaro, Tanzania',
   closestAirport: 'Kilimanjaro International Airport',
-  airportCode: 'KIA',
+  airportCode: 'JRO',
   mainImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Mount_Kilimanjaro.jpg/1280px-Mount_Kilimanjaro.jpg',
   images: [
     'http://www.nationalgeographicexpeditions.com/assets/images/1761/itinerary-header.jpg',

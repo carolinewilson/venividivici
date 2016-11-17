@@ -10,8 +10,6 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
 
   Location.get($state.params, (location) => {
     budgetPlanner.newTrip = {
-      departDate: moment('2017-01-01').format('MMM YYYY'),
-      returnDate: '2017-01-20',
       origin: 'LGW',
       destination: location.closestAirport,
       destAirportCode: location.airportCode,
@@ -24,47 +22,50 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     };
   });
 
+
   function getFlights() {
 
     // budgetPlanner.newTrip.flightCost = 500;
-    // console.log(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate);
-
-    // make sure start date is in format YYYY-MM-DD
 
     // add duration to start date to get end date
-    const endDate = moment(budgetPlanner.newTrip.departDate).add(30, 'days').format('Do MMMM YYYY');
-    console.log(endDate);
+    const tripDuration = parseFloat(budgetPlanner.newTrip.duration);
+
+    budgetPlanner.newTrip.returnDate = moment(budgetPlanner.newTrip.departDate).add(tripDuration, 'days').format('YYYY-MM-DD');
+    console.log(budgetPlanner.newTrip.returnDate);
 
     // if no results, add 7 days to start date and end date
 
 
 
-    // FlightService
-    //   .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
-    //   .then(
-    //     successResponse => {
-    //       if (successResponse.totalPrice === 0) {
-    //         console.log('no results found');
-    //
-    //         // Re-run search with different date if no flights found
-    //
-    //         FlightService
-    //           .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
-    //           .then(successResponse => {
-    //
-    //           }, errorResponse => {
-    //
-    //           });
-    //
-    //       // If flights found, update newTrip with price
-    //       } else {
-    //         budgetPlanner.newTrip.flightCost = successResponse.totalPrice;
-    //       }
-    //     },
-    //     errorResponse => {
-    //       console.log('Could not retrieve price:', errorResponse);
-    //     }
-    // );
+    FlightService
+      .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
+      .then(
+        (successResponse) => {
+          console.log(successResponse);
+          if (successResponse.totalPrice === 0) {
+            console.log('no results found');
+
+            // Re-run search with different date if no flights found
+
+            // FlightService
+            //   .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
+            //   .then(successResponse => {
+            //
+            //   }, errorResponse => {
+            //
+            //   });
+
+          // If flights found, update newTrip with price
+          } else {
+            console.log('flights found!');
+            console.log(successResponse);
+            budgetPlanner.newTrip.flightCost = successResponse.totalPrice;
+          }
+        },
+        errorResponse => {
+          console.log('Could not retrieve price:', errorResponse);
+        }
+    );
   }
 
   function createTrip() {
