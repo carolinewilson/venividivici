@@ -24,8 +24,8 @@ function RegisterController($auth, $state, $window, User, TripService, Trip) {
           tripData.user = res.data.user._id;
           Trip.save(tripData, (res) => {
             console.log('saved trip! ', res);
-            $state.go('usersShow');
           });
+          return $state.go('usersShow', { id: res.data.user._id });
         }
 
         $state.go('home');
@@ -55,8 +55,8 @@ function LoginController($auth, $state, $window, TripService, Trip) {
         if (tripData) {
           Trip.save(tripData, (res) => {
             console.log('saved trip! ', res);
-            $state.go('usersShow');
           });
+          return $state.go('usersShow', { id: res.data.user._id });
         }
 
         $state.go('home');

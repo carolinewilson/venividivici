@@ -1,0 +1,23 @@
+<section>
+  <div>
+    <h1>{{ budgetTracker.trip.location.locationName }}</h1>
+    <p>Leaving {{ budgetTracker.trip.departDate }}</p>
+    <p>Returning {{ budgetTracker.trip.returnDate }}</p>
+    <h2>Budget</h2>
+    <p>Total cost: £{{ budgetTracker.trip.totalCost }}</p>
+    <p>Saved so far: £{{ budgetTracker.trip.totalSavings }}</p>
+  </div>
+
+  <div>
+    <h2>Flights</h2>
+    <p>£{{ budgetTracker.trip.flightCost }}</p>
+  </div>
+  <div>
+    <h2>Accommodation</h2>
+    <p>£{{ budgetTracker.trip.accomCost }}</p>
+  </div>
+  <div>
+    <h2>Spending Money</h2>
+    <p>£{{ budgetTracker.trip.expenses }}</p>
+  </div>
+</section>
