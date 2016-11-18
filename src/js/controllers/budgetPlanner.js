@@ -77,8 +77,8 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
       budgetPlanner.newTrip.user = $window.localStorage.getItem('userId');
       Trip.save(budgetPlanner.newTrip, (data) => {
         console.log('saved ', data);
+        $state.go('budgetTracker', { id: data._id });
       });
-      $state.go('budgetTracker', { id: budgetPlanner.newTrip._id });
     } else {
       // if user isn't logged in, add trip id to local storage
       TripService.saveTrip(budgetPlanner.newTrip);
