@@ -263,3 +263,14 @@ section {
     }
   }
 }
+
+.trips {
+  @include outer-container;
+  &-tile {
+    @include span-columns(3);
+    @include omega(4n);
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+}

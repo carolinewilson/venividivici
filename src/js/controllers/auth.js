@@ -50,13 +50,14 @@ function LoginController($auth, $state, $window, TripService, Trip) {
         $window.localStorage.setItem('userId', payload._id);
 
         const tripData = TripService.getTrip();
-        tripData.user = data.data.user._id;
+
 
         if (tripData) {
+          tripData.user = data.data.user._id;
           Trip.save(tripData, (res) => {
             console.log('saved trip! ', res);
           });
-          return $state.go('usersShow', { id: res.data.user._id });
+          return $state.go('usersShow', { id: data.data.user._id });
         }
 
         $state.go('home');
