@@ -2,14 +2,15 @@
 <section>
   <div class="info">
 
-      <h1>{{ locationsShow.location.locationName }}</h1>
+      <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
       <h3>Closest Airport: {{ locationsShow.location.closestAirport}}</h2>
         <h3>Attactions: <span ng-repeat="attraction in locationsShow.location.attractions">{{ attraction }}, </span></h2>
           <h3>Best time of the year: {{ locationsShow.location.bestTime}}</h2>
+          <p>{{ locationsShow.location.description}}</p>
   </div>
   <div class="images">
     <div class="images-left">
-      <img ng-src="{{locationsShow.location.images[0]}}">
+      <img ng-src="{{locationsShow.location.images[0]}}"></a>
     </div>
     <div class="images-right">
       <div ng-repeat="image in locationsShow.location.images"  class="images-right-img" style="background-image:url({{ image }})"></div>

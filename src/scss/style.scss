@@ -11,9 +11,14 @@ img {
   max-width: 100%;
 }
 
+ul {
+  padding: 0px;
+}
+
 section {
   @include outer-container;
 }
+
 
 .images {
   &-left {
@@ -44,4 +49,216 @@ section {
 #home-images {
   @include span-columns(4);
   @include omega(3n);
+}
+
+
+.sliding-panel-content {
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $sliding-panel-border-color: $dark-gray;
+  $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
+  $sliding-panel-color: #fff;
+  $sliding-panel-border: 1px solid $sliding-panel-border-color;
+  $sliding-panel-background-hover: $action-color;
+  $sliding-panel-color-hover: #fff;
+  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+
+  @include position(fixed, 0 auto 0 0);
+  @include size(200px 100%);
+  background: $sliding-panel-background;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  transform: translateX(-200px);
+  transition: all 0.25s linear;
+  z-index: 999999;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li a {
+    border-bottom: $sliding-panel-border;
+    color: $sliding-panel-color;
+    display: block;
+    font-weight: normal;
+    padding: 1em;
+    text-decoration: none;
+
+    &:focus {
+      background-color: $sliding-panel-background-focus;
+    }
+
+    &:hover {
+      background-color: $sliding-panel-background-hover;
+      color: $sliding-panel-color-hover;
+    }
+  }
+
+  &.is-visible {
+    transform: translateX(0);
+  }
+}
+
+.sliding-panel-fade-screen {
+  @include position(fixed, 0);
+  background: black;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  z-index: 999998;
+
+  &.is-visible {
+    opacity: 0.4;
+    visibility: visible;
+  }
+}
+
+.sliding-panel-button {
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+
+  // img {
+  //   height: 1.3em;
+  // }
+}
+
+//footer
+
+// Uncomment this for a sticky footer.
+//
+// .wrapper-for-content-outside-of-footer {
+//   min-height: 100%;
+//   height: auto !important;
+//   height: 100%;
+//   margin: 0 auto -4em;
+// }
+
+// html, body {
+//  height: 100%;
+// }
+
+// .wrapper-for-content-outside-of-footer::after {
+//   content: "";
+//   display: block;
+// }
+
+// .footer-2, .wrapper-for-content-outside-of-footer::after {
+//   height: 17em;
+
+//   @include media($large-screen) {
+//     height: 4em;
+//   }
+// }
+
+.footer-2 {
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $medium-screen: 40em !default;
+  $large-screen: 53.75em !default;
+  $footer-background: desaturate(darken($action-color, 20%), 30%);
+  $footer-color: white;
+  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+  background: $footer-background;
+  display: inline-block;
+  padding: $base-spacing;
+  width: 100%;
+
+  .footer-logo {
+    margin-bottom: 1em;
+    margin-right: 1em;
+
+    @include media($large-screen) {
+      float: left;
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-logo img {
+    height: 1.6em;
+  }
+
+  ul {
+    line-height: 1.5em;
+    margin: 0 0 1em 0;
+    padding: 0;
+
+    @include media($large-screen) {
+      float: left;
+      line-height: 1.8em;
+      margin-bottom: 0;
+      margin-left: 1em;
+    }
+  }
+
+  ul li {
+    list-style: none;
+    padding-right: 1em;
+
+    @include media($large-screen) {
+      display: inline;
+      text-align: left;
+    }
+  }
+
+  ul li a {
+    color: $footer-link-color;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: transparentize($footer-color, 0);
+    }
+  }
+
+  .footer-secondary-links {
+    @include media($large-screen) {
+      float: right;
+    }
+
+    li {
+      font-size: 0.8em;
+    }
+
+    ul.footer-social {
+      margin: 1em 0 0 0;
+
+      @include media($large-screen) {
+        float: right;
+        margin-top: 0;
+      }
+
+      li {
+        float: left;
+        font-size: 1em;
+        line-height: 0;
+        margin: 0;
+        padding-right: 0.7em;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      img {
+        height: 1.6em;
+        opacity: 0.7;
+        padding: 1px;
+
+        &:focus,
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
