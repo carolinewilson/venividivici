@@ -72,8 +72,10 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
 
     // Check if user is logged in
     const loggedIn = budgetPlanner.isLoggedIn();
-    // Trip.save(budgetPlanner.newTrip, () => {
-    //   console.log('saved!');
+
+    // Save new trip
+    Trip.save(budgetPlanner.newTrip, () => {
+      console.log('saved!');
 
       if (loggedIn) {
         console.log('Logged in!');
@@ -89,7 +91,7 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
         alert('You need to be signed in to save a trip');
         $state.go('register');
       }
-    // });
+    });
 
   }
 

@@ -40,6 +40,11 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/locations/:id/budget',
       templateUrl: '/templates/budgetPlanner.html',
       controller: 'BudgetPlannerController as budgetPlanner'
+    })
+    .state('budgetTracker', {
+      url: '/trips/:id',
+      templateUrl: '/templates/budgetTracker.html',
+      controller: 'BudgetTrackerController as budgetTracker'
     });
   $urlRouterProvider.otherwise('/');
 }
