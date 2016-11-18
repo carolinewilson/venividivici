@@ -7,7 +7,10 @@ function BudgetTrackerController(Trip, $state) {
   const budgetTracker = this;
 
   budgetTracker.trip = Trip.get($state.params);
-  budgetTracker.departDay = moment(budgetTracker.trip.departDate).format('DD');
-  budgetTracker.departMonth = moment(budgetTracker.trip.departDate).format('MMM');
 
+  function save() {
+    console.log('I am saving... I am saving... stormy waters, accross the sea...');
+  }
+
+  budgetTracker.save = save;
 }

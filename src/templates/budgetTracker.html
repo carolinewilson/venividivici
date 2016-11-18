@@ -4,20 +4,20 @@
     <p>Leaving {{ budgetTracker.trip.departDate }}</p>
     <p>Returning {{ budgetTracker.trip.returnDate }}</p>
     <h2>Budget</h2>
-    <p>Total cost: £{{ budgetTracker.trip.totalCost }}</p>
+    <p>Total cost: £{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost - budgetTracker.trip.totalSavings }}</p>
     <p>Saved so far: £{{ budgetTracker.trip.totalSavings }}</p>
   </div>
 
   <div>
     <h2>Flights</h2>
-    <p>£{{ budgetTracker.trip.flightCost }}</p>
+    <input-revealer type="number" name="flightCost" ng-model="budgetTracker.trip.flightCost" on-submit="budgetTracker.save()"></input-revealer>
   </div>
   <div>
     <h2>Accommodation</h2>
-    <p>£{{ budgetTracker.trip.accomCost }}</p>
+    <input-revealer type="number" name="accomCost" ng-model="budgetTracker.trip.accomCost" on-submit="budgetTracker.save()"></input-revealer>
   </div>
   <div>
     <h2>Spending Money</h2>
-    <p>£{{ budgetTracker.trip.expenses }}</p>
+    <input-revealer type="number" name="expenses" ng-model="budgetTracker.trip.expenses" on-submit="budgetTracker.save()"></input-revealer>
   </div>
 </section>
