@@ -6,11 +6,13 @@
 
 body {
   background-color: ffffff;
+  position: relative;
 }
 
 img {
   max-width: 100%;
 }
+
 
 ul {
   padding: 0px;
@@ -47,95 +49,73 @@ section {
     }
   }
 }
-#home-images {
+.home-images {
+  position: relative;
   @include span-columns(4);
   @include omega(3n);
+
+  padding-top: 20%;
+  background-size: cover;
+  background-position: center;
+  margin-top: 50px;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+  }
 }
+
 
 .plannerCol {
   @include span-columns(4);
   @include omega(3n);
 }
 
-
-
-.sliding-panel-content {
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $sliding-panel-border-color: $dark-gray;
-  $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
-  $sliding-panel-color: #fff;
-  $sliding-panel-border: 1px solid $sliding-panel-border-color;
-  $sliding-panel-background-hover: $action-color;
-  $sliding-panel-color-hover: #fff;
-  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
-
-  @include position(fixed, 0 auto 0 0);
-  @include size(200px 100%);
-  background: $sliding-panel-background;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
-  transform: translateX(-200px);
-  transition: all 0.25s linear;
-  z-index: 999999;
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  li a {
-    border-bottom: $sliding-panel-border;
-    color: $sliding-panel-color;
-    display: block;
-    font-weight: normal;
-    padding: 1em;
-    text-decoration: none;
-
-    &:focus {
-      background-color: $sliding-panel-background-focus;
-    }
-
-    &:hover {
-      background-color: $sliding-panel-background-hover;
-      color: $sliding-panel-color-hover;
-    }
-  }
-
-  &.is-visible {
-    transform: translateX(0);
-  }
+nav {
+  background-color: rgba(0,0,0,0.3);
+  height: 60px;
+  width: 100%;
+  padding: 0px;
+  z-index: auto;
+  position: absolute;
 }
-
-.sliding-panel-fade-screen {
-  @include position(fixed, 0);
-  background: black;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-  visibility: hidden;
-  z-index: 999998;
-
-  &.is-visible {
-    opacity: 0.4;
-    visibility: visible;
-  }
-}
-
-.sliding-panel-button {
-  cursor: pointer;
+nav ul li {
   display: inline-block;
-  outline: none;
-  padding: 10px 16px;
-  position: relative;
-
-  // img {
-  //   height: 1.3em;
-  // }
+  float: right;
+  padding-left: 10px;
+  margin-right: 10px;
+  a {
+    color:white;
+    text-decoration: none;
+    font-weight: 200;
+  }
 }
+
+
+
+
+
+
+
 
 //footer
 
@@ -164,6 +144,7 @@ section {
 //     height: 4em;
 //   }
 // }
+
 
 .footer-2 {
   $base-spacing: 1.5em !default;
@@ -312,5 +293,17 @@ section {
     margin: 0;
     padding: 0.1em 0.5em;
     text-shadow: 0 0 1px black;
+  }
+}
+
+
+.trips {
+  @include outer-container;
+  &-tile {
+    @include span-columns(3);
+    @include omega(4n);
+    height: 200px;
+    background-size: cover;
+    background-position: center;
   }
 }

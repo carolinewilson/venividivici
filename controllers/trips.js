@@ -4,7 +4,17 @@ const User = require('../models/user');
 
 // INDEX
 function tripsIndex(req, res) {
-  Trip.find((err, trips) => {
+  //look for all the trips and look for the user
+  Trip.find({user: req.query.userId})
+  .populate({
+    path: 'location',
+    model: Location
+  })
+  .populate({
+    path: 'user',
+    model: User
+  })
+  .exec((err, trips) => {
     if(err) return res.status(500).json({ error: err });
     return res.json(trips);
   });
