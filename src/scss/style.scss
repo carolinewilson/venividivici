@@ -52,6 +52,12 @@ section {
   @include omega(3n);
 }
 
+.plannerCol {
+  @include span-columns(4);
+  @include omega(3n);
+}
+
+
 
 .sliding-panel-content {
   $action-color: #477DCA !default;

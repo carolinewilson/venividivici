@@ -5,7 +5,8 @@
     <p>Returning {{ budgetTracker.trip.returnDate }}</p>
     <h2>Budget</h2>
     <p>Total cost: £{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost - budgetTracker.trip.totalSavings }}</p>
-    <p>Saved so far: £{{ budgetTracker.trip.totalSavings }}</p>
+    <h3>Saved so far</h3>
+    <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
   </div>
 
   <div>

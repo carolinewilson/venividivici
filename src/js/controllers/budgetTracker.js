@@ -9,7 +9,9 @@ function BudgetTrackerController(Trip, $state) {
   budgetTracker.trip = Trip.get($state.params);
 
   function save() {
-    console.log('I am saving... I am saving... stormy waters, accross the sea...');
+    budgetTracker.trip.$update((data) => {
+      console.log('trip saved!', data);
+    });
   }
 
   budgetTracker.save = save;
