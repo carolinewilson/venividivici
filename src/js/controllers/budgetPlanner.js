@@ -1,8 +1,8 @@
 angular.module('travelApp')
   .controller('BudgetPlannerController', BudgetPlannerController);
 
-BudgetPlannerController.$inject= ['Location','Trip','$state', 'FlightService', '$auth', 'TripService'];
-function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, TripService) {
+BudgetPlannerController.$inject= ['Location','Trip','$state', 'FlightService', '$auth', 'TripService', '$window'];
+function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, TripService, $window) {
   const budgetPlanner = this;
 
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
@@ -73,26 +73,21 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     // Check if user is logged in
     const loggedIn = budgetPlanner.isLoggedIn();
 
-    // Save new trip
-    Trip.save(budgetPlanner.newTrip, () => {
-      console.log('saved!');
+    if (loggedIn) {
+      budgetPlanner.newTrip.user = $window.localStorage.getItem('userId');
+      Trip.save(budgetPlanner.newTrip, (data) => {
+        console.log('saved ', data);
+      });
+      $state.go('budgetTracker', { id: budgetPlanner.newTrip.user });
+    } else {
+      // if user isn't logged in, add trip id to local storage
+      TripService.saveTrip(budgetPlanner.newTrip);
 
-      if (loggedIn) {
-        console.log('Logged in!');
-        // if user is logged in, add reference to user
-        budgetPlanner.newTrip.$update(() => {
-          console.log(budgetPlanner.newTrip);
-        });
-      } else {
-        console.log('Logged out!');
-        // if user isn't logged in, add trip id to local storage, get them to sign in, then add reference to user id to trip (id from local storage)
-        TripService.saveTrip(budgetPlanner.newTrip);
-        // now go to login/register
-        alert('You need to be signed in to save a trip');
-        $state.go('register');
-      }
-    });
+      alert('You need to be signed in to save a trip');
 
+      // get them to sign in, then add reference to user id to trip (id from local storage)
+      $state.go('register');
+    }
   }
 
   budgetPlanner.newTrip.totalCost = budgetPlanner.newTrip.flightCost + budgetPlanner.newTrip.expenses + budgetPlanner.newTrip.accomCost - budgetPlanner.newTrip.totalSavings;

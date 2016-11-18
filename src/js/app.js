@@ -45,6 +45,16 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/trips/:id',
       templateUrl: '/templates/budgetTracker.html',
       controller: 'BudgetTrackerController as budgetTracker'
+    }) /////////user state
+    .state('usersShow', {
+      url: '/users/:id/show',
+      templateUrl: '/templates/usersShow.html',
+      controller: 'UsersShowController as usersShow'
+    })
+    .state('usersEdit', {
+      url: '/users/:id/edit',
+      templateUrl: '/templates/usersEdit.html',
+      controller: 'UsersEditController as usersEdit'
     });
   $urlRouterProvider.otherwise('/');
 }
