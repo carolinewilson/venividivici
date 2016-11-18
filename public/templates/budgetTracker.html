@@ -4,9 +4,17 @@
     <p>Leaving {{ budgetTracker.trip.departDate }}</p>
     <p>Returning {{ budgetTracker.trip.returnDate }}</p>
     <h2>Budget</h2>
-    <p>Total cost: £{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost - budgetTracker.trip.totalSavings }}</p>
+    <p>Total cost: £{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost }}</p>
     <h3>Saved so far</h3>
     <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
+  </div>
+  
+  <div class="progress-bar-indication">
+    <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
+      <p>
+        {{ budgetTracker.calcPcSaved() }}%
+      </p>
+    </span>
   </div>
 
   <div>
