@@ -15,6 +15,8 @@
     <div class="images-right">
       <div ng-repeat="image in locationsShow.location.images"  class="images-right-img" style="background-image:url({{ image }})"></div>
     </div>
+      <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Budget Planner</button>
+      <a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Edit Location</a>
   </div>
   <h2>{{ location.locationName }}</h2>
 </section>

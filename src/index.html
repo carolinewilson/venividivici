@@ -17,12 +17,23 @@
 
     <nav class="js-menu sliding-panel-content">
       <ul>
+<<<<<<< HEAD
         <li ng-if="!main.isLoggedIn()"><a ui-sref="home" ui-sref-active="active">Home</a></li>
         <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
         <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
         <li><a ui-sref="locationsNew" class="heading" ui-sref-active="active">Discover Places</a></li>
         <li><a ui-sref="locationsEdit" class="heading" ui-sref-active="active">Edit Location</a></li>
+=======
+        <!-- always showing -->
+        <li><a ui-sref="home" ui-sref-active="active">Discover</a></li>
+        <!-- showing while log out-->
+        <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
+        <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+        <!-- showing while log in-->
+        <li ng-if="main.isLoggedIn()"><a ui-sref="usersShow({ id: main.userId })" ui-sref-active="active">My profile</a></li>
+>>>>>>> development
         <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
+
       </ul>
     </nav>
 
@@ -36,7 +47,7 @@
 
 
   </header>
-  <main ui-view>
+  <main ui-view class="">
   </main>
   <footer>
 

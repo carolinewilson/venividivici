@@ -1,0 +1,16 @@
+<section>
+    <div class="info">
+      <h1>My Details</h1>
+    </div>
+
+  <img ng-src="{{ usersShow.user.profilePic }}">
+  <p>Username: {{ usersShow.user.username }}</p>
+  <p>Email: {{ usersShow.user.email }}</p>
+  <p>Preferred Airport: {{ usersShow.user.preferredAirport }}</p>
+
+  <a class="heading" a ui-sref="usersEdit({id: usersShow.user._id})">Edit Profile</a>
+</section>
+
+<section>
+  <h1>My Trips</h1>
+</section>

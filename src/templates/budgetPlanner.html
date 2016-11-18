@@ -8,21 +8,23 @@
     <h2>Flights</h2>
     <form ng-submit="budgetPlanner.getFlights()">
       <label for="">Month</label>
-      <!-- <input ng-model="budgetPlanner.newTrip.departDate" type="text" name="departDate" placeholder="e.g. 'Jan'"> -->
       <select ng-model="budgetPlanner.newTrip.departDate" name="departDate">
-        <option>Jan 2017</option>
-        <option>Feb 2017</option>
-        <option>Mar 2017</option>
-        <option>Apr 2017</option>
-        <option>May 2017</option>
-        <option>Jun 2017</option>
-        <option>Jul 2017</option>
-        <option>Aug 2017</option>
-        <option>Sep 2017</option>
-        <option>Oct 2017</option>
-        <option>Nov 2017</option>
-        <option>Dec 2017</option>
+        <option value="2017-01-01">Jan 2017</option>
+        <option value="2017-02-01">Feb 2017</option>
+        <option value="2017-03-01">Mar 2017</option>
+        <option value="2017-04-01">Apr 2017</option>
+        <option value="2017-05-01">May 2017</option>
+        <option value="2017-06-01">Jun 2017</option>
+        <option value="2017-07-01">Jul 2017</option>
+        <option value="2017-08-01">Aug 2017</option>
+        <option value="2017-09-01">Sep 2017</option>
+        <option value="2017-10-01">Oct 2017</option>
+        <option value="2017-11-01">Nov 2017</option>
+        <option value="2017-12-01">Dec 2017</option>
       </select>
+
+      <label for="">Duration</label>
+      <input ng-model="budgetPlanner.newTrip.duration" type="number" name="duration" placeholder="How long for?">
 
       <label for="">Departure Airport</label>
       <input ng-model="budgetPlanner.newTrip.origin" type="text" name="origin" placeholder="e.g. 'LGW'">
@@ -30,13 +32,9 @@
       <label for="">Arrival Airport</label>
       <input ng-model="budgetPlanner.newTrip.destination" type="text" name="destination" placeholder="e.g. 'LAX'">
 
-      <label for="">Duration</label>
-      <input ng-model="budgetPlanner.newTrip.duration" type="number" name="duration" placeholder="How long for?">
-      <input ng-model="budgetPlanner.newTrip.returnDate" type="text" name="returnDate">
 
       <hr>
       <button type="submit" name="button">Find flights</button>
-      {{ budgetPlanner.newTrip.departDate + 7 }}
     </form>
     <div ng-show="!!budgetPlanner.newTrip.flightCost">
       <label>Expected Flight Cost</label>
