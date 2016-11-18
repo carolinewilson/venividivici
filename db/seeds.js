@@ -14,7 +14,7 @@ Trip.collection.drop();
 
 User.create([{
   username: 'Gummy Bear',
-  email: 'testing101@gmail.com',
+  email: 'test@gmail.com',
   preferredAirport: 'LGW',
   profilePic: 'http://orig15.deviantart.net/3a07/f/2009/343/2/8/el_conquistador_by_wredwrat.jpg',
   password: 'password' ,
