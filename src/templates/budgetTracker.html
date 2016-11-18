@@ -8,7 +8,7 @@
     <h3>Saved so far</h3>
     <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
   </div>
-  
+
   <div class="progress-bar-indication">
     <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
       <p>
@@ -17,15 +17,15 @@
     </span>
   </div>
 
-  <div>
+  <div class="plannerCol">
     <h2>Flights</h2>
     <input-revealer type="number" name="flightCost" ng-model="budgetTracker.trip.flightCost" on-submit="budgetTracker.save()"></input-revealer>
   </div>
-  <div>
+  <div class="plannerCol">
     <h2>Accommodation</h2>
     <input-revealer type="number" name="accomCost" ng-model="budgetTracker.trip.accomCost" on-submit="budgetTracker.save()"></input-revealer>
   </div>
-  <div>
+  <div class="plannerCol">
     <h2>Spending Money</h2>
     <input-revealer type="number" name="expenses" ng-model="budgetTracker.trip.expenses" on-submit="budgetTracker.save()"></input-revealer>
   </div>
