@@ -13,6 +13,9 @@ img {
   max-width: 100%;
 }
 
+main {
+  padding-top: 60p;
+}
 
 ul {
   padding: 0px;
@@ -65,7 +68,6 @@ section {
 .imagesGrid {
   // mobile
   $mobile: new-breakpoint(max-width 750px 1);
-
   @include media($mobile) {
     @include span-columns(1);
     @include omega(1n);
@@ -76,12 +78,11 @@ section {
 
   // Tablet
   $tablet: new-breakpoint(max-width 1120px 12);
-
   @include media($tablet) {
     @include span-columns(6);
     @include omega(2n);
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     margin: 20px;
   }
 
