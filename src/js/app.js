@@ -1,5 +1,5 @@
 angular
-  .module('travelApp', ['ngResource', 'ui.router', 'satellizer','ngMaterial'])
+  .module('travelApp', ['ngResource', 'ui.router', 'satellizer','ngMaterial','chart.js'])
   .config(Router)
   .config(Auth);
 
