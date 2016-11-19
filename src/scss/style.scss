@@ -22,6 +22,9 @@ section {
   @include outer-container;
 }
 
+main{
+  padding-top: 60px;
+}
 .images {
   &-left {
     @include span-columns(6);
@@ -336,16 +339,16 @@ nav ul li {
 
 .drag-drop{
   min-height: 300px;
-  max-height: 300px;
-  margin: 10px;
+  max-width: 300px;
+  // max-height: 300px;
+  // margin: 10px;
   background-color: white;
-  border-radius: 5px;
+  // border-radius: 5px;
   border: 1px solid black;
-  line-height: 0;
 
   img{
-    // width: 100%;
-    height: 300px;
+    width: 100%;
+    // height: 300px;
   }
   &.active{
     background-color: #aaa;

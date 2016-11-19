@@ -46,15 +46,15 @@ function Router($stateProvider, $urlRouterProvider){
       templateUrl: '/templates/budgetTracker.html',
       controller: 'BudgetTrackerController as budgetTracker'
     }) /////////user state
-    .state('usersShow', {
-      url: '/users/:id/show',
-      templateUrl: '/templates/usersShow.html',
-      controller: 'UsersShowController as usersShow'
+    .state('profileShow', {
+      url: '/me',
+      templateUrl: '/templates/profileShow.html',
+      controller: 'ProfileShowController as profileShow'
     })
-    .state('usersEdit', {
-      url: '/users/:id/edit',
-      templateUrl: '/templates/usersEdit.html',
-      controller: 'UsersEditController as usersEdit'
+    .state('profileEdit', {
+      url: '/me/:id/edit',
+      templateUrl: '/templates/profileEdit.html',
+      controller: 'ProfileEditController as profileEdit'
     });
   $urlRouterProvider.otherwise('/');
 }

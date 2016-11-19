@@ -3,12 +3,12 @@
       <h1>My Details</h1>
     </div>
 
-  <img ng-src="{{ usersShow.user.profilePic }}">
-  <p>Username: {{ usersShow.user.username }}</p>
-  <p>Email: {{ usersShow.user.email }}</p>
-  <p>Preferred Airport: {{ usersShow.user.preferredAirport }}</p>
+  <img ng-src="{{ profileShow.profile.profilePic }}">
+  <p>Username: {{ profileShow.profile.username }}</p>
+  <p>Email: {{ profileShow.profile.email }}</p>
+  <p>Preferred Airport: {{ profileShow.profile.preferredAirport }}</p>
 
-  <a class="heading" a ui-sref="usersEdit({id: usersShow.user._id})">Edit Profile</a>
+  <a class="heading" a ui-sref="profileEdit({ id: profileShow.profile._id })">Edit Profile</a>
 </section>
 
 <!-- hide if there are no saved trips -->
@@ -18,8 +18,8 @@
 
   <div class="trips">
     <h1>My Trips</h1>
-      <!-- {{usersShow.trips}} -->
-    <div class="trips-tile" ng-repeat="trip in usersShow.trips" style="background-image:url('{{trip.location.mainImage}}')">
+      <!-- {{profileShow.trips}} -->
+    <div class="trips-tile" ng-repeat="trip in profileShow.trips" style="background-image:url('{{trip.location.mainImage}}')">
       <ul>
         <li>Destination: {{trip.destination}}</li>
         <li>Origin: {{trip.origin}}</li>
