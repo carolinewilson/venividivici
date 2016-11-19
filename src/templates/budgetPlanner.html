@@ -44,6 +44,9 @@
         <label>Expected Flight Cost</label>
         <p>£ {{ budgetPlanner.newTrip.flightCost }}</p>
       </div>
+      <canvas id="doughnut" class="chart chart-doughnut"
+        chart-data="budgetPlanner.data" chart-labels="budgetPlanner.labels">
+      </canvas>
     </section>
 
     <section ng-show="!!budgetPlanner.newTrip.flightCost"  class="plannerCol">
