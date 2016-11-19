@@ -13,6 +13,9 @@ img {
   max-width: 100%;
 }
 
+main {
+  padding-top: 60p;
+}
 
 ul {
   padding: 0px;
@@ -22,9 +25,26 @@ section {
   @include outer-container;
 }
 
+
 main{
   padding-top: 60px;
 }
+
+.container {
+  padding-top: 60px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+.usersInfo {
+  img {
+    width: 300px;
+    border-radius: 100%;
+  }
+}
+
+
 .images {
   &-left {
     @include span-columns(6);
@@ -51,15 +71,37 @@ main{
     }
   }
 }
-.home-images {
-  position: relative;
+.imagesGrid {
+  // mobile
+  $mobile: new-breakpoint(max-width 750px 1);
+  @include media($mobile) {
+    @include span-columns(1);
+    @include omega(1n);
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+  }
+
+  // Tablet
+  $tablet: new-breakpoint(max-width 1120px 12);
+  @include media($tablet) {
+    @include span-columns(6);
+    @include omega(2n);
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+  }
+
   @include span-columns(4);
   @include omega(3n);
 
-  padding-top: 20%;
+  position: relative;
   background-size: cover;
   background-position: center;
-  margin-top: 50px;
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+
   .overlay {
     position: absolute;
     top: 0;
@@ -69,6 +111,7 @@ main{
     background-color: rgba(255, 255, 255, 0.5);
     opacity: 0;
     transition: all 0.4s ease;
+
   }
   h2 {
     position: absolute;
@@ -78,6 +121,10 @@ main{
     color: white;
     text-align: center;
     width: 100%;
+
+  }
+  .dark {
+    color: black;
   }
   &:hover {
     .overlay {
@@ -118,19 +165,20 @@ nav {
   height: 60px;
   width: 100%;
   padding: 0px;
-  z-index: auto;
+  z-index: 1;
   position: fixed;
   top: 0;
-}
-nav ul li {
+
+  ul li {
   display: inline-block;
   float: right;
-  padding-left: 10px;
-  margin-right: 10px;
-  a {
-    color:white;
-    text-decoration: none;
-    font-weight: 200;
+  margin: 0 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 200;
+    }
   }
 }
 
