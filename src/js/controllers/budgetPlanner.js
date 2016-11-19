@@ -22,13 +22,25 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
       totalCost: 0
     };
   });
-
+  
+  // Update pie chart
   $scope.$watchGroup([
+    () => budgetPlanner.newTrip.flightCost,
     () => budgetPlanner.newTrip.accomCost,
     () => budgetPlanner.newTrip.expenses
   ], () => {
     updateChart();
   });
+
+  function updateChart() {
+
+    budgetPlanner.labels = ['Flights', 'Accomodation', 'Spending Money'];
+    budgetPlanner.data = [
+      budgetPlanner.newTrip.flightCost,
+      budgetPlanner.newTrip.accomCost,
+      budgetPlanner.newTrip.expenses
+    ];
+  }
 
   function getFlights() {
 
@@ -65,16 +77,6 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     //     }
     // );
 
-    budgetPlanner.labels = ['Flights', 'Accomodation', 'Spending Money'];
-    updateChart();
-  }
-
-  function updateChart() {
-    budgetPlanner.data = [
-      budgetPlanner.newTrip.flightCost,
-      budgetPlanner.newTrip.accomCost,
-      budgetPlanner.newTrip.expenses
-    ];
   }
 
   function createTrip() {

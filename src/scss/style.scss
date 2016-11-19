@@ -90,6 +90,11 @@ section {
   @include omega(3n);
 }
 
+.trackerCol {
+  @include span-columns(6);
+  @include omega(2n);
+}
+
 nav {
   background-color: rgba(0,0,0,0.3);
   height: 60px;
