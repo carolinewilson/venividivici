@@ -22,6 +22,16 @@ section {
   @include outer-container;
 }
 
+main {
+  padding-top: 60px;
+}
+
+.usersInfo {
+  img {
+    width: 200px;
+    border-radius: 100%;
+  }
+}
 .images {
   &-left {
     @include span-columns(6);

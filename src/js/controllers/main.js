@@ -16,7 +16,8 @@ function MainController($auth, $state, $window, TripService, UserService) {
   function logout() {
     $auth.logout()
       .then(() => {
-        localStorage.removeItem('userId');
+        $window.localStorage.removeItem('userId');
+        // $auth.getPayload()._id
         TripService.deleteTrip();
         $state.go('login');
       });
