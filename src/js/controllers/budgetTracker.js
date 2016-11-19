@@ -1,9 +1,9 @@
 angular.module('travelApp')
   .controller('BudgetTrackerController', BudgetTrackerController);
 
-BudgetTrackerController.$inject = ['Trip', '$state'];
+BudgetTrackerController.$inject = ['Trip', '$state','$scope'];
 
-function BudgetTrackerController(Trip, $state) {
+function BudgetTrackerController(Trip, $state, $scope) {
   const budgetTracker = this;
 
   budgetTracker.trip = Trip.get($state.params);
@@ -16,10 +16,28 @@ function BudgetTrackerController(Trip, $state) {
     return Math.ceil(budgetTracker.pcSaved);
   }
 
+  // Update pie chart
+  $scope.$watchGroup([
+    () => budgetTracker.trip.flightCost,
+    () => budgetTracker.trip.accomCost,
+    () => budgetTracker.trip.expenses
+  ], () => {
+    updateChart();
+  });
+
+  function updateChart() {
+
+    budgetTracker.labels = ['Flights', 'Accomodation', 'Spending Money'];
+    budgetTracker.data = [
+      budgetTracker.trip.flightCost,
+      budgetTracker.trip.accomCost,
+      budgetTracker.trip.expenses
+    ];
+  }
 
   function save() {
-    budgetTracker.trip.$update((data) => {
-      console.log('trip saved!', data);
+    budgetTracker.trip.$update(() => {
+      calcPcSaved();
     });
   }
 

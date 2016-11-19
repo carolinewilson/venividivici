@@ -1,32 +1,54 @@
+<section id="budgetTracker">
+  <img ng-src="{{budgetTracker.trip.location.mainImage}}">
   <section>
-  <div>
-    <h1>{{ budgetTracker.trip.location.locationName }}</h1>
-    <p>Leaving {{ budgetTracker.trip.departDate }}</p>
-    <p>Returning {{ budgetTracker.trip.returnDate }}</p>
-    <h2>Budget</h2>
-    <p>Total cost: £{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost }}</p>
-    <h3>Saved so far</h3>
-    <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
-  </div>
 
-  <div class="progress-bar-indication">
-    <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
-      <p>
-        {{ budgetTracker.calcPcSaved() }}%
-      </p>
-    </span>
-  </div>
+    <section>
+    <h1>Your trip to {{ budgetTracker.trip.location.locationName }}</h1>
+      <p>{{ budgetTracker.trip.departDate }} to {{ budgetTracker.trip.returnDate }}</p>
+      <div class="progress-bar-indication">
+        <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
+          <p>
+            {{ budgetTracker.calcPcSaved() }}% of the way there!
+          </p>
+        </span>
+      </div>
+    </section>
+    <section>
+      <div class="twoCol">
+        <h3>Saved so far</h3>
+        <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
+      </div>
+      <div class="twoCol">
+        <h2>Total Cost</h2>
+        <p>£{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost }}</p>
+      </div>
+    </section>
 
-  <div class="plannerCol">
-    <h2>Flights</h2>
-    <input-revealer type="number" name="flightCost" ng-model="budgetTracker.trip.flightCost" on-submit="budgetTracker.save()"></input-revealer>
-  </div>
-  <div class="plannerCol">
-    <h2>Accommodation</h2>
-    <input-revealer type="number" name="accomCost" ng-model="budgetTracker.trip.accomCost" on-submit="budgetTracker.save()"></input-revealer>
-  </div>
-  <div class="plannerCol">
-    <h2>Spending Money</h2>
-    <input-revealer type="number" name="expenses" ng-model="budgetTracker.trip.expenses" on-submit="budgetTracker.save()"></input-revealer>
-  </div>
+  </section>
+
+  <hr>
+
+  <section class="twoCol">
+    <div>
+      <h2>Flights</h2>
+      <input-revealer type="number" name="flightCost" ng-model="budgetTracker.trip.flightCost" on-submit="budgetTracker.save()"></input-revealer>
+    </div>
+    <div>
+      <h2>Accommodation</h2>
+      <input-revealer type="number" name="accomCost" ng-model="budgetTracker.trip.accomCost" on-submit="budgetTracker.save()"></input-revealer>
+    </div>
+    <div>
+      <h2>Spending Money</h2>
+      <input-revealer type="number" name="expenses" ng-model="budgetTracker.trip.expenses" on-submit="budgetTracker.save()"></input-revealer>
+    </div>
+  </section>
+
+  <section class="twoCol">
+    <div>
+      <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="budgetTracker.data" chart-labels="budgetTracker.labels">
+      </canvas>
+    </div>
+  </section>
+
 </section>

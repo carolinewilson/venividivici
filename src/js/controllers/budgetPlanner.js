@@ -1,8 +1,8 @@
 angular.module('travelApp')
   .controller('BudgetPlannerController', BudgetPlannerController);
 
-BudgetPlannerController.$inject= ['Location','Trip','$state', 'FlightService', '$auth', 'TripService', '$window'];
-function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, TripService, $window) {
+BudgetPlannerController.$inject= ['Location','Trip','$state', 'FlightService', '$auth', 'TripService', '$window', '$scope'];
+function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, TripService, $window, $scope) {
   const budgetPlanner = this;
 
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
@@ -22,7 +22,25 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
       totalCost: 0
     };
   });
+  
+  // Update pie chart
+  $scope.$watchGroup([
+    () => budgetPlanner.newTrip.flightCost,
+    () => budgetPlanner.newTrip.accomCost,
+    () => budgetPlanner.newTrip.expenses
+  ], () => {
+    updateChart();
+  });
 
+  function updateChart() {
+
+    budgetPlanner.labels = ['Flights', 'Accomodation', 'Spending Money'];
+    budgetPlanner.data = [
+      budgetPlanner.newTrip.flightCost,
+      budgetPlanner.newTrip.accomCost,
+      budgetPlanner.newTrip.expenses
+    ];
+  }
 
   function getFlights() {
 
@@ -58,17 +76,16 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     //       console.log('Could not retrieve price:', errorResponse);
     //     }
     // );
+
   }
 
   function createTrip() {
+
     // Calculate total cost
     budgetPlanner.newTrip.totalCost = budgetPlanner.newTrip.flightCost + budgetPlanner.newTrip.expenses + budgetPlanner.newTrip.accomCost - budgetPlanner.newTrip.totalSavings;
 
     // Get the location id
-    console.log(budgetPlanner.location);
     budgetPlanner.newTrip.location = budgetPlanner.location._id;
-
-    console.log(budgetPlanner.newTrip);
 
     // Check if user is logged in
     const loggedIn = budgetPlanner.isLoggedIn();

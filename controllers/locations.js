@@ -1,8 +1,9 @@
 const Location = require('../models/location');
+const User = require('../models/user');
 
 // INDEX
 function locationsIndex(req, res) {
-  Location.find((err, locations) => {
+  Location.find(req.query, (err, locations) => {
     if(err) return res.status(500).json({ error: err });
     return res.json(locations);
   });
@@ -16,9 +17,13 @@ function locationsCreate(req, res) {
 }
 // SHOW
 function locationsShow(req, res) {
-  Location.findById(req.params.id, (err, location) => {
+  Location.findById(req.params.id)
+  .populate({
+    path: 'user',
+    model: User
+  })
+  .exec((err, location) => {
     if(err) return res.status(500).json({ error: err });
-    if(!location) return res.status(404).json({ error: 'Not found' });
     return res.json(location);
   });
 }

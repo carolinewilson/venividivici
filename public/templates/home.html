@@ -1,17 +1,25 @@
 <!-- only show when log in -->
-<!-- <div class="addLocation" ng-if="main.isLoggedIn()">
-  <a ui-sref="locationsNew({id: locationsIndex.location._id})" class="heading" >Add a Place</a>
-</div> -->
+<section class="container">
+  <!-- <div class="addLocation" ng-if="main.isLoggedIn()">
+    <a ui-sref="locationsNew()" class="heading" >Add a Place</a>
+  </div> -->
 
-<section>
-  <ul>
-    <li class="home-images" ng-repeat="location in locationsIndex.all" class="four columns" style="background-image:url('{{location.mainImage}}')">
-      <a ui-sref="locationsShow({ id: location._id })">
-        <!-- <img ng-src="{{location.mainImage}}" class="u-max-full-width"> -->
-        <div class="overlay">
-          <h2>{{ location.locationName}}</h2>
-        </div>
-      </a>
-    </li>
-  </ul>
+  <section>
+    <ul>
+      <li class="imagesGrid" ng-if="main.isLoggedIn()" style="background-image:url('http://iconshow.me/media/images/ui/ios7-icons/png/512/plus-empty.png')">
+        <a ui-sref="locationsNew()">
+          <div class="overlay">
+            <h2 class="dark">Share your discovery</h2>
+          </div>
+        </a>
+      </li>
+      <li class="imagesGrid" ng-repeat="location in locationsIndex.all" style="background-image:url('{{location.mainImage}}')">
+        <a ui-sref="locationsShow({ id: location._id })">
+          <div class="overlay">
+            <h2>{{ location.locationName}}</h2>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
 </section>

@@ -10,9 +10,9 @@ function LocationsNewController(Location, $state) {
   locationsNew.location = {};
 
   function createLocation() {
-    locationsNew.location.images = [locationsNew.location.tempImage.one, locationsNew.location.tempImage.two, locationsNew.location.tempImage.three];
+    locationsNew.location.images = [locationsNew.location.tempImage.one, locationsNew.location.tempImage.two, locationsNew.location.tempImage.three, locationsNew.location.tempImage.four, locationsNew.location.tempImage.five];
     Location.save(locationsNew.location, () => {
-      $state.go('login');
+      $state.go('home');
     });
   }
   locationsNew.createLocation = createLocation;

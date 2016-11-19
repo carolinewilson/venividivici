@@ -1,14 +1,36 @@
-<img ng-src="{{ locationsShow.location.mainImage }}">
-<section>
+<section id="locationsShow">
+  <img ng-src="{{ locationsShow.location.mainImage }}">
   <div class="info">
-      <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
-      <h3>Closest Airport: {{ locationsShow.location.closestAirport}}</h2>
-        <h3>Attactions: <span ng-repeat="attraction in locationsShow.location.attractions">{{ attraction }}, </span></h2>
-          <h3>Best time of the year: {{ locationsShow.location.bestTime}}</h2>
-          <p>{{ locationsShow.location.description}}</p>
-          <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Budget Planner</button>
-          <a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Edit Location</a>
+    <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
+    <p>{{ locationsShow.location.description}}</p>
   </div>
+  <div class="info">
+    <div class="threeCol">
+      <h2>Closest Airport</h2>
+      <p>{{ locationsShow.location.closestAirport}}</p>
+    </div>
+    <div class="threeCol">
+      <h2>Attactions</h2>
+      <p ng-repeat="attraction in locationsShow.location.attractions">{{ attraction }}</p>
+    </div>
+    <div class="threeCol">
+      <h2>Best time of the year</h2>
+      <p>{{ locationsShow.location.bestTime}}</p>
+    </div>
+  </div>
+</section>
+<section>
+  <div>
+    <div class="oneCol">
+      <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Get me there</button>
+    </div>
+    <div class="">
+      <p>Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
+      <a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a>
+    </div>
+  </div>
+</section>
+<section>
   <div class="images">
     <div class="images-left">
       <img ng-src="{{locationsShow.location.images[0]}}"></a>
