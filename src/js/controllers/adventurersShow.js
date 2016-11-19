@@ -7,7 +7,7 @@ function AdventurersShowController(User, $state, Location) {
 
   adventurersShow.user = User.get($state.params, (user)=> {
     // find all the locations with user id
-    adventurersShow.locations = Location.query({userId: user._id});
+    adventurersShow.locations = Location.query({ user: user._id });
   });
 
 }
