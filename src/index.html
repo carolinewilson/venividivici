@@ -21,58 +21,11 @@
         <!-- showing while log in-->
         <li ng-if="main.isLoggedIn()"><a ui-sref="usersShow({ id: main.userId })" ui-sref-active="active">My profile</a></li>
         <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
-
       </ul>
     </nav>
-
-
-
-
-
-
-
-
   </header>
-  <main ui-view class="">
-  </main>
-  <footer>
-
-  </footer><!--<div class="wrapper-for-content-outside-of-footer">
-   Uncomment this whole section for a sticky footer. The content of the page should be inside of this .wrapper-for-content-outside-of-footer
-</div>-->
-
-<footer class="footer-2" role="contentinfo">
-  <div class="footer-logo">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo image">
-  </div>
-    <ul>
-      <li><a href="javascript:void(0)">About</a></li>
-      <li><a href="javascript:void(0)">Contact</a></li>
-      <li><a href="javascript:void(0)">Products</a></li>
-    </ul>
-
-    <div class="footer-secondary-links">
-      <ul>
-        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-        <li><a href="javascript:void(0)">Privacy Policy</a></li>
-      </ul>
-
-      <ul class="footer-social">
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
-          </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
-        </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-        </a></li>
-      </ul>
-    </div>
-</footer>
-
+  <main ui-view class=""></main>
 </body>
-
 </html>
 
 
@@ -115,13 +68,4 @@
 </body>
 </html> -->
 <!-- <nav>
-  <ul>
-    <li><a ui-sref="budgetPlanner" ui-sref-active="active">Budget Planner</a></li>
-    <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-    <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
-    <li ng-if="!main.isLoggedIn()"><a ui-sref="home" ui-sref-active="active">Home</a></li>
-    <li><a ui-sref="locationsNew" class="heading" ui-sref-active="active">Discover Places</a></li>
-    <li><a ui-sref="locationsEdit" class="heading" ui-sref-active="active">Edit Location</a></li>
-    <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
-  </ul>
-</nav> -->
+  <ul>-->

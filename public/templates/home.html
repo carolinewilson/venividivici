@@ -1,12 +1,16 @@
-<div class="addLocation">
+<!-- only show when log in -->
+<div class="addLocation" ng-if="main.isLoggedIn()">
   <a ui-sref="locationsNew({id: locationsIndex.location._id})" class="heading" >Add a Place</a>
 </div>
+
 <section>
   <ul>
-    <li id="home-images" ng-repeat="location in locationsIndex.all" class="four columns">
+    <li class="home-images" ng-repeat="location in locationsIndex.all" class="four columns" style="background-image:url('{{location.mainImage}}')">
       <a ui-sref="locationsShow({ id: location._id })">
-        <img ng-src="{{location.mainImage}}" class="u-max-full-width">
-        <p>{{ location.locationName}}</p>
+        <!-- <img ng-src="{{location.mainImage}}" class="u-max-full-width"> -->
+        <div class="overlay">
+          <h2>{{ location.locationName}}</h2>
+        </div>
       </a>
     </li>
   </ul>

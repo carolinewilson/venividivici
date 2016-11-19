@@ -1,23 +1,32 @@
-<section>
+  <section>
   <div>
     <h1>{{ budgetTracker.trip.location.locationName }}</h1>
     <p>Leaving {{ budgetTracker.trip.departDate }}</p>
     <p>Returning {{ budgetTracker.trip.returnDate }}</p>
     <h2>Budget</h2>
-    <p>Total cost: £{{ budgetTracker.trip.totalCost }}</p>
-    <p>Saved so far: £{{ budgetTracker.trip.totalSavings }}</p>
+    <p>Total cost: £{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost }}</p>
+    <h3>Saved so far</h3>
+    <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
   </div>
 
-  <div>
+  <div class="progress-bar-indication">
+    <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
+      <p>
+        {{ budgetTracker.calcPcSaved() }}%
+      </p>
+    </span>
+  </div>
+
+  <div class="plannerCol">
     <h2>Flights</h2>
-    <p>£{{ budgetTracker.trip.flightCost }}</p>
+    <input-revealer type="number" name="flightCost" ng-model="budgetTracker.trip.flightCost" on-submit="budgetTracker.save()"></input-revealer>
   </div>
-  <div>
+  <div class="plannerCol">
     <h2>Accommodation</h2>
-    <p>£{{ budgetTracker.trip.accomCost }}</p>
+    <input-revealer type="number" name="accomCost" ng-model="budgetTracker.trip.accomCost" on-submit="budgetTracker.save()"></input-revealer>
   </div>
-  <div>
+  <div class="plannerCol">
     <h2>Spending Money</h2>
-    <p>£{{ budgetTracker.trip.expenses }}</p>
+    <input-revealer type="number" name="expenses" ng-model="budgetTracker.trip.expenses" on-submit="budgetTracker.save()"></input-revealer>
   </div>
 </section>

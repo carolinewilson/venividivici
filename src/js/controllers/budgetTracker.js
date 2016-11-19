@@ -7,7 +7,22 @@ function BudgetTrackerController(Trip, $state) {
   const budgetTracker = this;
 
   budgetTracker.trip = Trip.get($state.params);
-  budgetTracker.departDay = moment(budgetTracker.trip.departDate).format('DD');
-  budgetTracker.departMonth = moment(budgetTracker.trip.departDate).format('MMM');
+  budgetTracker.pcSaved = (budgetTracker.trip.totalSavings / (budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost)) * 100;
 
+  function calcPcSaved() {
+
+    budgetTracker.pcSaved = (budgetTracker.trip.totalSavings / (budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost)) * 100;
+
+    return Math.ceil(budgetTracker.pcSaved);
+  }
+
+
+  function save() {
+    budgetTracker.trip.$update((data) => {
+      console.log('trip saved!', data);
+    });
+  }
+
+  budgetTracker.save = save;
+  budgetTracker.calcPcSaved = calcPcSaved;
 }

@@ -1,15 +1,17 @@
 angular.module('travelApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$auth', '$state', '$window', 'TripService'];
+MainController.$inject = ['$auth', '$state', '$window', 'TripService', 'UserService'];
 //MainController.$inject = ['$auth', '$state', '$rootScope'];
 //function MainController($auth, $state, $rootScope) {
 
-function MainController($auth, $state, $window, TripService) {
+function MainController($auth, $state, $window, TripService, UserService) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
   main.userId = $window.localStorage.getItem('userId');
+  // UserService.getUser();
+  // console.log(UserService.getUser());
 
   function logout() {
     $auth.logout()

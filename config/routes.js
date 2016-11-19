@@ -4,7 +4,7 @@ const users = require('../controllers/users');
 const locations = require('../controllers/locations');
 const trips = require('../controllers/trips');
 const skyscanner = require('../controllers/skyscanner');
-// const secureRoute = require('../lib/secureRoute');
+const secureRoute = require('../lib/secureRoute');
 
 router
   .post('/login', authController.login)
@@ -12,17 +12,17 @@ router
   .get('/flights', skyscanner.flights);
 
 router.route('/users')
-  .get(users.index)
+  .get(users.index);
   // .get(secureRoute, users.index)
-  .post(users.create);
+  // .post(users.create);
 
 router.route('/users/:id')
   // .get(secureRoute, users.show)
   // .put(secureRoute, users.update)
   // .delete(secureRoute, users.delete);
-  .get(users.show)
-  .put(users.update)
-  .delete(users.delete);
+  .get(secureRoute, users.show)
+  .put(secureRoute, users.update)
+  .delete(secureRoute, users.delete);
 
 router.route('/locations')
   .get(locations.index)

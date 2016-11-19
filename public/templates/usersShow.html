@@ -11,6 +11,26 @@
   <a class="heading" a ui-sref="usersEdit({id: usersShow.user._id})">Edit Profile</a>
 </section>
 
+<!-- hide if there are no saved trips -->
+
 <section>
-  <h1>My Trips</h1>
+
+
+  <div class="trips">
+    <h1>My Trips</h1>
+      <!-- {{usersShow.trips}} -->
+    <div class="trips-tile" ng-repeat="trip in usersShow.trips" style="background-image:url('{{trip.location.mainImage}}')">
+      <ul>
+        <li>Destination: {{trip.destination}}</li>
+        <li>Origin: {{trip.origin}}</li>
+        <li>Flight cost: £{{trip.flightCost}}</li>
+        <li><button ui-sref="budgetTracker({id: trip._id})">Budget Tracker</button></li>
+        <!-- <li>
+          <img ng-src="{{trip.location.mainImage}}">
+        </li> -->
+      </ul>
+
+    </div>
+  </div>
+
 </section>
