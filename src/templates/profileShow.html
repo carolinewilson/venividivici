@@ -3,6 +3,11 @@
       <h1>My Details</h1>
     </div>
 
+  <div ng-controller="UploadController as upload">
+    <div>profile image</div>
+    <drag-drop base64="upload.data.base64"></drag-drop>
+  </div>
+
   <img ng-src="{{ profileShow.profile.profilePic }}">
   <p>Username: {{ profileShow.profile.username }}</p>
   <p>Email: {{ profileShow.profile.email }}</p>

@@ -1,8 +1,9 @@
 
-<section>
-
+<section class="profileSignUpForm">
   <form ng-submit="profileEdit.update()">
-
+  <div ng-controller="UploadController as upload">
+    <drag-drop base64="upload.data.base64"></drag-drop>
+  </div>
   <div>
     <div>
       <label>Profile Picture</label>
