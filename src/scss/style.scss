@@ -9,6 +9,11 @@ body {
   position: relative;
 }
 
+// header {
+//   margin: 0px;
+//   padding: 0px;
+// }
+
 img {
   max-width: 100%;
 }
@@ -95,7 +100,7 @@ nav {
   height: 60px;
   width: 100%;
   padding: 0px;
-  z-index: auto;
+  z-index: initial;
   position: absolute;
 }
 nav ul li {
