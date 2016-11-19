@@ -4,7 +4,7 @@
 
   <div id="budgetPlanner">
 
-    <section class="plannerCol">
+    <section class="threeCol">
       <h2>Flights</h2>
       <form ng-submit="budgetPlanner.getFlights()">
         <label>Month</label>
@@ -38,7 +38,7 @@
       </form>
     </section>
 
-    <section  class="plannerCol">
+    <section  class="threeCol">
       <h2>Total Cost: £ {{ budgetPlanner.newTrip.flightCost + budgetPlanner.newTrip.expenses + budgetPlanner.newTrip.accomCost - budgetPlanner.newTrip.totalSavings }}</h2>
       <div ng-show="!!budgetPlanner.newTrip.flightCost">
         <label>Expected Flight Cost</label>
@@ -49,7 +49,7 @@
       </canvas>
     </section>
 
-    <section ng-show="!!budgetPlanner.newTrip.flightCost"  class="plannerCol">
+    <section ng-show="!!budgetPlanner.newTrip.flightCost"  class="threeCol">
       <h2>Accommodation</h2>
       <form ng-submit="budgetPlanner.createTrip()">
         <label>Cost</label>

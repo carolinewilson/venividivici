@@ -84,17 +84,20 @@ section {
   }
 }
 
-
-.plannerCol {
+.threeCol {
   @include span-columns(4);
   @include omega(3n);
+  text-align: center;
 }
 
-.trackerCol {
+.twoCol {
   @include span-columns(6);
   @include omega(2n);
+  text-align: center;
 }
-
+.oneCol {
+  text-align: center;
+}
 nav {
   background-color: rgba(0,0,0,0.3);
   height: 60px;
