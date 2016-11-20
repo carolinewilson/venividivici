@@ -22,7 +22,7 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
       totalCost: 0
     };
   });
-  
+
   // Update pie chart
   $scope.$watchGroup([
     () => budgetPlanner.newTrip.flightCost,
@@ -44,39 +44,49 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
 
   function getFlights() {
 
-    budgetPlanner.newTrip.flightCost = 500;
-
     // add duration to start date to get end date
     const tripDuration = parseFloat(budgetPlanner.newTrip.duration);
 
     budgetPlanner.newTrip.returnDate = moment(budgetPlanner.newTrip.departDate).add(tripDuration, 'days').format('YYYY-MM-DD');
     console.log(budgetPlanner.newTrip.returnDate);
 
-    // if no results, add 7 days to start date and end date
+    // budgetPlanner.newTrip.flightCost = 500;
+    let flightFound = false;
+    let i = 0;
 
-    // FlightService
-    //   .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
-    //   .then(
-    //     (successResponse) => {
-    //       console.log(successResponse);
-    //       if (successResponse.totalPrice === 0) {
-    //         console.log('no results found');
-    //
-    //         // Re-run search with different date if no flights found
-    //
-    //
-    //       // If flights found, update newTrip with price
-    //       } else {
-    //         console.log('flights found!');
-    //         console.log(successResponse);
-    //         budgetPlanner.newTrip.flightCost = successResponse.totalPrice;
-    //       }
-    //     },
-    //     errorResponse => {
-    //       console.log('Could not retrieve price:', errorResponse);
-    //     }
-    // );
+    while (!flightFound && i <= 31) {
 
+      FlightService
+        .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
+        .then(
+          successResponse => {
+            console.log(successResponse);
+            const quote = successResponse.response.Quotes[0];
+            const carrier = successResponse.response.Carriers[0];
+
+            if (quote) {
+              // If flights found, update newTrip with price
+              budgetPlanner.newTrip.flightCost = quote.MinPrice;
+              budgetPlanner.newTrip.outboundLeg = moment(quote.OutboundLeg.DepartureDate).format('Do MMM');
+              budgetPlanner.newTrip.inboundLeg = moment(quote.InboundLeg.DepartureDate).format('Do MMM');
+              budgetPlanner.newTrip.carrier = carrier.Name;
+              return flightFound = true;
+            } else {
+              budgetPlanner.newTrip.noFlightsMsg = `We can't find flights for these dates. Try a different date.`
+              console.log('no flights found');
+            }
+          },
+          errorResponse => {
+            budgetPlanner.newTrip.searchString = 'Oh dear, there seems to be a problem. Try again later.';
+            console.log(errorResponse);
+          }
+      );
+
+
+      budgetPlanner.newTrip.departDate = moment(budgetPlanner.newTrip.departDate).add(1, 'days').format('YYYY-MM-DD');
+      budgetPlanner.newTrip.returnDate = moment(budgetPlanner.newTrip.returnDate).add(1, 'days').format('YYYY-MM-DD');
+      i++;
+    }
   }
 
   function createTrip() {
