@@ -3,17 +3,20 @@
       <h1>My Details</h1>
     </div>
 
-  <div ng-controller="UploadController as upload">
+  <!-- <div ng-controller="UploadController as upload">
     <div>profile image</div>
     <drag-drop base64="upload.data.base64"></drag-drop>
+  </div> -->
+
+
+  <div><img ng-src="{{ profileShow.profile.profilePic }}" alt="profilePic" height="300px" style="border: 1px black solid;"/>
   </div>
 
-  <img ng-src="{{ profileShow.profile.profilePic }}">
   <p>Username: {{ profileShow.profile.username }}</p>
   <p>Email: {{ profileShow.profile.email }}</p>
   <p>Preferred Airport: {{ profileShow.profile.preferredAirport }}</p>
 
-  <a class="heading" a ui-sref="profileEdit({ id: profileShow.profile._id })">Edit Profile</a>
+  <button ui-sref="profileEdit({ id: profileShow.profile._id })">Edit Your Profile</button>
 </section>
 
 <!-- hide if there are no saved trips -->

@@ -1,9 +1,11 @@
 
 <section class="profileSignUpForm">
   <form ng-submit="profileEdit.update()">
+<!--
   <div ng-controller="UploadController as upload">
     <drag-drop base64="upload.data.base64"></drag-drop>
-  </div>
+  </div> -->
+
   <div>
     <div>
       <label>Profile Picture</label>
@@ -12,12 +14,12 @@
 
     <div>
       <label>Username</label>
-      <input type="text" name="user name" placeholder="Enter Username" ng-model="profileEdit.profile.username">
+      <input type="text" name="user name" placeholder="Username" ng-model="profileEdit.profile.username">
     </div>
 
     <div>
       <label>Email</label>
-      <input type="text" name="Name" placeholder="Enter email" ng-model="profileEdit.profile.email">
+      <input type="text" name="Name" placeholder="Email" ng-model="profileEdit.profile.email">
     </div>
     <div>
       <label>Your preferred Airport</label>
