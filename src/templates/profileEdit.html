@@ -1,15 +1,22 @@
 
-<section class="profileSignUpForm">
-  <form ng-submit="profileEdit.update()">
-<!--
-  <div ng-controller="UploadController as upload">
-    <drag-drop base64="upload.data.base64"></drag-drop>
-  </div> -->
+<section class="profileSection">
 
-  <div>
+  <form ng-submit="profileEdit.update()">
+
+      <!--
+        <div ng-controller="UploadController as upload">
+          <drag-drop base64="upload.data.base64"></drag-drop>
+        </div> -->
+
+  <div class="profileSignUpForm">
+    <div class="divHeading">
+      <h2>Edit profile</h2>
+    </div>
     <div>
+
       <label>Profile Picture</label>
       <input type="text" name="image" placeholder="image url" ng-model="profileEdit.profile.profilePic">
+      <input type="file" name="profilePic" accept="image/*" />
     </div>
 
     <div>
@@ -25,7 +32,7 @@
       <label>Your preferred Airport</label>
       <input type="text" name="airport" placeholder="Enter your preferred airport" ng-model="profileEdit.profile.preferredAirport">
     </div>
-  </div>
     <button>Update your profile</button>
+    </div>
   </form>
 </section>

@@ -27,7 +27,7 @@ function LocationsEditController(location, $state) {
 
   function update() {
     location.update({ id: locationsEdit.location._id }, locationsEdit.location, () => {
-      $state.go('login', $state.params);
+      $state.go('home', $state.params);
 
 
     });
