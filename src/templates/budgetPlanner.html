@@ -23,7 +23,7 @@
           <option value="2017-12-01">Dec 2017</option>
         </select>
 
-        <label>Duration</label>
+        <label>Duration (days)</label>
         <input ng-model="budgetPlanner.newTrip.duration" type="number" name="duration" placeholder="How long for?">
 
         <label>Departure Airport</label>
@@ -41,7 +41,7 @@
         </div>
         <div ng-if="budgetPlanner.newTrip.flightCost">
           <input ng-model="budgetPlanner.newTrip.flightCost" type="text" name="flightCost" disabled="true">
-          <label>Flights found with {{ budgetPlanner.newTrip.carrier }}</label>
+          <label>Flights found<span ng-if="budgetPlanner.newTrip.carrier"> with {{ budgetPlanner.newTrip.carrier }}</span></label>
           <p>Leaving {{ budgetPlanner.newTrip.outboundLeg }} and returning {{ budgetPlanner.newTrip.inboundLeg }}</p>
 
           <button type="submit" name="button">Update flights</button>

@@ -60,12 +60,12 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
         .getPrice(budgetPlanner.newTrip.origin, budgetPlanner.newTrip.destAirportCode, budgetPlanner.newTrip.departDate, budgetPlanner.newTrip.returnDate)
         .then(
           successResponse => {
-            console.log(successResponse);
             const quote = successResponse.response.Quotes[0];
             const carrier = successResponse.response.Carriers[0];
 
             if (quote) {
               // If flights found, update newTrip with price
+              console.log(successResponse);
               budgetPlanner.newTrip.flightCost = quote.MinPrice;
               budgetPlanner.newTrip.outboundLeg = moment(quote.OutboundLeg.DepartureDate).format('Do MMM');
               budgetPlanner.newTrip.inboundLeg = moment(quote.InboundLeg.DepartureDate).format('Do MMM');
