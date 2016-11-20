@@ -23,7 +23,7 @@
           <option value="2017-12-01">Dec 2017</option>
         </select>
 
-        <label>Duration</label>
+        <label>Duration (days)</label>
         <input ng-model="budgetPlanner.newTrip.duration" type="number" name="duration" placeholder="How long for?">
 
         <label>Departure Airport</label>
@@ -32,31 +32,36 @@
         <label>Arrival Airport</label>
         <input ng-model="budgetPlanner.newTrip.destination" type="text" name="destination" placeholder="e.g. 'LAX'" disabled="true">
 
-
         <hr>
-        <button type="submit" name="button">Find flights</button>
+
+        <label>Flight Cost</label>
+        <div ng-if="!budgetPlanner.newTrip.flightCost">
+          <button type="submit" name="button">Find flights</button>
+          <p ng-if="budgetPlanner.newTrip.noFlightsMsg && !budgetPlanner.newTrip.flightCost">{{ budgetPlanner.newTrip.noFlightsMsg }}</p>
+        </div>
+        <div ng-if="budgetPlanner.newTrip.flightCost">
+          <input ng-model="budgetPlanner.newTrip.flightCost" type="text" name="flightCost" disabled="true">
+          <label>Flights found<span ng-if="budgetPlanner.newTrip.carrier"> with {{ budgetPlanner.newTrip.carrier }}</span></label>
+          <p>Leaving {{ budgetPlanner.newTrip.outboundLeg }} and returning {{ budgetPlanner.newTrip.inboundLeg }}</p>
+
+          <button type="submit" name="button">Update flights</button>
+        </div>
       </form>
     </section>
 
     <section  class="threeCol">
       <h2>Total Cost: £ {{ budgetPlanner.newTrip.flightCost + budgetPlanner.newTrip.expenses + budgetPlanner.newTrip.accomCost - budgetPlanner.newTrip.totalSavings }}</h2>
-      <div ng-show="!!budgetPlanner.newTrip.flightCost">
-        <label>Expected Flight Cost</label>
-        <p>£ {{ budgetPlanner.newTrip.flightCost }}</p>
-      </div>
       <canvas id="doughnut" class="chart chart-doughnut"
         chart-data="budgetPlanner.data" chart-labels="budgetPlanner.labels">
       </canvas>
     </section>
 
     <section ng-show="!!budgetPlanner.newTrip.flightCost"  class="threeCol">
-      <h2>Accommodation</h2>
+      <h2>Accommodation Cost</h2>
       <form ng-submit="budgetPlanner.createTrip()">
-        <label>Cost</label>
         <input ng-model="budgetPlanner.newTrip.accomCost" type="number" name="accomCost" placeholder="Add expected cost">
 
         <h2>Spending Money</h2>
-        <label>Total</label>
         <input ng-model="budgetPlanner.newTrip.expenses" type="number" name="expenses" placeholder="£">
         <hr>
         <button>Save trip</button>

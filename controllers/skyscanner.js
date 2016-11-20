@@ -12,11 +12,14 @@ function flights(req, res) {
     json: true
   })
   .then(function successCallback(response) {
-    const totalPrice = response.Quotes.reduce((sum, currentQuote) => {
+    const data = {};
+    data.totalPrice = response.Quotes.reduce((sum, currentQuote) => {
       return sum + currentQuote.MinPrice;
     }, 0);
+    data.carriers = response.Carriers;
 
-    res.json({ totalPrice });
+
+    res.json({ response });
   })
   .catch(function errorCallback(response) {
     res.status(500).json(response);
