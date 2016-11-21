@@ -13,9 +13,14 @@ function googleMap($window) {
     link: function($scope, element) {
       $scope.$watch('center', (newVal) => {
         if(newVal && newVal.lat && newVal.lng) {
-          new $window.google.maps.Map(element[0], {
+          const map = new $window.google.maps.Map(element[0], {
             center: $scope.center,
-            zoom: 8
+            zoom: 10
+          });
+
+          new $window.google.maps.Marker({
+            position: $scope.center,
+            map
           });
         }
       });
