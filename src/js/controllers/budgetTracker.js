@@ -8,6 +8,8 @@ function BudgetTrackerController(Trip, $state, $scope) {
 
   budgetTracker.trip = Trip.get($state.params);
   budgetTracker.pcSaved = (budgetTracker.trip.totalSavings / (budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost)) * 100;
+  budgetTracker.formattedDepart = moment(budgetTracker.trip.departDate).format('Do MMM YYYY');
+  budgetTracker.formattedReturn = moment(budgetTracker.trip.returnDate).format('Do MMM YYYY');
 
   function calcPcSaved() {
 
