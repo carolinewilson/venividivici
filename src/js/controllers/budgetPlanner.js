@@ -80,7 +80,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
               budgetPlanner.newTrip.carrier = carrier.Name;
               return flightFound = true;
             } else {
-              budgetPlanner.newTrip.noFlightsMsg = 'We can\'t find flights for these dates. Try a different date.';
+              budgetPlanner.newTrip.noFlightsMsg = 'We can\'t find flights for these dates. Try a different month.';
               // console.log('no flights found');
             }
           },
@@ -93,6 +93,10 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
 
       budgetPlanner.newTrip.departDate = moment(budgetPlanner.newTrip.departDate).add(1, 'days').format('YYYY-MM-DD');
       budgetPlanner.newTrip.returnDate = moment(budgetPlanner.newTrip.returnDate).add(1, 'days').format('YYYY-MM-DD');
+
+      budgetPlanner.newTrip.accomCost = 30 * budgetPlanner.newTrip.duration;
+      budgetPlanner.newTrip.expenses = 50 * budgetPlanner.newTrip.duration;
+
       i++;
     }
   }

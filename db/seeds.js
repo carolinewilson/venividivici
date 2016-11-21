@@ -67,10 +67,10 @@ User.create([{
     closestAirport: 'Presidente Carlos Ibáñez del Campo International Airport',
     mainImage: 'http://i.imgur.com/Y6qMZTX.jpg',
     images: [
-      'http://www.knowmadadventures.com/wp-content/uploads/2013/06/tourist-sites-in-chile.jpg',
+      'http://www.lovethesepics.com/wp-content/uploads/2011/06/Patagonia-Chile-looks-like-something-off-a-postcard-.-.-.-or-out-of-a-dream.jpg',
       'https://s-media-cache-ak0.pinimg.com/originals/b2/01/64/b20164db11285787efd6a8b74ace7010.jpg',
       'http://www.kevandemgoglobal.com/wp-content/uploads/2015/10/Marble-Caves-Chile-7.jpg',
-      'http://www.lovethesepics.com/wp-content/uploads/2011/06/Patagonia-Chile-looks-like-something-off-a-postcard-.-.-.-or-out-of-a-dream.jpg',
+      'http://www.knowmadadventures.com/wp-content/uploads/2013/06/tourist-sites-in-chile.jpg',
       'http://miriadna.com/desctopwalls/images/max/Patagonia-(Chile).jpg'
     ],
     attractions: [
@@ -98,7 +98,7 @@ User.create([{
     bestTime: 'July - September',
     description: 'This surreal-looking ice cave is located on the Kamchatka Peninsula of Russia. The almost kilometer long tunnel was formed by a hot water spring flowing beneath the glacial ice fields on the flanks of the nearby Mutnovsky volcano. Because glaciers on Kamchatka volcanoes have been melting in recent years, the roof of this cave is now so thin that sunlight penetrates through it, eerily illuminating the icy structures within.'
   },{
-    locationName: 'Heart Sea Arch, Portugal',
+    locationName: 'Praia da Marinha, Portugal',
     user: userId2,
     closestAirport: 'Faro Airport',
     airportCode: 'FAO',
