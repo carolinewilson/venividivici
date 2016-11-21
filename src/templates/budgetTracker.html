@@ -5,7 +5,7 @@
     <section>
       <div class="headerText">
         <h1>Your trip to {{ budgetTracker.trip.location.locationName }}</h1>
-        <h2>{{ budgetTracker.formattedDepart }} to {{ budgetTracker.formattedReturn }}</h2>
+        <h2>{{ budgetTracker.trip.departDate | date: 'd MMM yyyy' }} to {{ budgetTracker.trip.returnDate  | date: 'd MMM yyyy' }}</h2>
       </div>
       <div class="progress-bar-indication">
         <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">

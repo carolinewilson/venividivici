@@ -5,6 +5,8 @@ BudgetPlannerController.$inject= ['Location','Trip','$state', 'FlightService', '
 function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, TripService, $window, $scope) {
   const budgetPlanner = this;
 
+  const moment = $window.moment;
+  
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
   budgetPlanner.newTrip = {};
   budgetPlanner.location = Location.get($state.params);
