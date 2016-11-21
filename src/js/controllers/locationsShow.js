@@ -7,6 +7,7 @@ function LocationsShowController(Location, $state, User) {
   const locationsShow = this;
 
   locationsShow.location = Location.get($state.params, (location) => {
+    console.log(location);
     locationsShow.user = User.query({ _id: location.user});
   });
 

@@ -25,10 +25,8 @@
       <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Get me there</button>
     </div>
     <div class="">
-      <p><strong>Discovered by</strong> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border: 1px black solid; border-radius:100px;"/><a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
-
-
-      <a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a>
+      <p class="twoCol"><strong>Discovered by</strong> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border: 1px black solid; border-radius:100px;"/><a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
+      <p class="twoCol"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
     </div>
   </div>
 </section>
