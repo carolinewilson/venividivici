@@ -15,7 +15,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
 
   User.get({ id: userId }, (user) => {
 
-    
+
     const airport = user.preferredAirport;
 
     Location.get($state.params, (location) => {
@@ -23,7 +23,8 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
         origin: 'LGW',
         destination: location.closestAirport,
         destAirportCode: location.airportCode,
-        duration: 7
+        duration: 7,
+        totalSavings: 0
       };
 
       budgetPlanner.newTrip.origin = airport;
@@ -55,7 +56,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
     const tripDuration = parseFloat(budgetPlanner.newTrip.duration);
 
     budgetPlanner.newTrip.returnDate = moment(budgetPlanner.newTrip.departDate).add(tripDuration, 'days').format('YYYY-MM-DD');
-    console.log(budgetPlanner.newTrip.returnDate);
+    // console.log(budgetPlanner.newTrip.returnDate);
 
     // budgetPlanner.newTrip.flightCost = 500;
     let flightFound = false;
@@ -72,7 +73,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
 
             if (quote) {
               // If flights found, update newTrip with price
-              console.log(successResponse);
+              // console.log(successResponse);
               budgetPlanner.newTrip.flightCost = quote.MinPrice;
               budgetPlanner.newTrip.outboundLeg = moment(quote.OutboundLeg.DepartureDate).format('Do MMM');
               budgetPlanner.newTrip.inboundLeg = moment(quote.InboundLeg.DepartureDate).format('Do MMM');
@@ -80,7 +81,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
               return flightFound = true;
             } else {
               budgetPlanner.newTrip.noFlightsMsg = 'We can\'t find flights for these dates. Try a different date.';
-              console.log('no flights found');
+              // console.log('no flights found');
             }
           },
           errorResponse => {

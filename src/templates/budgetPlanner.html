@@ -63,6 +63,7 @@
         <input ng-model="budgetPlanner.newTrip.accomCost" type="number" name="accomCost" placeholder="Add expected cost">
 
         <h2>Spending Money</h2>
+        <p>Based on the length of your trip, the estimated cost is £{{ 50 * budgetPlanner.newTrip.duration }}</p>
         <input ng-model="budgetPlanner.newTrip.expenses" type="number" name="expenses" placeholder="Add your estimated spending money">
         <hr>
         <button>Save trip</button>
