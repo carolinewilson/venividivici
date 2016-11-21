@@ -40,10 +40,26 @@ section {
   @include outer-container;
 }
 
-main{
+main {
   padding-top: 60px;
+
 }
 
+#locationsShow, #budgetTracker {
+  h1 {
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translate(-50%,50%);
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
 .container {
   padding-top: 60px;
   width: 90%;
