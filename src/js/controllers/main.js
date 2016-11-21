@@ -40,11 +40,11 @@ function MainController($auth, $state, $window, TripService, UserService) {
   main.logout = logout;
 
   main.images = [{
-    url: 'http://www.liberty-int.com/Public/Italy-Signature-Slide5-Venice.jpg',
-    caption: 'Venice'
+    url: 'https://paraphrasinglife.files.wordpress.com/2014/08/no-1-alternative.jpg',
+    caption: 'One s destination is never a place, but a new way of seeing things..'
   }, {
-    url: 'http://www.timeforkids.com/files/styles/tfk_rect_large/public/2011-07/ita_ss4.jpg?itok=jYcwJZX9',
-    caption: 'Tower of Piza'
+    url: 'http://sevennaturalwonders.org/wp-content/uploads/2015/04/rothera111.jpg',
+    caption: 'Don t tell how educated you are, tell me how much you travelled'
   }, {
     url: 'http://maupintour.com/wp-content/uploads/2015/10/Historic-Coliseum-Rome-Italy.jpg',
     caption: 'Coliseum'
