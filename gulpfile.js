@@ -76,6 +76,7 @@ gulp.task('html', () => {
     .pipe(gulp.dest('public'))
     .pipe(livereload());
 });
+
 // images
 gulp.task('images', () => {
   return gulp.src('src/images/*')

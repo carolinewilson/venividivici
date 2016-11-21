@@ -1,9 +1,16 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "base/base";
+@import "partials/carousel";
 @import "buttons";
+
 // @import "partials/forms";
 
+.google-map {
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+}
 
 body {
   background-color: ffffff;
@@ -72,27 +79,27 @@ body {
         width: 60%;
       }
     }
-  .newLocationSection{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(36,39,43,0.7);
-    z-index: 3;
-    @include display(flex);
-    @include justify-content(center);
-    @include align-items(center);
-    @include flex-direction(column);
-    .createLocationForm{
-      background-color: #fbfbfb;
-      padding: 20px;
-      // height: 500px;
-      // width: 500px;
-      height: 300%;
-      width: 200%;
-    }
-  }
+  // .newLocationSection{
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   background-color: rgba(36,39,43,0.7);
+  //   z-index: 3;
+  //   @include display(flex);
+  //   @include justify-content(center);
+  //   @include align-items(center);
+  //   @include flex-direction(column);
+  //   .createLocationForm{
+  //     background-color: #fbfbfb;
+  //     padding: 20px;
+  //     // height: 500px;
+  //     // width: 500px;
+  //     height: 300%;
+  //     width: 200%;
+  //   }
+  // }
 
 
 
@@ -110,8 +117,28 @@ section {
   @include outer-container;
 }
 
-main{
-  padding-top: 60px;
+#locationsShow, #budgetTracker {
+  h1 {
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translate(-50%,50%);
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.login {
+  margin-top: 150px;
+}
+
+.register {
+  margin-top: 150px;
 }
 
 .container {
@@ -128,31 +155,54 @@ main{
     border-radius: 100%;
   }
 }
-
-
 .images {
+  overflow: hidden;
+  position: relative;
+  min-height: 325px;
   &-left {
-    @include span-columns(6);
+    @include span-columns(8);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
     @media screen and (max-width: 768px) {
       @include span-columns(12);
+      position: static;
+      margin-bottom: 20px;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
     }
   }
   &-right {
-    @include span-columns(6);
+    @include span-columns(4);
+    @include shift(8);
     @media screen and (max-width: 768px) {
       @include span-columns(12);
+      @include shift(0);
     }
+    // display: table-cell;
     &-img {
-      @include span-columns(3 of 6);
+      @include span-columns(2 of 4);
       @include omega(2n);
       @media screen and (max-width: 768px) {
         @include span-columns(6 of 12);
       }
       // height: 200px;
-      padding-top: 47.6%;
       background-position: center;
       background-size: cover;
-      margin-bottom: $gutter;
+      &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 20px;
+      }
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
     }
   }
 }
@@ -257,7 +307,7 @@ main{
   }
 }
 .input-revealer {
-  background-image: url('../images/edit-icon.png');
+  background-image: url('http://www.iconsfind.com/wp-content/uploads/2013/11/Editing-Edit-icon.png');
   background-size: 3%;
   background-repeat: no-repeat;
   background-position: top right;
@@ -267,7 +317,7 @@ nav {
   height: 60px;
   width: 100%;
   padding: 0px;
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   top: 0;
 
