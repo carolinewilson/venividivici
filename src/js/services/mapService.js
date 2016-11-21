@@ -4,7 +4,7 @@ angular.module('travelApp')
 MapService.$inject = ['$http'];
 function MapService($http) {
 
-  function getMap(destination) {
+  function getCoords(destination) {
     return $http({
       method: 'GET',
       url: '/maps',
@@ -18,5 +18,5 @@ function MapService($http) {
     });
   }
 
-  this.getMap = getMap;
+  this.getCoords = getCoords;
 }

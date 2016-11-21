@@ -38,7 +38,7 @@
     <div class="images-right">
       <div ng-repeat="image in locationsShow.location.images.slice(1,4) track by $index"  class="images-right-img" style="background-image:url({{ image }})"></div>
     </div>
-
   </div>
 </section>
-<ui-gmap-google-map center='locationsShow.map.center' zoom='locationsShow.map.zoom'></ui-gmap-google-map>
+
+<google-map center="locationsShow.center"></google-map>

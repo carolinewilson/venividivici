@@ -8,21 +8,18 @@ function LocationsShowController(Location, $state, User, MapService) {
 
   Location.get($state.params, (location) => {
     locationsShow.location = location;
-    locationsShow.user = User.query({ _id: location.user});
+    locationsShow.user = User.query({ _id: location.user });
+    locationsShow.center = {};
 
     // Google Map
-    console.log(locationsShow.location.locationName);
     MapService
-      .getMap(locationsShow.location.locationName)
+      .getCoords(locationsShow.location.locationName)
       .then(res => {
-        locationsShow.map.center.latitude = res.lat;
-        locationsShow.map.center.longitude = res.lng;
+        locationsShow.center = res;
       }, err => {
         console.log(err);
       });
   });
-
-  locationsShow.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
 
 }
