@@ -58,31 +58,54 @@ main{
     border-radius: 100%;
   }
 }
-
-
 .images {
+  overflow: hidden;
+  position: relative;
+  min-height: 325px;
   &-left {
-    @include span-columns(6);
+    @include span-columns(8);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
     @media screen and (max-width: 768px) {
       @include span-columns(12);
+      position: static;
+      margin-bottom: 20px;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
     }
   }
   &-right {
-    @include span-columns(6);
+    @include span-columns(4);
+    @include shift(8);
     @media screen and (max-width: 768px) {
       @include span-columns(12);
+      @include shift(0);
     }
+    // display: table-cell;
     &-img {
-      @include span-columns(3 of 6);
+      @include span-columns(2 of 4);
       @include omega(2n);
       @media screen and (max-width: 768px) {
         @include span-columns(6 of 12);
       }
       // height: 200px;
-      padding-top: 47.6%;
       background-position: center;
       background-size: cover;
-      margin-bottom: $gutter;
+      &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 20px;
+      }
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
     }
   }
 }

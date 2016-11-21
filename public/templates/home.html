@@ -1,6 +1,4 @@
-<carousel images="main.images" delay="5000"></carousel>
 <!-- only show when log in -->
-
 <carousel images="main.images" delay="5000"></carousel>
 <section class="container">
   <!-- <div class="addLocation" ng-if="main.isLoggedIn()">
@@ -19,7 +17,7 @@
       <li class="imagesGrid" ng-repeat="location in locationsIndex.all" style="background-image:url('{{location.mainImage}}')">
         <a ui-sref="locationsShow({ id: location._id })">
           <div class="overlay">
-            <h2>{{ location.locationName}}</h2>
+            <h2>{{ location.locationName }}</h2>
           </div>
         </a>
       </li>
