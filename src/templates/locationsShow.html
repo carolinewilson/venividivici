@@ -25,8 +25,8 @@
       <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Get me there</button>
     </div>
     <div class="">
-      <p>Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
-      <a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a>
+      <p class="twoCol">Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
+      <p class="twoCol"><a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
     </div>
   </div>
 </section>

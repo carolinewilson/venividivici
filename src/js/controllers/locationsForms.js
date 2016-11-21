@@ -21,7 +21,7 @@ function LocationsNewController(Location, $state, $auth) {
     // get userId from paylod
     locationsNew.location.user = $auth.getPayload()._id;
 
-    console.log(locationsNew.location);
+    // console.log(locationsNew.location);
     // Save location
     Location.save(locationsNew.location, () => {
       $state.go('home');
