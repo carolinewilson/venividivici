@@ -24,7 +24,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
   if (budgetPlanner.isLoggedIn()) {
     const userId = $auth.getPayload()._id;
     User.get({ id: userId }, (user) => {
-      const airport = user.preferredAirport;
+      const airport = user.preferredAirportCode;
       budgetPlanner.newTrip.origin = airport;
     });
   }

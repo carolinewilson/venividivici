@@ -25,6 +25,15 @@
     <div>
       <label>Your preferred Airport</label>
       <input type="text" name="airport" placeholder="Enter your preferred airport" ng-model="profileEdit.profile.preferredAirport">
+
+
+      <select ng-model="profileEdit.profile.preferredAirport" name="preferredAirport">
+        <option>-- London --</option>
+        <option value="London Heathrow,LHR">London Heathrow (LHR)</option>
+        <option value="London Gatwick,LGW">London Gatwick (LGW)</option>
+        <option value="London Luton,LTN">London Luton (LTN)</option>
+        <option value="London Stansted,LGW">London Stansted (LGW)</option>
+      </select>
     </div>
     <button>Update your profile</button>
     <button ui-sref="profileShow">Cancel</button>
