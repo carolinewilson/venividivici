@@ -63,5 +63,13 @@ function LoginController($auth, $state, $window, TripService, Trip) {
       });
   }
 
+  function authenticate(service) {
+    $auth.authenticate(service, () => {
+      $state.go('home');
+    });
+  }
+
+  login.authenticate = authenticate;
+
   login.submit = submit;
 }

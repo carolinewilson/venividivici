@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   profilePic: { type: String, default: 'http://www.freeiconspng.com/uploads/profile-icon-9.png' },
   preferredAirport: { type: String },
-  passwordHash: { type: String }
+  passwordHash: { type: String },
+  facebookId: { type: String }
 });
 
 function setPassword(value){
@@ -23,7 +24,7 @@ function validatePassword(password){
 
 function preValidate(next) {
   if (this.isNew) {
-    if (!this._password) {
+    if (!this._password && !this.facebookId) {
       this.invalidate('password', 'A password is required.');
     }
   }
