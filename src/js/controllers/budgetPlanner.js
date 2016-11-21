@@ -9,12 +9,13 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
   budgetPlanner.newTrip = {};
   budgetPlanner.location = Location.get($state.params);
-  
+
   Location.get($state.params, (location) => {
     budgetPlanner.newTrip = {
       origin: 'LGW',
       destination: location.closestAirport,
       destAirportCode: location.airportCode,
+      suggestedDate: location.bestTime,
       duration: 7,
       totalSavings: 0
     };
