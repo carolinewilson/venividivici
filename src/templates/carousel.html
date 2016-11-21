@@ -1,0 +1,16 @@
+<div class="carousel">
+  <ul class="image-container">
+    <li class="image" ng-repeat="image in images" style="background-image:url({{image.url}})">
+      <p ng-if="image.caption">{{ image.caption }}</p>
+    </li>
+  </ul>
+
+  <button ng-click="prev()"></button>
+  <button ng-click="next()"></button>
+
+  <nav>
+    <ul>
+      <li ng-repeat="image in images" ng-click="go($index)"></li>
+    </ul>
+  </nav>
+</div>
