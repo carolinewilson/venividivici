@@ -6,7 +6,7 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
   const budgetPlanner = this;
 
   const moment = $window.moment;
-  
+
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
   budgetPlanner.newTrip = {};
   budgetPlanner.location = Location.get($state.params);
@@ -16,12 +16,12 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
       origin: 'LGW',
       destination: location.closestAirport,
       destAirportCode: location.airportCode,
-      duration: 7,
-      flightCost: 0,
-      accomCost: 0,
-      expenses: 0,
-      totalSavings: 0,
-      totalCost: 0
+      duration: 7
+      // flightCost: 0,
+      // accomCost: 0,
+      // expenses: 0,
+      // totalSavings: 0,
+      // totalCost: 0
     };
   });
 

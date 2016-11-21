@@ -56,13 +56,14 @@
       </canvas>
     </section>
 
-    <section ng-show="!!budgetPlanner.newTrip.flightCost"  class="threeCol">
+    <section class="threeCol">
       <h2>Accommodation Cost</h2>
+      <p>Based on the length of your trip, the estimated cost is £{{ 30 * budgetPlanner.newTrip.duration }}</p>
       <form ng-submit="budgetPlanner.createTrip()">
         <input ng-model="budgetPlanner.newTrip.accomCost" type="number" name="accomCost" placeholder="Add expected cost">
 
         <h2>Spending Money</h2>
-        <input ng-model="budgetPlanner.newTrip.expenses" type="number" name="expenses" placeholder="£">
+        <input ng-model="budgetPlanner.newTrip.expenses" type="number" name="expenses" placeholder="Add your estimated spending money">
         <hr>
         <button>Save trip</button>
       </form>
