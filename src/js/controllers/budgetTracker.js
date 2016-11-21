@@ -9,13 +9,13 @@ function BudgetTrackerController(Trip, $state, $scope, $window) {
   const moment = $window.moment;
 
   budgetTracker.trip = Trip.get($state.params);
-  budgetTracker.pcSaved = (budgetTracker.trip.totalSavings / (budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost)) * 100;
+  budgetTracker.percentSaved = (budgetTracker.trip.totalSavings / (budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost)) * 100;
 
-  function calcPcSaved() {
+  function calcPercentSaved() {
 
-    budgetTracker.pcSaved = (budgetTracker.trip.totalSavings / (budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost)) * 100;
+    budgetTracker.percentSaved = (budgetTracker.trip.totalSavings / (budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost)) * 100;
 
-    return Math.ceil(budgetTracker.pcSaved);
+    return Math.ceil(budgetTracker.percentSaved);
   }
 
   // Update pie chart
@@ -39,10 +39,10 @@ function BudgetTrackerController(Trip, $state, $scope, $window) {
 
   function save() {
     Trip.update({ id: budgetTracker.trip._id }, budgetTracker.trip, () => {
-      calcPcSaved();
+      calcPercentSaved();
     });
   }
 
   budgetTracker.save = save;
-  budgetTracker.calcPcSaved = calcPcSaved;
+  budgetTracker.calcPercentSaved = calcPercentSaved;
 }

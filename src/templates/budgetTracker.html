@@ -8,9 +8,9 @@
         <h2>{{ budgetTracker.trip.departDate | date: 'd MMM yyyy' }} to {{ budgetTracker.trip.returnDate  | date: 'd MMM yyyy' }}</h2>
       </div>
       <div class="progress-bar-indication">
-        <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
+        <span class="meter" style="width: {{ budgetTracker.calcPercentSaved() }}%">
           <p>
-            {{ budgetTracker.calcPcSaved() }}% of the way there!
+            {{ budgetTracker.calcPercentSaved() }}% of the way there!
           </p>
         </span>
       </div>
