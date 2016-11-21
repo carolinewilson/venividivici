@@ -2,43 +2,50 @@
     <div class="info">
       <h1>My Details</h1>
     </div>
-
-  <!-- <div ng-controller="UploadController as upload">
-    <div>profile image</div>
-    <drag-drop base64="upload.data.base64"></drag-drop>
-  </div> -->
-
-
-  <div><img ng-src="{{ profileShow.profile.profilePic }}" alt="profilePic" height="200px" style="border: 1px black solid; border-radius:100px;"/>
-  </div>
-  <div>
-  <h2>Username: {{ profileShow.profile.username }}</h2>
-  <p>Email: {{ profileShow.profile.email }}</p>
-  <p>Preferred Airport: {{ profileShow.profile.preferredAirport }}</p>
-  </div>
+    <div>
+      <img ng-src="{{ profileShow.profile.profilePic }}" alt="profilePic" height="200px" style="border: 1px black solid; border-radius:100px;"/>
+    </div>
+    <div>
+      <h2>Username: {{ profileShow.profile.username }}</h2>
+      <p>Email: {{ profileShow.profile.email }}</p>
+      <p>Preferred Airport: {{ profileShow.profile.preferredAirport }}</p>
+    </div>
   <button ui-sref="profileEdit({ id: profileShow.profile._id })">Edit Your Profile</button>
 </section>
 
-<!-- hide if there are no saved trips -->
-
-<section>
-
+<!-- hide if there are no saved trips. .length determines if there is a data in the object and evaluates if its true or false-->
+<section ng-if="profileShow.trips.length">
 
   <div class="trips">
     <h1>My Trips</h1>
       <!-- {{profileShow.trips}} -->
     <div class="trips-tile" ng-repeat="trip in profileShow.trips" style="background-image:url('{{trip.location.mainImage}}')">
-      <ul>
-        <li>{{trip.location.locationName}}</li>
-        <li>Destination Aiport: {{trip.destination}}</li>
-        <li>Flight cost: £{{trip.flightCost}}</li>
-        <li><button ui-sref="budgetTracker({id: trip._id})">Live the dream</button></li>
-        <!-- <li>
-          <img ng-src="{{trip.location.mainImage}}">
-        </li> -->
-      </ul>
-
+      <div class="trips-tile-overlay">
+        <ul>
+          <li>{{trip.location.locationName}}</li>
+          <li>Destination Aiport: {{trip.destination}}</li>
+          <li>Flight cost: £{{trip.flightCost}}</li>
+          <li><button ui-sref="budgetTracker({id: trip._id})">Budget tracker</button></li>
+        </ul>
+      </div>
     </div>
   </div>
+</section>
 
+<!-- hide if there are no saved trips. .length determines if there is a data in the object and evaluates if its true or false-->
+<section>
+<!-- <section ng-show="profileShow.trips"> -->
+  <h1>My Discoveries</h1>
+  <div class="trips">
+    <!-- {{profileShow.locations}} -->
+    <div class="trips-tile" ng-repeat="location in profileShow.locations" style="background-image:url('{{location.mainImage}}')">
+      <a ui-sref="locationsShow({ id: location._id })">
+        <div class="trips-tile-overlay">
+          <ul>
+            <li class="locationsHeading">{{location.locationName}}</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+  </div>
 </section>

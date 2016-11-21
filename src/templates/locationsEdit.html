@@ -1,5 +1,5 @@
 <section class="row">
-
+  <h1>Share your discovery</h1>
   <form ng-submit="locationsEdit.update()">
 
   <div class="editForm">
@@ -27,20 +27,10 @@
     </div>
 </div>
 
-<!-- array of images -->
-<div ng-controller="UploadController as upload">
-
-  <drag-drop base64="upload.data.base64"></drag-drop>
-</div>
-
-<div ng-controller="UploadController as upload">
-
-  <drag-drop base64="upload.data.base64"></drag-drop>
-</div>
-
 
 <div class="tripImages">
     <div>
+      <h3>Add images</h3>
       <label>Image</label>
         <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[0]">
     </div>
@@ -60,8 +50,7 @@
       <label>Image</label>
       <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[4]">
     </div>
-
-</div>
+  </div>
     <button>Update</button>
   </form>
 </section>

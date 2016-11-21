@@ -1,6 +1,7 @@
-<section class="row">
+<div class="newLocationSection">
+  <h1>Share your discovery</h1>
   <form ng-submit="locationsNew.createLocation()">
-  <div class="createForm">
+  <div class="createLocationForm">
     <div>
       <label>Main Image</label>
       <input type="text" name="image" placeholder="image url" ng-model="locationsNew.location.mainImage">
@@ -23,21 +24,9 @@
       <label>When to go?</label>
       <input type="text" name="whentogo" placeholder="Enter month" ng-model="locationsNew.location.bestTime">
     </div>
-  </div>
-
-<!-- array of images -->
-<section>
-  <h3>Share your images here</b>
-  <div ng-controller="UploadController as upload">
-
-    <drag-drop base64="upload.data.base64"></drag-drop>
-    <drag-drop base64="upload.data.base64"></drag-drop>
-  </div>
-</section>
 
 
 
-  <div class="imagesUploadForm">
     <div>
       <label>Image</label>
       <input type="text" name="image" placeholder="image url" ng-model="locationsNew.location.tempImage.one">
@@ -58,8 +47,8 @@
       <label>Image</label>
       <input type="text" name="image" placeholder="image url" ng-model="locationsNew.location.tempImage.five">
     </div>
-  </div>
+    </div>
 
     <button>Upload Your Discovery</button>
   </form>
-</section>
+</div>

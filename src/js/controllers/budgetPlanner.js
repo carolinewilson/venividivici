@@ -72,7 +72,7 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
               budgetPlanner.newTrip.carrier = carrier.Name;
               return flightFound = true;
             } else {
-              budgetPlanner.newTrip.noFlightsMsg = `We can't find flights for these dates. Try a different date.`
+              budgetPlanner.newTrip.noFlightsMsg = `We can't find flights for these dates. Try a different date.`;
               console.log('no flights found');
             }
           },

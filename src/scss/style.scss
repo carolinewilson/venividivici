@@ -9,7 +9,9 @@ body {
   background-color: ffffff;
   position: relative;
   .profileSection{
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(36,39,43,0.7);
@@ -21,10 +23,80 @@ body {
     input{
       width: 500px;
     }
+    .profileSignUpForm {
+      background-color: #fbfbfb;
+      padding: 20px;
+    }
   }
   .divHeading{
     height: 50px;
   }
+  .loginSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36,39,43,0.7);
+    z-index: 3;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    .loginForm{
+      background-color: #fbfbfb;
+      padding: 20px;
+        height: 80%;
+        width: 60%;
+      padding: 20px;
+    }
+  }
+  .registerSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36,39,43,0.7);
+    z-index: 4;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+      .registerForm{
+        background-color: #fbfbfb;
+        padding: 20px;
+        // height: 500px;
+        // width: 500px;
+        height: 90%;
+        width: 60%;
+      }
+    }
+  .newLocationSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36,39,43,0.7);
+    z-index: 3;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    .createLocationForm{
+      background-color: #fbfbfb;
+      padding: 20px;
+      // height: 500px;
+      // width: 500px;
+      height: 300%;
+      width: 200%;
+    }
+  }
+
+
+
+
 }
 img {
   max-width: 100%;
@@ -403,35 +475,62 @@ nav {
   }
 }
 .trips {
+  .trips-tile-overlay {
+    @include position(absolute, 0 0 0 0);
+    background-color: rgba(255,255,255,0.5);
+    opacity: 0;
+    transition: all 0.2s ease;
+    @media (max-width:767px) {
+      opacity: 1;
+      background-color: transparent;
+
+    }
+  }
+  h1{
+    text-align: center;
+  }
   @include outer-container;
   &-tile {
     @include span-columns(3);
     @include omega(4n);
-    height: 300px;
-    width: 300px;
+    @media (max-width:767px) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+    // auto size styling for the box which is responsive
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+    // width: 300px;
     background-size: cover;
     background-position: center;
-  }
-}
-
-.drag-drop{
-  min-height: 300px;
-  max-width: 300px;
-  @include span-columns(3);
-  @include omega(4n);
-  // max-height: 300px;
-  // margin: 10px;
-  background-color: white;
-  // border-radius: 5px;
-  border: 1px solid black;
-
-  img{
-    // display: inline-block;
-    width: 300px;
-    height: 300px;
-
-  }
-  &.active{
-    background-color: #aaa;
+    margin-bottom: 2.35765%;
+    ul {
+      @include position(absolute, 50% null null 50%);
+      transform: translate(-50%, -50%);
+      width: 90%;
+      margin: 0;
+      li {
+        list-style: none;
+      }
+    }
+    .locationsHeading{
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      margin: 0;
+      @media (max-width:767px) {
+        font-size: 16px;
+      }
+    }
+    &:hover {
+      .trips-tile-overlay {
+        opacity: 1;
+      }
+    }
   }
 }

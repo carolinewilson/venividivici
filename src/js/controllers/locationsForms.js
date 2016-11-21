@@ -8,7 +8,9 @@ LocationsNewController.$inject = ['Location', '$state', '$auth'];
 function LocationsNewController(Location, $state, $auth) {
   const locationsNew = this;
   const currentUser = $auth.getPayload()._id;
-  locationsNew.location = {};
+  locationsNew.location = {
+    tempImage: {}
+  };
   locationsNew.location.user = currentUser;
 
   function createLocation() {
