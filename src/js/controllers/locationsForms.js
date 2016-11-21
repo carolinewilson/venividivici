@@ -3,11 +3,13 @@ angular.module('travelApp')
   .controller('LocationsNewController', LocationsNewController);
 
 //////new
-LocationsNewController.$inject = ['Location', '$state'];
+LocationsNewController.$inject = ['Location', '$state', '$auth'];
 
-function LocationsNewController(Location, $state) {
+function LocationsNewController(Location, $state, $auth) {
   const locationsNew = this;
+  const currentUser = $auth.getPayload()._id;
   locationsNew.location = {};
+  locationsNew.location.user = currentUser;
 
   function createLocation() {
     locationsNew.location.images = [locationsNew.location.tempImage.one, locationsNew.location.tempImage.two, locationsNew.location.tempImage.three, locationsNew.location.tempImage.four, locationsNew.location.tempImage.five];
@@ -27,7 +29,7 @@ function LocationsEditController(location, $state) {
 
   function update() {
     location.update({ id: locationsEdit.location._id }, locationsEdit.location, () => {
-      $state.go('login', $state.params);
+      $state.go('home', $state.params);
 
 
     });
