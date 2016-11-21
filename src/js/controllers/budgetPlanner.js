@@ -1,8 +1,8 @@
 angular.module('travelApp')
   .controller('BudgetPlannerController', BudgetPlannerController);
 
-BudgetPlannerController.$inject= ['Location','Trip','$state', 'FlightService', '$auth', 'TripService', '$window', '$scope'];
-function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, TripService, $window, $scope) {
+BudgetPlannerController.$inject= ['Location','Trip','User','$state', 'FlightService', '$auth', 'TripService', '$window', '$scope'];
+function BudgetPlannerController(Location, Trip, User, $state, FlightService, $auth, TripService, $window, $scope) {
   const budgetPlanner = this;
 
   const moment = $window.moment;
@@ -11,18 +11,23 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
   budgetPlanner.newTrip = {};
   budgetPlanner.location = Location.get($state.params);
 
-  Location.get($state.params, (location) => {
-    budgetPlanner.newTrip = {
-      origin: 'LGW',
-      destination: location.closestAirport,
-      destAirportCode: location.airportCode,
-      duration: 7
-      // flightCost: 0,
-      // accomCost: 0,
-      // expenses: 0,
-      // totalSavings: 0,
-      // totalCost: 0
-    };
+  const userId = $auth.getPayload()._id;
+
+  User.get({ id: userId }, (user) => {
+
+    
+    const airport = user.preferredAirport;
+
+    Location.get($state.params, (location) => {
+      budgetPlanner.newTrip = {
+        origin: 'LGW',
+        destination: location.closestAirport,
+        destAirportCode: location.airportCode,
+        duration: 7
+      };
+
+      budgetPlanner.newTrip.origin = airport;
+    });
   });
 
   // Update pie chart
