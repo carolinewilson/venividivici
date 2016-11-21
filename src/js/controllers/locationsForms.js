@@ -10,10 +10,16 @@ function LocationsNewController(Location, $state) {
   locationsNew.location = {};
 
   function createLocation() {
+    const airport = locationsNew.location.airport.split(',');
+    locationsNew.location.closestAirport = airport[0];
+    locationsNew.location.airportCode = airport[1];
+
     locationsNew.location.images = [locationsNew.location.tempImage.one, locationsNew.location.tempImage.two, locationsNew.location.tempImage.three, locationsNew.location.tempImage.four, locationsNew.location.tempImage.five];
-    Location.save(locationsNew.location, () => {
-      $state.go('home');
-    });
+    
+    console.log(locationsNew.location);
+    // Location.save(locationsNew.location, () => {
+    //   $state.go('home');
+    // });
   }
   locationsNew.createLocation = createLocation;
 }
