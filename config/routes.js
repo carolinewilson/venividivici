@@ -5,11 +5,14 @@ const locations = require('../controllers/locations');
 const trips = require('../controllers/trips');
 const skyscanner = require('../controllers/skyscanner');
 const secureRoute = require('../lib/secureRoute');
+const oauthController = require('../controllers/oauth');
 
 router
   .post('/login', authController.login)
   .post('/register', authController.register)
+  .post('/auth/facebook', oauthController.facebook)
   .get('/flights', skyscanner.flights);
+
 
 router.route('/users')
   .get(users.index);

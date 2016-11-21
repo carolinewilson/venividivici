@@ -7,7 +7,9 @@ LocationsNewController.$inject = ['Location', '$state', '$auth'];
 
 function LocationsNewController(Location, $state, $auth) {
   const locationsNew = this;
+  const currentUser = $auth.getPayload()._id;
   locationsNew.location = {};
+  locationsNew.location.user = currentUser;
 
   function createLocation() {
     // set airport info
@@ -44,7 +46,6 @@ function LocationsEditController(location, $state) {
       locationsEdit.location.closestAirport = airport[0];
       locationsEdit.location.airportCode = airport[1];
     }
-
     // push images into array
     locationsEdit.location.images = [locationsEdit.location.images[0], locationsEdit.location.images[1], locationsEdit.location.images[2], locationsEdit.location.images[3], locationsEdit.location.images[4]];
 

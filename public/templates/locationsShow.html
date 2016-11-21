@@ -25,8 +25,8 @@
       <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Get me there</button>
     </div>
     <div class="">
-      <p class="twoCol">Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
-      <p class="twoCol"><a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
+      <p class="twoCol"><strong>Discovered by</strong> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border: 1px black solid; border-radius:100px;"/><a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
+      <p class="twoCol"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
     </div>
   </div>
 </section>
@@ -36,7 +36,7 @@
       <img ng-src="{{locationsShow.location.images[0]}}"></a>
     </div>
     <div class="images-right">
-      <div ng-repeat="image in locationsShow.location.images"  class="images-right-img" style="background-image:url({{ image }})"></div>
+      <div ng-repeat="image in locationsShow.location.images.slice(1,4) track by $index"  class="images-right-img" style="background-image:url({{ image }})"></div>
     </div>
 
   </div>
