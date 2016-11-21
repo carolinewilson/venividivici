@@ -4,6 +4,7 @@ const users = require('../controllers/users');
 const locations = require('../controllers/locations');
 const trips = require('../controllers/trips');
 const skyscanner = require('../controllers/skyscanner');
+const google = require('../controllers/googleMaps');
 const secureRoute = require('../lib/secureRoute');
 const oauthController = require('../controllers/oauth');
 
@@ -11,7 +12,8 @@ router
   .post('/login', authController.login)
   .post('/register', authController.register)
   .post('/auth/facebook', oauthController.facebook)
-  .get('/flights', skyscanner.flights);
+  .get('/flights', skyscanner.flights)
+  .get('/maps', google.maps);
 
 
 router.route('/users')
