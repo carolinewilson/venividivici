@@ -1,19 +1,31 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "base/base";
+@import "buttons";
 // @import "partials/forms";
 
 
 body {
   background-color: ffffff;
   position: relative;
+  .profileSection{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36,39,43,0.7);
+    z-index: 600 !important;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    input{
+      width: 500px;
+    }
+  }
+  .divHeading{
+    height: 50px;
+  }
 }
-
-// header {
-//   margin: 0px;
-//   padding: 0px;
-// }
-
 img {
   max-width: 100%;
 }

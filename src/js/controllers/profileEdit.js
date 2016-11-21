@@ -9,7 +9,7 @@ function ProfileEditController(User, $state) {
 
   function update() {
     User.update({ id: profileEdit.profile._id }, profileEdit.profile, () => {
-      $state.go('home', $state.params);
+      $state.go('profileShow', $state.params);
 
     });
   }

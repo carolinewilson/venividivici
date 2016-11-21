@@ -20,7 +20,7 @@ router.route('/users/:id')
   // .get(secureRoute, users.show)
   // .put(secureRoute, users.update)
   // .delete(secureRoute, users.delete);
-  .get(secureRoute, users.show)
+  .get(users.show)
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 

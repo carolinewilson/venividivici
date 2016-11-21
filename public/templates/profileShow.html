@@ -3,17 +3,20 @@
       <h1>My Details</h1>
     </div>
 
-  <div ng-controller="UploadController as upload">
+  <!-- <div ng-controller="UploadController as upload">
     <div>profile image</div>
     <drag-drop base64="upload.data.base64"></drag-drop>
-  </div>
+  </div> -->
 
-  <img ng-src="{{ profileShow.profile.profilePic }}">
-  <p>Username: {{ profileShow.profile.username }}</p>
+
+  <div><img ng-src="{{ profileShow.profile.profilePic }}" alt="profilePic" height="200px" style="border: 1px black solid; border-radius:100px;"/>
+  </div>
+  <div>
+  <h2>Username: {{ profileShow.profile.username }}</h2>
   <p>Email: {{ profileShow.profile.email }}</p>
   <p>Preferred Airport: {{ profileShow.profile.preferredAirport }}</p>
-
-  <a class="heading" a ui-sref="profileEdit({ id: profileShow.profile._id })">Edit Profile</a>
+  </div>
+  <button ui-sref="profileEdit({ id: profileShow.profile._id })">Edit Your Profile</button>
 </section>
 
 <!-- hide if there are no saved trips -->
@@ -26,10 +29,10 @@
       <!-- {{profileShow.trips}} -->
     <div class="trips-tile" ng-repeat="trip in profileShow.trips" style="background-image:url('{{trip.location.mainImage}}')">
       <ul>
-        <li>Destination: {{trip.destination}}</li>
-        <li>Origin: {{trip.origin}}</li>
+        <li>{{trip.location.locationName}}</li>
+        <li>Destination Aiport: {{trip.destination}}</li>
         <li>Flight cost: £{{trip.flightCost}}</li>
-        <li><button ui-sref="budgetTracker({id: trip._id})">Budget Tracker</button></li>
+        <li><button ui-sref="budgetTracker({id: trip._id})">Live the dream</button></li>
         <!-- <li>
           <img ng-src="{{trip.location.mainImage}}">
         </li> -->
