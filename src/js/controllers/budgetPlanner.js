@@ -4,32 +4,29 @@ angular.module('travelApp')
 BudgetPlannerController.$inject= ['Location','Trip','User','$state', 'FlightService', '$auth', 'TripService', '$window', '$scope'];
 function BudgetPlannerController(Location, Trip, User, $state, FlightService, $auth, TripService, $window, $scope) {
   const budgetPlanner = this;
-
   const moment = $window.moment;
 
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
   budgetPlanner.newTrip = {};
   budgetPlanner.location = Location.get($state.params);
+  
+  Location.get($state.params, (location) => {
+    budgetPlanner.newTrip = {
+      origin: 'LGW',
+      destination: location.closestAirport,
+      destAirportCode: location.airportCode,
+      duration: 7,
+      totalSavings: 0
+    };
+  });
 
-  const userId = $auth.getPayload()._id;
-
-  User.get({ id: userId }, (user) => {
-
-
-    const airport = user.preferredAirport;
-
-    Location.get($state.params, (location) => {
-      budgetPlanner.newTrip = {
-        origin: 'LGW',
-        destination: location.closestAirport,
-        destAirportCode: location.airportCode,
-        duration: 7,
-        totalSavings: 0
-      };
-
+  if (budgetPlanner.isLoggedIn()) {
+    const userId = $auth.getPayload()._id;
+    User.get({ id: userId }, (user) => {
+      const airport = user.preferredAirport;
       budgetPlanner.newTrip.origin = airport;
     });
-  });
+  }
 
   // Update pie chart
   $scope.$watchGroup([
