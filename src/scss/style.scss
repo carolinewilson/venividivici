@@ -7,8 +7,6 @@
 @import "partials/buttons";
 @import "partials/progressBar";
 
-// @import "partials/forms";
-
 .google-map {
   width: 100%;
   height: 400px;
@@ -58,6 +56,8 @@ body {
   background-color: ffffff;
   position: relative;
   .profileSection{
+    background-image: url("../../images/beach1.jpeg");
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
@@ -73,58 +73,82 @@ body {
       width: 500px;
     }
     .profileSignUpForm {
-      background-color: #fbfbfb;
+      background-color: rgba(251, 251, 251, 0.32);
       padding: 20px;
+      button{
+        width: 80%;
+        margin-left: 10%;
+      }
     }
   }
   .divHeading{
     height: 50px;
   }
   .loginSection{
+    background-image: url("../../images/beach1.jpeg");
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(36,39,43,0.7);
-    // background-color: rgba(41, 121, 232,0.7);
-    // background-color: $brand-sky-blue;
-
     z-index: 3;
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
     @include flex-direction(column);
+      h1{
+        text-align: center;
+      }
     .loginForm{
-      background-color: #fbfbfb;
+      background-color: rgba(251, 251, 251, 0.32);
       padding: 20px;
-        height: 80%;
-        width: 60%;
+      width: 60%;
       padding: 20px;
+      text-align: center;
+        h2{
+          text-align: center;
+        }
+        button{
+          width: 80%;
+          display: block;
+          margin: 20px auto;
+          float: none;
+        }
     }
   }
   .registerSection{
+    background-image: url("../../images/beach1.jpeg");
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(36,39,43,0.7);
+    text-align: center;
     z-index: 4;
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
     @include flex-direction(column);
       .registerForm{
-        background-color: #fbfbfb;
+        background-color: rgba(251, 251, 251, 0.32);
         padding: 20px;
-        // height: 500px;
-        // width: 500px;
-        height: 90%;
+        top: 30%;
         width: 60%;
+          p{
+            text-align: center;
+          }
+          button{
+            width: 80%;
+            margin-top: 20px;
+
+        }
       }
     }
   .newLocationSection{
+    background-image: url("../../images/beach1.jpeg");
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
@@ -135,19 +159,19 @@ body {
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
-    // @include flex-direction(column);
-
     .createLocationForm{
-      background-color: #fbfbfb;
+      background-color: rgba(251, 251, 251, 0.32);
       padding: 20px;
-      height: 500px;
-      width: 800px;
+      width: 80%;
       top: 50px;
-      overflow-y: hidden;
-      overflow-x: scroll;
+        button{
+          width: 80%;
+        }
     }
   }
   .locationEditSection{
+    background-image: url("../../images/beach1.jpeg");
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
@@ -158,12 +182,26 @@ body {
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
+    form {
+      position: relative;
+      a {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    }
     .locationEditForm{
-      background-color: #fbfbfb;
-      padding: 20px;
-      height: 500px;
-      width: 800px;
-      top: 50px
+      background-color: rgba(251, 251, 251, 0.32);
+      padding: 40px;
+      overflow: hidden;
+      width: 900px;
+      top: 50px;
+        button{
+          width: 80%;
+          background: rgba(78, 171, 199, 0.97);
+          border: rgba(78, 171, 199, 0.97);
+          margin-top: 10px;
+      }
     }
   }
   .closingIcon{
@@ -213,7 +251,6 @@ footer {
   }
   h2 {
     color: white;
-    // background-color: rgba(0,0,0, 0.5);
     position: absolute;
     top: 90%;
     left: 50%;

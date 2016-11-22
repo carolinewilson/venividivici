@@ -1,8 +1,6 @@
 <div class="hero-image" style="background-image:url('{{budgetTracker.trip.location.mainImage}}')">
-  <!-- <div class="textContainer"> -->
     <h1>Your trip to {{ budgetTracker.trip.location.locationName }}</h1>
     <h2>{{ budgetTracker.trip.departDate | date: 'd MMM yyyy' }} to {{ budgetTracker.trip.returnDate  | date: 'd MMM yyyy' }}</h2>
-  <!-- </div> -->
 </div>
 
 <section>
@@ -31,7 +29,6 @@
     <h2>Saved so far</h2>
     <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
   </div>
-  <!-- <hr> -->
 </section>
 
 <section class="budget-tracker">
