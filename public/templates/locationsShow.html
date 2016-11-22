@@ -36,12 +36,6 @@
     <div class="images-left" style="background-image:url('{{locationsShow.location.images[0]}}')">
       <!-- <img ng-src="{{locationsShow.location.images[0]}}"></a> -->
     </div>
-
-    <!-- <div class="images-right">
-      <div ng-repeat="image in locationsShow.location.images track by $index"  class="images-right-img" style="background-image:url({{ image }})"></div>
-    </div> -->
-
-
     <div class="images-right">
       <div ng-repeat="image in locationsShow.location.images.slice(1,4) track by $index"  class="images-right-img" style="background-image:url({{ image }})"></div>
     </div>

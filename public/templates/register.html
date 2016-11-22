@@ -1,7 +1,7 @@
 
 <div class="registerSection">
   <div class="registerForm">
-    <a ui-sref="home"><img src="images/closeicon.png"></a>
+    <a ui-sref="home"><img class="closingIcon" src="images/closeicon.png"></a>
     <h1>Start discovering today</h1>
     <form novalidate ng-submit="register.submit()">
       <div>
@@ -20,13 +20,11 @@
         <label>Password Confirmation</label>
         <input type="password" placeholder="Password Confirmation" ng-model="register.user.passwordConfirmation">
       </div>
-
       <button>Register</button>
     </form>
         <p>
           Already registered? <a ui-sref="login">Log in</a>
           <!-- {{ register.user }} -->
         </p>
-
   </div>
 </div>
