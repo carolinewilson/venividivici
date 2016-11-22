@@ -30,7 +30,7 @@ User.create([{
   username: 'Marco',
   email: 'marco@gmail.com',
   preferredAirport: 'LGW',
-  profilePic: 'http://orig15.deviantart.net/3a07/f/2009/343/2/8/el_conquistador_by_wredwrat.jpg',
+  profilePic: '../../images/marco.jpg',
   password: 'password' ,
   passwordConfirmation: 'password'
 }], (err, user) => {
