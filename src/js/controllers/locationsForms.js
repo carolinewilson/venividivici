@@ -8,7 +8,9 @@ LocationsNewController.$inject = ['Location', '$state', '$auth'];
 function LocationsNewController(Location, $state, $auth) {
   const locationsNew = this;
   const currentUser = $auth.getPayload()._id;
-  locationsNew.location = {};
+  locationsNew.location = {
+    tempImage: {}
+  };
   locationsNew.location.user = currentUser;
 
   function createLocation() {
@@ -25,8 +27,8 @@ function LocationsNewController(Location, $state, $auth) {
 
     // console.log(locationsNew.location);
     // Save location
-    Location.save(locationsNew.location, () => {
-      $state.go('locationsShow');
+    Location.save(locationsNew.location, (location) => {
+      $state.go('locationsShow', { id: location._id });
     });
   }
   locationsNew.createLocation = createLocation;

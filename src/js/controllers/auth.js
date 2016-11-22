@@ -6,7 +6,6 @@ RegisterController.$inject = ['$auth', '$state', '$window', 'User','TripService'
 function RegisterController($auth, $state, $window, User, TripService, Trip) {
 
   const register = this;
-
   register.user = {};
 
   function submit() {
@@ -22,13 +21,17 @@ function RegisterController($auth, $state, $window, User, TripService, Trip) {
 
         if (tripData) {
           tripData.user = res.data.user._id;
-          Trip.save(tripData, (res) => {
-            console.log('saved trip! ', res);
+          Trip.save(tripData, () => {
+            // console.log('saved trip! ', res);
           });
           return $state.go('usersShow', { id: res.data.user._id });
         }
+        register.err = false;
 
         $state.go('home');
+      }, err => {
+        console.log(err);
+        register.err = true;
       });
   }
 
@@ -39,20 +42,19 @@ LoginController.$inject = ['$auth', '$state', '$window','TripService', 'Trip'];
 function LoginController($auth, $state, $window, TripService, Trip) {
 
   const login = this;
-
   login.credentials = {};
 
   function submit() {
     $auth
       .login(login.credentials)
       .then((data) => {
+        login.err = false;
         const payload = $auth.getPayload();
         $window.localStorage.setItem('userId', payload._id);
 
         const tripData = TripService.getTrip();
-        console.log(data);
+        // console.log(data);
         if (tripData) {
-
           tripData.user = data.data.user._id;
 
           Trip.save(tripData, (res) => {
@@ -62,14 +64,16 @@ function LoginController($auth, $state, $window, TripService, Trip) {
         }
 
         $state.go('home');
+      }, (error) => {
+        console.log(error);
+        login.err = true;
       });
   }
 
   function authenticate(service) {
     $auth.authenticate(service, () => {
-      console.log();
-      $state.go('home');
     });
+    $state.go('home');
   }
 
   login.authenticate = authenticate;

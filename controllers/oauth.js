@@ -3,15 +3,13 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const secret = require('../config/tokens').secret;
 
-
-
 function facebook(req, res) {
   request.get({
     url: 'https://graph.facebook.com/v2.5/oauth/access_token',
     qs: {
       code: req.body.code,
-      client_id: process.env.FACEBOOK_APP_ID,
-      client_secret: process.env.FACEBOOK_APP_SECRET,
+      client_id: process.env.FACEBOOK_APP_PROJECT3_ID,
+      client_secret: process.env.FACEBOOK_APP_PROJECT3_SECRET,
       redirect_uri: req.body.redirectUri
     },
     json: true

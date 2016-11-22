@@ -1,7 +1,8 @@
+<div class="hero-image" style="background-image:url('{{ locationsShow.location.mainImage }}')">
+  <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
+</div>
 <section id="locationsShow">
-  <img ng-src="{{ locationsShow.location.mainImage }}">
   <div class="info">
-    <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
     <p>{{ locationsShow.location.description}}</p>
   </div>
   <div class="info">
@@ -22,11 +23,12 @@
 <section>
   <div>
     <div class="oneCol">
-      <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Get me there</button>
+      <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Live the dream</button>
     </div>
-    <div class="">
-      <p class="twoCol"><strong>Discovered by</strong> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border: 1px black solid; border-radius:100px;"/><a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
-      <p class="twoCol"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
+
+    <div>
+      <p class="twoCol" style="text-align:left;"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
+      <p class="twoCol" style="text-align:right;">Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border-radius:100px;"/></p>
     </div>
   </div>
 </section>
@@ -40,5 +42,6 @@
     </div>
   </div>
 </section>
-
-<google-map center="locationsShow.center"></google-map>
+<!-- <section ng-if="locationsShow.center"> -->
+  <google-map center="locationsShow.center" ng-if="locationsShow.center"></google-map>
+<!-- </section> -->

@@ -55,8 +55,7 @@ User.create([{
       'https://www.youtube.com/embed/-iY-6taCXcU'
     ],
     attractions: [
-      'Safari',
-      'Waterfalls'
+      'Safari, Waterfalls'
     ],
     bestTime: 'January - February',
     description: 'At the heart of Mt Kilimanjaro National Park, one of Tanzania’s most visited parks, is the 5896m Mt Kilimanjaro, Africa’s highest mountain and one of the continent’s most magnificent sights. It’s also one of the highest volcanoes and the highest freestanding mountain in the world, rising from cultivated farmlands on the lower levels, through lush rainforest to alpine meadows, and finally across a barren lunar landscape to the twin summits of Kibo and Mawenzi. (Kilimanjaro’s third volcanic cone, Shira, is on the mountain’s western side.) The lower rainforest is home to many animals, including buffaloes, elephants, leopards and monkeys, and elands are occasionally seen in the saddle area between Kibo and Mawenzi.'
@@ -67,20 +66,19 @@ User.create([{
     closestAirport: 'Presidente Carlos Ibáñez del Campo International Airport',
     mainImage: 'http://i.imgur.com/Y6qMZTX.jpg',
     images: [
-      'http://www.knowmadadventures.com/wp-content/uploads/2013/06/tourist-sites-in-chile.jpg',
+      'http://www.lovethesepics.com/wp-content/uploads/2011/06/Patagonia-Chile-looks-like-something-off-a-postcard-.-.-.-or-out-of-a-dream.jpg',
       'https://s-media-cache-ak0.pinimg.com/originals/b2/01/64/b20164db11285787efd6a8b74ace7010.jpg',
       'http://www.kevandemgoglobal.com/wp-content/uploads/2015/10/Marble-Caves-Chile-7.jpg',
-      'http://www.lovethesepics.com/wp-content/uploads/2011/06/Patagonia-Chile-looks-like-something-off-a-postcard-.-.-.-or-out-of-a-dream.jpg',
+      'http://www.knowmadadventures.com/wp-content/uploads/2013/06/tourist-sites-in-chile.jpg',
       'http://miriadna.com/desctopwalls/images/max/Patagonia-(Chile).jpg'
     ],
     attractions: [
-      'Parque Nacional Los Glaciares',
-      'Reserva Faunística Península Valdés'
+      'Parque Nacional Los Glaciares, Reserva Faunística Península Valdés'
     ],
     bestTime: 'December - February',
     description: 'Pounding westerlies, barren seascapes and the ragged spires of Torres del Paine – this is the distilled essence of Patagonia. The provinces of Magallanes and Última Esperanza boast a frontier appeal perhaps only matched by the deep Amazon and remote Alaska. Long before humans arrived on the continent, glaciers chiseled and carved these fine landscapes. Now it\'s a place for travelers to hatch their greatest adventures, whether hiking through rugged landscapes, seeing penguins by the thousands or horseback riding across the steppe.'
   },{
-    locationName: 'Kamchatka Ice Caves',
+    locationName: 'Kamchatka Peninsula',
     user: userId3,
     airportCode: 'VVO',
     closestAirport: 'Vladivostok International Airport',
@@ -93,12 +91,12 @@ User.create([{
       'http://www.56thparallel.com/wp-content/uploads/2013/11/Russia-tours-to-Kamchatka-travel-Siberia-Far-East-56th-parallel.jpg'
     ],
     attractions: [
-      'Volcanos'
+      'Volcanos, Kamchatka Ice Caves'
     ],
     bestTime: 'July - September',
     description: 'This surreal-looking ice cave is located on the Kamchatka Peninsula of Russia. The almost kilometer long tunnel was formed by a hot water spring flowing beneath the glacial ice fields on the flanks of the nearby Mutnovsky volcano. Because glaciers on Kamchatka volcanoes have been melting in recent years, the roof of this cave is now so thin that sunlight penetrates through it, eerily illuminating the icy structures within.'
   },{
-    locationName: 'Heart Sea Arch, Portugal',
+    locationName: 'Praia da Marinha, Portugal',
     user: userId2,
     closestAirport: 'Faro Airport',
     airportCode: 'FAO',
@@ -130,18 +128,15 @@ User.create([{
       ''
     ],
     attractions: [
-      'St Basil\'s Cathedral',
-      'Red Square',
-      'Kremlin',
-      'Kolomenskoye'
+      'St Basil\'s Cathedral, Red Square, Kremlin, Kolomenskoye'
     ],
     bestTime: 'September - October',
     description: 'At the southern end of Red Square stands the icon of Russia: St Basil’s Cathedral. This crazy confusion of colours, patterns and shapes is the culmination of a style that is unique to Russian architecture. In 1552 Ivan the Terrible captured the Tatar stronghold of Kazan on the Feast of Intercession. He commissioned this landmark church, officially the Intercession Cathedral, to commemorate the victory. Created from 1555 to 1561, this masterpiece would become the ultimate symbol of Russia.'
   },{
     locationName: 'Grand Canyon National Park',
     user: userId3,
-    closestAirport: 'Flagstaff Pulliam Airport',
-    airportCode: 'FLG',
+    closestAirport: 'Grand Canyon National Park Airport',
+    airportCode: 'CDP',
     mainImage: 'http://www.wallpaperbetter.com/wallpaper/403/858/399/havasu-falls-grand-canyon-national-park-in-arizona-1080P-wallpaper-middle-size.jpg',
     images: [
       'http://www.arizona-leisure.com/gfx/gallery/desert-view/desert-view-1.jpg',
@@ -152,8 +147,7 @@ User.create([{
       'https://travelinggypsyadventures.files.wordpress.com/2012/07/20080404001638_havasu_falls_base.jpg'
     ],
     attractions: [
-      'Havasu Falls',
-      'Skywalk'
+      'Havasu Falls, Skywalk'
     ],
     bestTime: 'March through May and September through November',
     description: 'The road to the Grand Canyon from the south crosses a gently rising plateau that gives no hint at what is about to unfold. You wonder if you have made a wrong turn. All at once an immense gorge a mile deep and up to 18 miles wide opens up. The scale is so vast that even from the best vantage point only a fraction of the canyon\'s 277 miles can be seen.'
@@ -172,9 +166,7 @@ User.create([{
       'http://cdni.condenast.co.uk/646x430/s_v/santorini_cnt_18nov09_iStock_b_1.jpg'
     ],
     attractions: [
-      'Beaches',
-      'Boutiques',
-      'Sunsets'
+      'Beaches, Boutiques, Sunsets'
     ],
     bestTime: 'April to September',
     description: 'Santorini is the most popular island in Greece. It may be the most popular island in the world. There are few travel destinations that combine beautiful beaches, spectacular scenery, ancient cities, amazing restaurants, some of the world\'s best wine, and an active volcano. But Santorini has all this and more.'
@@ -192,13 +184,12 @@ User.create([{
       'http://www.thegoldenscope.com/wp-content/uploads/2014/02/fjallsc3a1rlc3b3n-glacier-lake-iceland-resized.jpg'
     ],
     attractions: [
-      'Blue Lagoon Thermal Pools',
-      'Stunning landscapes'
+      'Blue Lagoon Thermal Pools, Stunning landscapes'
     ],
     bestTime: 'June to August',
     description: 'Grindavík is a fishing town at the Southern Peninsula at the southwest coast of Iceland. It is one of the few cities with a harbour at this coast. Most of the inhabitants work in the fishing industry. The Blue Lagoon, Grindavík\'s premiere attraction, is located 3 miles from the town centre. '
   },{
-    locationName: 'Angkor Wat, Cambodia',
+    locationName: 'Siem Reap, Cambodia',
     user: userId1,
     closestAirport: 'Siem Reap International Airport',
     airportCode: 'REP',
@@ -211,8 +202,7 @@ User.create([{
       'http://www.treybarrow.com/Angkor%20Wat,%20Cambodia/photos/1%20Angkor%20Wat.jpg'
     ],
     attractions: [
-      'Temples',
-      'Architecture'
+      'Angkor Wat, Temples, Architecture'
     ],
     bestTime: 'Year round',
     description: 'Angkor is one of the most important archaeological sites in South-East Asia. Stretching over some 400 km2, including forested area, Angkor Archaeological Park contains the magnificent remains of the different capitals of the Khmer Empire, from the 9th to the 15th century. They include the famous Temple of Angkor Wat and, at Angkor Thom, the Bayon Temple with its countless sculptural decorations.'
@@ -230,16 +220,15 @@ User.create([{
       'http://www.willgoto.com/images/Size3/Egypt_Farafra_White_desert_Desert_blanc_02_3029aea2dea84e19ba73954ae8bd46a1.jpg'
     ],
     attractions: [
-      'White Desert',
-      'Camping under the stars'
+      'White Desert, Camping under the stars'
     ],
     bestTime: 'Year round',
     description: 'Farafra Oasis is renowned for its White Desert, which many tourists visit on safaris from Bahariya rather than from the oasis “capital”, Qasr al-Farafra, a one-horse town if ever there was. Historically, Farafra was the least populous and most isolated of the four oases. When camels were the only means of travel, the Farafrans had less contact with Bahariya (a journey of four days) than with Dakhla, which was tenuously connected to the Forty Days Road. Fakhry relates how the villagers once lost track of time and could only ascertain the right day for Friday prayers by sending a rider to Dakhla.'
   },{
     locationName: 'Paria Canyon, Utah',
     user: userId3,
-    closestAirport: 'Page Municipal Airport',
-    airportCode: 'PGA',
+    closestAirport: 'Salt Lake City',
+    airportCode: 'SLC',
     mainImage: 'http://onlyfreewallpaper.com/walls/paria-canyon-wide.jpg',
     images: [
       'https://s-media-cache-ak0.pinimg.com/originals/e2/2f/6a/e22f6a0a299c34cb9839174e98b6b30c.jpg',
@@ -253,6 +242,42 @@ User.create([{
     ],
     bestTime: 'September to June',
     description: 'Nationally known for its beauty, the Paria Canyon has towering walls streaked with desert varnish, huge red rock amphitheaters, sandstone arches, wooded terraces, and hanging gardens. The 3,000-foot escarpment known as the Vermilion Cliffs dominates the remainder of the wilderness with its thick Navajo sandstone face, steep, boulder-strewn slopes, rugged arroyos and stark overall appearance. Some of the best slot canyon hiking opportunities on the Colorado Plateau are found here. Deer and desert bighorn sheep inhabit the area.'
+  },{
+    locationName: 'Seyðisfjörður, Iceland',
+    user: userId1,
+    closestAirport: '',
+    airportCode: '',
+    mainImage: '../../images/seydisfjordur-iceland.jpeg',
+    images: [
+      '',
+      '',
+      '',
+      '',
+      ''
+    ],
+    attractions: [
+      ''
+    ],
+    bestTime: '',
+    description: 'A place of singing waterfalls and peculiar characters, Seydisfjordur is a welcoming town booming with creativity and rich in history. Inhabited by about 700 people the town acts as one big family, and a friendly one at that.'
+  },{
+    locationName: '',
+    user: userId1,
+    closestAirport: '',
+    airportCode: '',
+    mainImage: '',
+    images: [
+      '',
+      '',
+      '',
+      '',
+      ''
+    ],
+    attractions: [
+      ''
+    ],
+    bestTime: '',
+    description: ''
   }], (err, locations) => {
     if(err) return console.log('error creating locations', err);
     console.log(`${locations.length} locations created`);

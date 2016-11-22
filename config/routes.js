@@ -17,39 +17,29 @@ router
 
 
 router.route('/users')
-  .get(users.index);
-  // .get(secureRoute, users.index)
-  // .post(users.create);
+  .get(secureRoute, users.index);
 
 router.route('/users/:id')
-  // .get(secureRoute, users.show)
-  // .put(secureRoute, users.update)
-  // .delete(secureRoute, users.delete);
   .get(users.show)
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 
 router.route('/locations')
   .get(locations.index)
-  // .post(secureRoute, locations.create);
-  .post(locations.create);
+  .post(secureRoute, locations.create);
 
 router.route('/locations/:id')
   .get(locations.show)
-  // .put(secureRoute, locations.update)
-  // .delete(secureRoute, locations.delete);
-  .put(locations.update)
-  .delete(locations.delete);
+  .put(secureRoute, locations.update)
+  .delete(secureRoute, locations.delete);
 
 router.route('/trips')
-  .get(trips.index)
-  .post(trips.create);
+  .get(secureRoute, trips.index)
+  .post(secureRoute, trips.create);
 
 router.route('/trips/:id')
-  .get(trips.show)
-  // .put(secureRoute, trips.update)
-  // .delete(secureRoute, trips.delete);
-  .put(trips.update)
-  .delete(trips.delete);
+  .get(secureRoute, trips.show)
+  .put(secureRoute, trips.update)
+  .delete(secureRoute, trips.delete);
 
 module.exports = router;

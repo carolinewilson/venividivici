@@ -1,29 +1,20 @@
 
-<section class="profileSection">
-
+<div class="profileSection">
   <form ng-submit="profileEdit.update()">
 
-      <!--
-        <div ng-controller="UploadController as upload">
-          <drag-drop base64="upload.data.base64"></drag-drop>
-        </div> -->
-
   <div class="profileSignUpForm">
+    <a ui-sref="profileShow({ id: profileEdit.profile.id})"><img class="closingIcon" src="images/closeicon.png"></a>
     <div class="divHeading">
       <h2>Edit profile</h2>
     </div>
     <div>
-
       <label>Profile Picture</label>
       <input type="text" name="image" placeholder="image url" ng-model="profileEdit.profile.profilePic">
-      <input type="file" name="profilePic" accept="image/*" />
     </div>
-
     <div>
       <label>Username</label>
       <input type="text" name="user name" placeholder="Username" ng-model="profileEdit.profile.username">
     </div>
-
     <div>
       <label>Email</label>
       <input type="text" name="Name" placeholder="Email" ng-model="profileEdit.profile.email">
@@ -31,8 +22,17 @@
     <div>
       <label>Your preferred Airport</label>
       <input type="text" name="airport" placeholder="Enter your preferred airport" ng-model="profileEdit.profile.preferredAirport">
+
+
+      <select ng-model="profileEdit.profile.preferredAirport" name="preferredAirport">
+        <option>-- London --</option>
+        <option value="London Heathrow,LHR">London Heathrow (LHR)</option>
+        <option value="London Gatwick,LGW">London Gatwick (LGW)</option>
+        <option value="London Luton,LTN">London Luton (LTN)</option>
+        <option value="London Stansted,LGW">London Stansted (LGW)</option>
+      </select>
     </div>
-    <button>Update your profile</button>
+      <button>Update your profile</button>
     </div>
   </form>
-</section>
+</div>

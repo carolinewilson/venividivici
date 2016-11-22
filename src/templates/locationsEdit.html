@@ -1,22 +1,21 @@
-<section class="row">
+<div class="locationEditSection">
 
   <form ng-submit="locationsEdit.update()">
+  <a ui-sref="locationsShow({id: locationsEdit.location._id})"><img class="closingIcon" src="images/closeicon.png"></a>
+  <div class="locationEditForm">
 
-  <div class="editForm">
-    <div>
-      <label>Main Image</label>
-      <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.mainImage">
-    </div>
-
-    <div>
-      <label>Location Name</label>
-      <input type="text" name="Name" placeholder="Enter Location Name" ng-model="locationsEdit.location.locationName">
-    </div>
-
-
-    <div>
-      <label>Nearest Airport</label>
-      <p>{{ locationsEdit.location.closestAirport }}</p>
+    <div class="twoCol">
+      <div>
+        <label>Main Image</label>
+        <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.mainImage">
+      </div>
+      <div>
+        <label>Location Name</label>
+        <input type="text" name="Name" placeholder="Enter Location Name" ng-model="locationsEdit.location.locationName">
+      </div>
+      <div>
+        <label>Nearest Airport</label>
+        <p>{{ locationsEdit.location.closestAirport }}</p>
 
       <select ng-model="locationsEdit.location.airport" name="closestAirport">
         <option>-- Africa --</option>
@@ -229,60 +228,47 @@
         <option value="Surabaya,SUB">Surabaya (SUB)</option>
         <option value="Macau,MFM">Surabaya (MFM)</option>
         <option value="Hanoi,HAN">Surabaya (HAN)</option>
-
       </select>
     </div>
 
-    <div>
-      <label>Description</label>
-      <textarea name="description" placeholder="Share why this place is so great" ng-model="locationsEdit.location.description"></textarea>
-    </div>
+      <div>
+        <label>Description</label>
+        <textarea name="description" placeholder="Share why this place is so great" ng-model="locationsEdit.location.description"></textarea>
+      </div>
+      <div>
+        <label>Attractions</label>
+        <input type="text" name="attractions" placeholder="Enter nearest attractions" ng-model="locationsEdit.location.attractions">
+      </div>
+      <div>
+        <label>When to go?</label>
+        <input type="text" name="whentogo" placeholder="Enter month" ng-model="locationsEdit.location.bestTime">
+      </div>
+  </div>
 
-    <div>
-      <label>Attractions</label>
-      <input type="text" name="attractions" placeholder="Enter nearest attractions" ng-model="locationsEdit.location.attractions">
+  <div class="twoCol">
+    <div class="tripImages">
+        <div>
+          <label>Image</label>
+            <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[0]">
+        </div>
+        <div>
+          <label>Image</label>
+          <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[1]">
+        </div>
+        <div>
+          <label>Image</label>
+          <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[2]">
+        </div>
+        <div>
+          <label>Image</label>
+          <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[3]">
+        </div>
+        <div>
+          <label>Image</label>
+          <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[4]">
+        </div>
+      </form>
     </div>
-    <div>
-      <label>When to go?</label>
-      <input type="text" name="whentogo" placeholder="Enter month" ng-model="locationsEdit.location.bestTime">
-    </div>
+  </div>
+  <button>Update</button>
 </div>
-
-<!-- array of images -->
-<!-- <div ng-controller="UploadController as upload">
-
-  <drag-drop base64="upload.data.base64"></drag-drop>
-</div> -->
-
-<div ng-controller="UploadController as upload">
-
-  <drag-drop base64="upload.data.base64"></drag-drop>
-</div>
-
-
-<div class="tripImages">
-    <div>
-      <label>Image</label>
-        <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[0]">
-    </div>
-    <div>
-      <label>Image</label>
-      <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[1]">
-    </div>
-    <div>
-      <label>Image</label>
-      <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[2]">
-    </div>
-    <div>
-      <label>Image</label>
-      <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[3]">
-    </div>
-    <div>
-      <label>Image</label>
-      <input type="text" name="image" placeholder="image url" ng-model="locationsEdit.location.images[4]">
-    </div>
-
-</div>
-    <button>Update</button>
-  </form>
-</section>

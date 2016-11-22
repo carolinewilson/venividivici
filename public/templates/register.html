@@ -1,26 +1,37 @@
-<section class="register">
 
-<p>
-  Already registered? <a ui-sref="login">Log in</a>
-</p>
-<form novalidate ng-submit="register.submit()">
-  <div class="row">
-    <label>Username</label>
-    <input class="u-full-width" type="text" placeholder="Username" ng-model="register.user.username">
-  </div>
-  <div class="row">
-    <label>Email</label>
-    <input class="u-full-width" type="email" placeholder="Email" ng-model="register.user.email">
-  </div>
-  <div class="row">
-    <label>Password</label>
-    <input class="u-full-width" type="password" placeholder="Password" ng-model="register.user.password">
-  </div>
-  <div class="row">
-    <label>Password Confirmation</label>
-    <input class="u-full-width" type="password" placeholder="Password Confirmation" ng-model="register.user.passwordConfirmation">
-  </div>
+<div class="registerSection">
+  <div class="registerForm">
 
-  <button>Register</button>
-</form>
-</section>
+    <a ui-sref="home"><img class="closingIcon" src="images/closeicon.png"></a>
+
+    <div class="error" ng-if="register.err">
+      <p>Oh dear... there was a problem creating your account 🤔</p>
+      <p>Check your details and try again.</h3>
+    </div>
+
+    <h1>Start discovering today</h1>
+    <form novalidate ng-submit="register.submit()">
+      <div>
+        <label>Username</label>
+        <input type="text" placeholder="Username" ng-model="register.user.username">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" placeholder="Email" ng-model="register.user.email">
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" placeholder="Password" ng-model="register.user.password">
+      </div>
+      <div>
+        <label>Password Confirmation</label>
+        <input type="password" placeholder="Password Confirmation" ng-model="register.user.passwordConfirmation">
+      </div>
+      <button>Register</button>
+    </form>
+        <p>
+          Already registered? <a ui-sref="login">Log in</a>
+          <!-- {{ register.user }} -->
+        </p>
+  </div>
+</div>
