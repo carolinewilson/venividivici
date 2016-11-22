@@ -1,12 +1,13 @@
 button {
-  width: 150px;
-  background:  $brand-darker-blue;
-  border: 2px solid $brand-darker-blue;
+  margin: 10px;
+  width: 50%;
+  background: $brand-light-blue;
+  border: 2px solid $brand-light-blue;
   height: 40px;
   border-radius: 500px;
   text-align: center;
-  color: #FBFBFB;
-  font-size: 18px;
+  color: white;
+  font-size: 14px;
   cursor: pointer;
   outline:none;
   padding: 5px;
@@ -15,11 +16,9 @@ button {
   @include transition(all 0.5s ease);
   &:hover{
     background: transparent;
-    color: $brand-darker-blue;
+    color: $brand-light-blue;
   }
 }
-
-
 input{
   cursor: text;
 }

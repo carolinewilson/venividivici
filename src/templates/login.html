@@ -10,11 +10,9 @@
     <h1>Log in</h1>
     <form class="login-div" novalidate ng-submit="login.submit()">
       <div>
-        <!-- <label>Email</label> -->
         <input type="email" placeholder="Email" ng-model="login.credentials.email">
       </div>
       <div>
-        <!-- <label>Password</label> -->
         <input type="password" placeholder="Password" ng-model="login.credentials.password">
       </div>
       <div class="twoCol">
@@ -25,7 +23,7 @@
       <button class="oneCol" ng-click="login.authenticate('facebook')">Login with Facebook</button>
     </div>
     <div>
-      <h2>New to Veni Vidi?</h2>
+      <h2>New to Veni Vidi Vici?</h2>
       <button ui-sref="register" class="oneCol">Create your account</button>
     </div>
     </div>

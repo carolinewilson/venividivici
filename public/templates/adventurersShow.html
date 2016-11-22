@@ -1,12 +1,11 @@
 <section>
   <div class="usersInfo">
-    <h1>{{ adventurersShow.user.username }}</h1>
     <img ng-src="{{ adventurersShow.user.profilePic }}">
+    <h1>{{ adventurersShow.user.username }}'s Discoveries</h1>
   </div>
 </section>
 
 <section>
-    <h1>{{ adventurersShow.user.username }}'s Discoveries</h1>
     <ul class='gridContainer'>
       <li class="imagesGrid" ng-repeat="location in adventurersShow.locations" style="background-image:url('{{ location.mainImage }}')">
         <a ui-sref="locationsShow({ id: location._id })">
