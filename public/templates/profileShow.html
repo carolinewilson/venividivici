@@ -1,17 +1,12 @@
 <section>
-    <div>
-      <h1>My Details</h1>
-    </div>
-    <div>
-      <img ng-src="{{ profileShow.profile.profilePic }}" alt="profilePic" height="200px" style="border: 1px black solid; border-radius:100px;"/>
-    </div>
-    <div>
-      <h2>Username: {{ profileShow.profile.username }}</h2>
-      <p>Email: {{ profileShow.profile.email }}</p>
-      <p>Preferred Airport: {{ profileShow.profile.preferredAirport }}</p>
-    </div>
-  <button ui-sref="profileEdit({ id: profileShow.profile._id })">Edit Your Profile</button>
-  <button ng-click="profileShow.logout()">Logout</button>
+  <div class="usersInfo">
+    <img ng-src="{{ profileShow.profile.profilePic }}" alt="{{ profileShow.profile.profilePic }}">
+    <h1>{{ profileShow.profile.username }}</h1>
+    <p>Email: {{ profileShow.profile.email }}</p>
+    <p>Preferred Airport: {{ profileShow.profile.preferredAirport }}</p>
+    <button ui-sref="profileEdit({ id: profileShow.profile._id })">Update Profile</button>
+    <button ng-click="profileShow.logout()">Logout</button>      
+  </div>
 </section>
 
 <!-- hide if there are no saved trips. .length determines if there is a data in the object and evaluates if its true or false-->
