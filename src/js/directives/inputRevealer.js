@@ -1,7 +1,8 @@
 angular.module('travelApp')
   .directive('inputRevealer', inputRevealer);
 
-function inputRevealer() {
+inputRevealer.$inject = ['$timeout'];
+function inputRevealer($timeout) {
   return {
     restrict: 'E',
     replace: true,
@@ -16,10 +17,14 @@ function inputRevealer() {
       element.on('click', () => {
         if(!$scope.isEditing) {
           $scope.isEditing = true;
+          $timeout(() => {
+            element[0].querySelector('input').select();
+          },0);
         }
         $scope.$apply();
-      }).on('keyup', (e) => {
-        if(e.keyCode === 13) {
+      }).on('keydown', (e) => {
+        if(e.keyCode === 9 || e.keyCode === 13) {
+          e.preventDefault();
           $scope.onSubmit();
           $scope.isEditing = false;
           $scope.$apply();
