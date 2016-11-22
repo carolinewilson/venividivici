@@ -79,31 +79,48 @@ body {
         width: 60%;
       }
     }
-  // .newLocationSection{
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   background-color: rgba(36,39,43,0.7);
-  //   z-index: 3;
-  //   @include display(flex);
-  //   @include justify-content(center);
-  //   @include align-items(center);
-  //   @include flex-direction(column);
-  //   .createLocationForm{
-  //     background-color: #fbfbfb;
-  //     padding: 20px;
-  //     // height: 500px;
-  //     // width: 500px;
-  //     height: 300%;
-  //     width: 200%;
-  //   }
-  // }
+  .newLocationSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36,39,43,0.7);
+    z-index: 3;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    // @include flex-direction(column);
 
-
-
-
+    .createLocationForm{
+      background-color: #fbfbfb;
+      padding: 20px;
+      height: 500px;
+      width: 800px;
+      top: 50px;
+      overflow-y: hidden;
+      overflow-x: scroll;
+    }
+  }
+  .locationEditSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36,39,43,0.7);
+    z-index: 3;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    .locationEditForm{
+      background-color: #fbfbfb;
+      padding: 20px;
+      height: 500px;
+      width: 800px;
+      top: 50px
+    }
+  }
 }
 img {
   max-width: 100%;

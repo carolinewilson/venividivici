@@ -1,23 +1,20 @@
 
 <div class="profileSection">
-
   <form ng-submit="profileEdit.update()">
 
   <div class="profileSignUpForm">
+    <a ui-sref="profileShow({ id: profileEdit.profile.id})"><img src="images/closeicon.png"></a>
     <div class="divHeading">
       <h2>Edit profile</h2>
     </div>
     <div>
-
       <label>Profile Picture</label>
       <input type="text" name="image" placeholder="image url" ng-model="profileEdit.profile.profilePic">
     </div>
-
     <div>
       <label>Username</label>
       <input type="text" name="user name" placeholder="Username" ng-model="profileEdit.profile.username">
     </div>
-
     <div>
       <label>Email</label>
       <input type="text" name="Name" placeholder="Email" ng-model="profileEdit.profile.email">
@@ -26,8 +23,7 @@
       <label>Your preferred Airport</label>
       <input type="text" name="airport" placeholder="Enter your preferred airport" ng-model="profileEdit.profile.preferredAirport">
     </div>
-    <button>Update your profile</button>
-    <button ui-sref="profileShow">Cancel</button>
+      <button>Update your profile</button>
     </div>
   </form>
 </div>
