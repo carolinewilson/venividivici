@@ -1,39 +1,40 @@
-<section id="budgetTracker">
-  <img ng-src="{{budgetTracker.trip.location.mainImage}}">
-  <section>
+<div class="hero-image" style="background-image:url('{{budgetTracker.trip.location.mainImage}}')">
+  <h1>Your trip to {{ budgetTracker.trip.location.locationName }}</h1>
+  <h2>{{ budgetTracker.trip.departDate | date: 'd MMM yyyy' }} to {{ budgetTracker.trip.returnDate  | date: 'd MMM yyyy' }}</h2>
+</div>
 
-    <section>
-      <div class="headerText">
-        <h1>Your trip to {{ budgetTracker.trip.location.locationName }}</h1>
-        <h2>{{ budgetTracker.trip.departDate | date: 'd MMM yyyy' }} to {{ budgetTracker.trip.returnDate  | date: 'd MMM yyyy' }}</h2>
-      </div>
-      <div class="progress-bar-indication">
-        <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
-          <p>
-            {{ budgetTracker.calcPcSaved() }}% of the way there!
-          </p>
-        </span>
-      </div>
-    </section>
-    <div class="oneCol">
-      <h3>To reach your savings goal before your trip <span class="highlight">{{ budgetTracker.timeFromNow }}</span> you need to be saving <span class="highlight">£{{ budgetTracker.weeklySavingGoal }}</span> per week.</h3>
-    </div>
-    <section>
-      <div class="twoCol">
-        <h2>Saved so far</h2>
-        <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
-      </div>
-      <div class="twoCol">
-        <h2>Total Cost</h2>
-        <p>£{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost }}</p>
-      </div>
-    </section>
+<section>
+  <div class="headerText">
+    <h2></h2>
+  </div>
+  <div class="progress-bar-indication">
+    <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
+      <p>
+        {{ budgetTracker.calcPcSaved() }}% of the way there!
+      </p>
+    </span>
+  </div>
+</section>
 
-  </section>
+<section>
+  <h3>To reach your savings goal before your trip <span class="highlight">{{ budgetTracker.timeFromNow }}</span> you need to be saving <span class="highlight">£{{ budgetTracker.weeklySavingGoal }}</span> per week.</h3>
+</section>
+
+<section>
+  <div class="twoCol">
+    <h2>Saved so far</h2>
+    <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
+  </div>
+  <div class="twoCol">
+    <h2>Total Cost</h2>
+    <p>£{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost }}</p>
+  </div>
+</section>
+
 
   <hr>
-
-  <section class="twoCol">
+<section>
+  <div class="twoCol">
     <div>
       <h2>Flights</h2>
       <input-revealer type="number" name="flightCost" ng-model="budgetTracker.trip.flightCost" on-submit="budgetTracker.save()"></input-revealer>
@@ -46,14 +47,11 @@
       <h2>Spending Money</h2>
       <input-revealer type="number" name="expenses" ng-model="budgetTracker.trip.expenses" on-submit="budgetTracker.save()"></input-revealer>
     </div>
-  </section>
+  </div>
 
-  <section class="twoCol">
-    <div>
-      <canvas id="doughnut" class="chart chart-doughnut"
-      chart-data="budgetTracker.data" chart-labels="budgetTracker.labels">
-      </canvas>
-    </div>
-  </section>
-
+  <div class="twoCol">
+    <canvas id="doughnut" class="chart chart-doughnut"
+    chart-data="budgetTracker.data" chart-labels="budgetTracker.labels">
+    </canvas>
+  </div>
 </section>
