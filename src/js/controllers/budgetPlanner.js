@@ -113,7 +113,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
     if (loggedIn) {
       budgetPlanner.newTrip.user = $window.localStorage.getItem('userId');
       Trip.save(budgetPlanner.newTrip, (data) => {
-        console.log('saved ', data);
+        // console.log('saved ', data);
         $state.go('budgetTracker', { id: data._id });
       });
     } else {

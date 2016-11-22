@@ -22,9 +22,6 @@ router.route('/users')
   // .post(users.create);
 
 router.route('/users/:id')
-  // .get(secureRoute, users.show)
-  // .put(secureRoute, users.update)
-  // .delete(secureRoute, users.delete);
   .get(users.show)
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
