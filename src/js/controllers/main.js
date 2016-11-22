@@ -8,15 +8,6 @@ function MainController($auth, $state, $window, TripService, $rootScope) {
   main.isLoggedIn = $auth.isAuthenticated;
   main.userId = $window.localStorage.getItem('userId');
 
-  function logout() {
-    $auth.logout()
-      .then(() => {
-        $window.localStorage.removeItem('userId');
-        // $auth.getPayload()._id
-        TripService.deleteTrip();
-        $state.go('home');
-      });
-  }
 
   const protectedStates = ['locationsNew', 'locationsEdit', 'budgetTracker', 'profileShow', 'profileEdit'];
   function secureState(e, toState) {
@@ -27,8 +18,6 @@ function MainController($auth, $state, $window, TripService, $rootScope) {
   }
 
   $rootScope.$on('$stateChangeStart', secureState);
-
-  main.logout = logout;
 
   main.images = [{
     url: 'https://paraphrasinglife.files.wordpress.com/2014/08/no-1-alternative.jpg',
