@@ -45,14 +45,13 @@ User.create([{
     user: userId1,
     closestAirport: 'Kilimanjaro International Airport',
     airportCode: 'JRO',
-    mainImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Mount_Kilimanjaro.jpg/1280px-Mount_Kilimanjaro.jpg',
+    mainImage: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Uhuru_Peak_Mt._Kilimanjaro_2.JPG',
     images: [
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Mount_Kilimanjaro.jpg/1280px-Mount_Kilimanjaro.jpg',
       'http://www.nationalgeographicexpeditions.com/assets/images/1761/itinerary-header.jpg',
       'http://www.kili-tanzanitesafaris.com/Mount%20Kilimanjaro.jpg',
       'http://www.wdwradio.com/wp-content/uploads/2014/12/kilimanjaro-safaris.jpg',
-      'https://havecamerawilltravel.com/places/files/2016/10/mt-kilimanjaro-mt-kilimanjaro-stars-and-camp-at-lava-tower-54-copyright-havecamerawilltravel-com-1068x713.jpg',
-      'http://static1.squarespace.com/static/51732308e4b0152c18ff09f1/t/5517a19fe4b04d5c319e3240/1427612067030/DSC_4802.jpg',
-      'https://www.youtube.com/embed/-iY-6taCXcU'
+      '../../images/kilimanjaro_camping.jpg'
     ],
     attractions: [
       'Safari, Waterfalls'
@@ -66,11 +65,11 @@ User.create([{
     closestAirport: 'Presidente Carlos Ibáñez del Campo International Airport',
     mainImage: 'http://i.imgur.com/Y6qMZTX.jpg',
     images: [
-      'http://www.lovethesepics.com/wp-content/uploads/2011/06/Patagonia-Chile-looks-like-something-off-a-postcard-.-.-.-or-out-of-a-dream.jpg',
-      'https://s-media-cache-ak0.pinimg.com/originals/b2/01/64/b20164db11285787efd6a8b74ace7010.jpg',
       'http://www.kevandemgoglobal.com/wp-content/uploads/2015/10/Marble-Caves-Chile-7.jpg',
-      'http://www.knowmadadventures.com/wp-content/uploads/2013/06/tourist-sites-in-chile.jpg',
-      'http://miriadna.com/desctopwalls/images/max/Patagonia-(Chile).jpg'
+      'https://s-media-cache-ak0.pinimg.com/originals/b2/01/64/b20164db11285787efd6a8b74ace7010.jpg',
+      '../../images/patagonia.jpeg',
+      'http://www.lovethesepics.com/wp-content/uploads/2011/06/Patagonia-Chile-looks-like-something-off-a-postcard-.-.-.-or-out-of-a-dream.jpg',
+      'http://www.knowmadadventures.com/wp-content/uploads/2013/06/tourist-sites-in-chile.jpg'
     ],
     attractions: [
       'Parque Nacional Los Glaciares, Reserva Faunística Península Valdés'
@@ -82,13 +81,13 @@ User.create([{
     user: userId3,
     airportCode: 'VVO',
     closestAirport: 'Vladivostok International Airport',
-    mainImage: 'http://www.56thparallel.com/wp-content/uploads/2015/12/Mutnovsky-Ice-cave-tour-Kamchatka-614x316.jpg',
+    mainImage: 'https://c2.staticflickr.com/8/7569/15827512311_c35380bd6b_b.jpg',
     images: [
       'http://bow-businesstravel.com/wp-content/gallery/dont-miss-kamchatka/Ice-cave.jpeg',
       'http://selfiedestination.com/wp-content/uploads/2016/10/31-Kamchatka-Ice-Cave-Russia.jpg   ',
       'https://magingalagadngsining.files.wordpress.com/2015/10/6e04033e519120aafef753396380af53.jpg',
       'http://67.media.tumblr.com/a8dcfb5beb06a89ad94a643b9117924a/tumblr_ml5nmqaNnO1rw872io4_1280.jpg',
-      'http://www.56thparallel.com/wp-content/uploads/2013/11/Russia-tours-to-Kamchatka-travel-Siberia-Far-East-56th-parallel.jpg'
+      'http://www.56thparallel.com/wp-content/uploads/2015/12/Mutnovsky-Ice-cave-tour-Kamchatka-614x316.jpg'
     ],
     attractions: [
       'Volcanos, Kamchatka Ice Caves'
@@ -100,13 +99,14 @@ User.create([{
     user: userId2,
     closestAirport: 'Faro Airport',
     airportCode: 'FAO',
-    mainImage: 'http://viralaholic.com/wp-content/uploads/2016/02/a5d4e5fc45b23249c145b1c5eea5291e.jpg',
+    mainImage: '../../images/praia-da-marinha.jpg',
     images: [
-      'http://seepicz.com/wp-content/uploads/2013/12/aeea73be78ddb60e88fb3ac46e6b82b6.jpg',
+      'http://viralaholic.com/wp-content/uploads/2016/02/a5d4e5fc45b23249c145b1c5eea5291e.jpg',
       'http://3.bp.blogspot.com/-48RFfRpcL8o/VDV-bXHQjfI/AAAAAAAAGtg/Cu0RTuG8c3U/s1600/Heart-Sea-Arch-Portugal.jpg',
       'http://www.messagez.com/wp-content/gallery/portugal/the-algarve-paradise-entrance-photography-by-messagez-com_.jpg',
       'http://www.messagez.com/wp-content/gallery/portugal/the-heart-of-algarve-portugal-photography-2-by-messagez-com_.jpg',
-      'http://seepicz.com/wp-content/uploads/2013/09/f12525828f4833e6657ed20c290007c7.jpg'
+      'http://seepicz.com/wp-content/uploads/2013/09/f12525828f4833e6657ed20c290007c7.jpg',
+      'http://seepicz.com/wp-content/uploads/2013/12/aeea73be78ddb60e88fb3ac46e6b82b6.jpg'
     ],
     attractions: [
       'Natural rock formations'
@@ -132,25 +132,6 @@ User.create([{
     ],
     bestTime: 'September - October',
     description: 'At the southern end of Red Square stands the icon of Russia: St Basil’s Cathedral. This crazy confusion of colours, patterns and shapes is the culmination of a style that is unique to Russian architecture. In 1552 Ivan the Terrible captured the Tatar stronghold of Kazan on the Feast of Intercession. He commissioned this landmark church, officially the Intercession Cathedral, to commemorate the victory. Created from 1555 to 1561, this masterpiece would become the ultimate symbol of Russia.'
-  },{
-    locationName: 'Grand Canyon National Park',
-    user: userId3,
-    closestAirport: 'Grand Canyon National Park Airport',
-    airportCode: 'CDP',
-    mainImage: 'http://www.wallpaperbetter.com/wallpaper/403/858/399/havasu-falls-grand-canyon-national-park-in-arizona-1080P-wallpaper-middle-size.jpg',
-    images: [
-      'http://www.arizona-leisure.com/gfx/gallery/desert-view/desert-view-1.jpg',
-      'http://e-perpustakaan.com/wp-content/uploads/2015/01/Grand-Canyon-1.jpg',
-      'http://i2.wp.com/www.agapevoyage.com/wp-content/uploads/2015/06/105e95_94e394a79e13899348fea1b22608add8.jpg_1024.jpg',
-      'http://46yuuj40q81w3ijifr45fvbe165m.wpengine.netdna-cdn.com/wp-content/uploads/2012/12/grand-canyon-skywalk-300x185.jpg',
-      'http://photorator.com/photos/images/scotlands-fairy-pools-isle-of-skye-x-post-from-rpics--8550.jpg',
-      'https://travelinggypsyadventures.files.wordpress.com/2012/07/20080404001638_havasu_falls_base.jpg'
-    ],
-    attractions: [
-      'Havasu Falls, Skywalk'
-    ],
-    bestTime: 'March through May and September through November',
-    description: 'The road to the Grand Canyon from the south crosses a gently rising plateau that gives no hint at what is about to unfold. You wonder if you have made a wrong turn. All at once an immense gorge a mile deep and up to 18 miles wide opens up. The scale is so vast that even from the best vantage point only a fraction of the canyon\'s 277 miles can be seen.'
   },{
     locationName: 'Santorini, Greece',
     user: userId3,
@@ -243,41 +224,23 @@ User.create([{
     bestTime: 'September to June',
     description: 'Nationally known for its beauty, the Paria Canyon has towering walls streaked with desert varnish, huge red rock amphitheaters, sandstone arches, wooded terraces, and hanging gardens. The 3,000-foot escarpment known as the Vermilion Cliffs dominates the remainder of the wilderness with its thick Navajo sandstone face, steep, boulder-strewn slopes, rugged arroyos and stark overall appearance. Some of the best slot canyon hiking opportunities on the Colorado Plateau are found here. Deer and desert bighorn sheep inhabit the area.'
   },{
-    locationName: 'Seyðisfjörður, Iceland',
+    locationName: 'Petra, Jordan',
     user: userId1,
-    closestAirport: '',
-    airportCode: '',
-    mainImage: '../../images/seydisfjordur-iceland.jpeg',
+    closestAirport: 'Amman',
+    airportCode: 'AMM',
+    mainImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Petra_Monastary.jpg',
     images: [
-      '',
-      '',
-      '',
-      '',
-      ''
+      'https://c2.staticflickr.com/4/3597/3483325690_ae3773d0c0_b.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/0/0f/Petra-9.JPG',
+      'https://c1.staticflickr.com/3/2106/5748356313_e3d389c8d4_b.jpg ',
+      'https://c1.staticflickr.com/3/2814/12302529396_bdf00af33e_b.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/6/61/The_monastery_in_petra_jordan-other.jpg'
     ],
     attractions: [
-      ''
+      'Ancient city, Tombs'
     ],
-    bestTime: '',
-    description: 'A place of singing waterfalls and peculiar characters, Seydisfjordur is a welcoming town booming with creativity and rich in history. Inhabited by about 700 people the town acts as one big family, and a friendly one at that.'
-  },{
-    locationName: '',
-    user: userId1,
-    closestAirport: '',
-    airportCode: '',
-    mainImage: '',
-    images: [
-      '',
-      '',
-      '',
-      '',
-      ''
-    ],
-    attractions: [
-      ''
-    ],
-    bestTime: '',
-    description: ''
+    bestTime: 'March – May',
+    description: 'A city of rose-coloured stone, carved out of Mount Hor’s rock-face by the Nabataeans in the 3rd century BC, there’s nothing else like Petra. If it’s not on your bucket list already, it really should be.'
   }], (err, locations) => {
     if(err) return console.log('error creating locations', err);
     console.log(`${locations.length} locations created`);

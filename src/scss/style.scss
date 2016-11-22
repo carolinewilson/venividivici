@@ -11,7 +11,7 @@
 .google-map {
   width: 100%;
   height: 400px;
-  margin: 100px auto 0;
+  margin-top: 10px;
 }
 
 .error {
@@ -155,6 +155,18 @@ section {
   padding: 20px;
 }
 
+footer {
+  width: 100%;
+  background-color: #bababa;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 30px;
+  p {
+    margin: 0;
+  }
+}
+
 .hero-image {
   background-position: center;
   background-size: cover;
@@ -182,6 +194,16 @@ section {
     width: 80%;
     text-align: center;
     margin: 0;
+  }
+}
+
+
+.mini-hero {
+  @extend .hero-image;
+  height: 300px;
+  h1 {
+    font-size: 40px;
+    top: 60%;
   }
 }
 
@@ -220,6 +242,14 @@ section {
 
 .register {
   margin-top: 150px;
+}
+
+.budget-tracker {
+  .chart {
+    max-width: 280px;
+    max-height: 280px;
+    margin: 0 auto;
+  }
 }
 
 .usersInfo {
@@ -346,10 +376,23 @@ section {
   }
 }
 
-.threeCol {
+.threeCol, .budget-col {
   @include span-columns(4);
   @include omega(3n);
   text-align: center;
+}
+
+.budget-col {
+  hr {
+    margin: 20px 0;
+  }
+  form > * {
+    margin-bottom: 20px;
+  }
+}
+
+.budget-col-middle {
+  padding: 0 20px;
 }
 
 .twoCol {
