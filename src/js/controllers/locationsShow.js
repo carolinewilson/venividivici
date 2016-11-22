@@ -10,6 +10,7 @@ function LocationsShowController(Location, $state, User, MapService) {
     locationsShow.location = location;
     locationsShow.user = User.query({ _id: location.user });
     locationsShow.center = {};
+    locationsShow.featureImg = locationsShow.location.images[0];
 
     // Google Map
     MapService
@@ -23,10 +24,8 @@ function LocationsShowController(Location, $state, User, MapService) {
 
 
   function bigImage(image) {
-    console.log(image);
-    locationsShow.showCarousel = true;
-
+    locationsShow.featureImg = image;
   }
-  locationsShow.bigImage = bigImage;
 
+  locationsShow.bigImage = bigImage;
 }
