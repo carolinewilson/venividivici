@@ -81,13 +81,13 @@ User.create([{
     user: userId3,
     airportCode: 'VVO',
     closestAirport: 'Vladivostok International Airport',
-    mainImage: 'http://www.56thparallel.com/wp-content/uploads/2015/12/Mutnovsky-Ice-cave-tour-Kamchatka-614x316.jpg',
+    mainImage: 'https://c2.staticflickr.com/8/7569/15827512311_c35380bd6b_b.jpg',
     images: [
       'http://bow-businesstravel.com/wp-content/gallery/dont-miss-kamchatka/Ice-cave.jpeg',
       'http://selfiedestination.com/wp-content/uploads/2016/10/31-Kamchatka-Ice-Cave-Russia.jpg   ',
       'https://magingalagadngsining.files.wordpress.com/2015/10/6e04033e519120aafef753396380af53.jpg',
       'http://67.media.tumblr.com/a8dcfb5beb06a89ad94a643b9117924a/tumblr_ml5nmqaNnO1rw872io4_1280.jpg',
-      'http://www.56thparallel.com/wp-content/uploads/2013/11/Russia-tours-to-Kamchatka-travel-Siberia-Far-East-56th-parallel.jpg'
+      'http://www.56thparallel.com/wp-content/uploads/2015/12/Mutnovsky-Ice-cave-tour-Kamchatka-614x316.jpg'
     ],
     attractions: [
       'Volcanos, Kamchatka Ice Caves'
@@ -99,13 +99,14 @@ User.create([{
     user: userId2,
     closestAirport: 'Faro Airport',
     airportCode: 'FAO',
-    mainImage: 'http://viralaholic.com/wp-content/uploads/2016/02/a5d4e5fc45b23249c145b1c5eea5291e.jpg',
+    mainImage: '../../images/praia-da-marinha.jpg',
     images: [
-      'http://seepicz.com/wp-content/uploads/2013/12/aeea73be78ddb60e88fb3ac46e6b82b6.jpg',
+      'http://viralaholic.com/wp-content/uploads/2016/02/a5d4e5fc45b23249c145b1c5eea5291e.jpg',
       'http://3.bp.blogspot.com/-48RFfRpcL8o/VDV-bXHQjfI/AAAAAAAAGtg/Cu0RTuG8c3U/s1600/Heart-Sea-Arch-Portugal.jpg',
       'http://www.messagez.com/wp-content/gallery/portugal/the-algarve-paradise-entrance-photography-by-messagez-com_.jpg',
       'http://www.messagez.com/wp-content/gallery/portugal/the-heart-of-algarve-portugal-photography-2-by-messagez-com_.jpg',
-      'http://seepicz.com/wp-content/uploads/2013/09/f12525828f4833e6657ed20c290007c7.jpg'
+      'http://seepicz.com/wp-content/uploads/2013/09/f12525828f4833e6657ed20c290007c7.jpg',
+      'http://seepicz.com/wp-content/uploads/2013/12/aeea73be78ddb60e88fb3ac46e6b82b6.jpg'
     ],
     attractions: [
       'Natural rock formations'
