@@ -1,6 +1,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "base/base";
+@import "partials/mixins";
 @import "partials/carousel";
 @import "partials/brandColours";
 @import "buttons";
@@ -10,13 +11,23 @@
 .google-map {
   width: 100%;
   height: 400px;
-  margin: 100px auto;
+  margin: 100px auto 0;
 }
 
 .error {
   color: $brand-red;
 }
+
+a {
+  color: black;
+}
+
+main {
+  margin-top: 60px;
+}
+
 body {
+  font-family: 'Poppins', sans-serif;
   background-color: ffffff;
   position: relative;
   .profileSection{
@@ -139,9 +150,35 @@ ul {
 
 section {
   @include outer-container;
+  padding: 20px;
+}
+
+.hero-image {
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  position: relative;
+  margin-top: -60px;
+  h1 {
+    color: white;
+    // background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    text-align: center;
+    margin: 0;
+  }
 }
 
 #locationsShow, #budgetTracker {
+
+  img {
+    height: 500px;
+    width: 100%;
+  }
+
   h1 {
     color: white;
     background-color: rgba(0,0,0,0.5);
@@ -200,7 +237,7 @@ section {
     left: 0;
     top: 0;
     height: 100%;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       @include span-columns(12);
       position: static;
       margin-bottom: 20px;
@@ -214,7 +251,7 @@ section {
   &-right {
     @include span-columns(4);
     @include shift(8);
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       @include span-columns(12);
       @include shift(0);
     }
@@ -222,7 +259,7 @@ section {
     &-img {
       @include span-columns(2 of 4);
       @include omega(2n);
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         @include span-columns(6 of 12);
       }
       // height: 200px;
@@ -239,54 +276,26 @@ section {
     }
   }
 }
-.gridContainer {
-  max-width: 1020px;
-  margin: 0 auto;
-  // border: 1px solid;
 
-  $tablet: new-breakpoint(max-width 1120px 12);
-  @include media($tablet) {
-    max-width: 790px;
-  }
-
-
-  $mobile: new-breakpoint(max-width 980px 1);
-  @include media($mobile) {
-    max-width: 390px;
-  }
-
-}
 .imagesGrid {
-  // mobile
-  $mobile: new-breakpoint(max-width 980px 1);
-  @include media($mobile) {
-    @include span-columns(1);
-    @include omega(1n);
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-  }
-
-  // Tablet
-  $tablet: new-breakpoint(max-width 1120px 12);
-  @include media($tablet) {
-    @include span-columns(6);
-    @include omega(2n);
-    width: 350px;
-    height: 350px;
-    margin: 20px;
-  }
-
   @include span-columns(4);
   @include omega(3n);
+
+  @media screen and (max-width: 767px) {
+    @include omega-reset(3n);
+    @include span-columns(6);
+    @include omega(2n);
+  }
 
   position: relative;
   background-size: cover;
   background-position: center;
-  margin: 20px;
-  width: 300px;
-  height: 300px;
-
+  margin-bottom: 20px;
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
   .overlay {
     position: absolute;
     top: 0;
@@ -296,7 +305,6 @@ section {
     background-color: rgba(255, 255, 255, 0.5);
     opacity: 0;
     transition: all 0.4s ease;
-
   }
   h2 {
     position: absolute;
@@ -306,7 +314,24 @@ section {
     color: white;
     text-align: center;
     width: 100%;
+  }
 
+  h3 {
+    position: absolute;
+    font-size: 24px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+  button {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
   }
   .dark {
     color: black;
@@ -335,12 +360,6 @@ section {
   text-align: center;
 }
 
-#budgetTracker, #locationsShow {
-  img {
-    height: 500px;
-    width: 100%;
-  }
-}
 .input-revealer {
   background-image: url('http://www.iconsfind.com/wp-content/uploads/2013/11/Editing-Edit-icon.png');
   background-size: 3%;
@@ -356,15 +375,18 @@ nav {
   position: fixed;
   top: 0;
 
-  ul li {
-  display: inline-block;
-  float: right;
-  margin: 0 10px;
-
-    a {
-      color: white;
-      text-decoration: none;
-      font-weight: 200;
+  ul {
+    margin: 0;
+    li {
+      display: inline-block;
+      float: right;
+      margin: 0 10px;
+      line-height: 60px;
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 200;
+      }
     }
   }
 }

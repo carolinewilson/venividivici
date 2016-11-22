@@ -14,38 +14,32 @@
 </section>
 
 <!-- hide if there are no saved trips. .length determines if there is a data in the object and evaluates if its true or false-->
-<section ng-if="profileShow.trips.length">
 
-  <div class="trips">
-    <h1>Upcoming Trips</h1>
-      <!-- {{profileShow.trips}} -->
-    <div class="trips-tile" ng-repeat="trip in profileShow.trips" style="background-image:url('{{trip.location.mainImage}}')">
-      <div class="trips-tile-overlay">
-        <ul>
-          <li>{{trip.location.locationName}}</li>
-          <li>Destination Aiport: {{trip.destination}}</li>
-          <li>Flight cost: £{{trip.flightCost}}</li>
-          <li><button ui-sref="budgetTracker({id: trip._id})">Budget tracker</button></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<section ng-if="profileShow.trips.length">
+  <h1>Upcoming Trips</h1>
+  <ul class='gridContainer'>
+    <li class="imagesGrid" ng-repeat="trip in profileShow.trips" style="background-image:url('{{trip.location.mainImage}}')">
+      <a ui-sref="budgetTracker({id: trip._id})">
+        <div class="overlay">
+          <h3>{{trip.location.locationName}}</h3>
+          <button>Budget tracker</button>
+        </div>
+      </a>
+    </li>
+  </ul>
 </section>
+
 
 <!-- hide if there are no saved trips. .length determines if there is a data in the object and evaluates if its true or false-->
 <section ng-if="profileShow.locations.length">
-<!-- <section ng-show="profileShow.trips"> -->
   <h1>My Discoveries</h1>
-  <div class="trips">
-    <!-- {{profileShow.locations}} -->
-    <div class="trips-tile" ng-repeat="location in profileShow.locations" style="background-image:url('{{location.mainImage}}')">
+  <ul class='gridContainer'>
+    <li class="imagesGrid" ng-repeat="location in profileShow.locations" style="background-image:url('{{location.mainImage}}')">
       <a ui-sref="locationsShow({ id: location._id })">
-        <div class="trips-tile-overlay">
-          <ul>
-            <li class="locationsHeading">{{location.locationName}}</li>
-          </ul>
+        <div class="overlay">
+          <h2>{{location.locationName}}</h2>
         </div>
       </a>
-    </div>
-  </div>
+    </li>
+  </ul>
 </section>

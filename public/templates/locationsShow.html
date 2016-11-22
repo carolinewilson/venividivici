@@ -1,7 +1,8 @@
+<div class="hero-image" style="background-image:url('{{ locationsShow.location.mainImage }}')">
+  <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
+</div>
 <section id="locationsShow">
-  <img ng-src="{{ locationsShow.location.mainImage }}">
   <div class="info">
-    <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
     <p>{{ locationsShow.location.description}}</p>
   </div>
   <div class="info">
@@ -41,6 +42,6 @@
     </div>
   </div>
 </section>
-<section ng-if="locationsShow.center">
-  <google-map center="locationsShow.center"></google-map>
-</section>
+<!-- <section ng-if="locationsShow.center"> -->
+  <google-map center="locationsShow.center" ng-if="locationsShow.center"></google-map>
+<!-- </section> -->
