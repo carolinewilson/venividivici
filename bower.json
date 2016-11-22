@@ -1,12 +1,14 @@
 {
-  "name": "wdi23-project3",
+  "name": "Veni Veni Vici",
   "description": "",
   "main": "app.js",
   "authors": [
-    "mickyginger <mickyginger@gmail.com>"
+    "carolinewilson <carolinecwilson3@gmail.com>",
+    "marcoservidio <servidiomarco@gmail.com>",
+    "dara <dara@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/mickyginger/WDI_LDN_23_CLASSWORK",
+  "homepage": "https://github.com/carolinewilson/Veni-Vidi-Vici",
   "ignore": [
     "**/.*",
     "node_modules",
