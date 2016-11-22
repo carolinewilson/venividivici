@@ -2,7 +2,7 @@ angular
   .module('travelApp', ['ngResource', 'ui.router', 'satellizer','chart.js'])
   .config(Router)
   .config(Auth);
-
+// 'ngMessage'
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider){
   $stateProvider
