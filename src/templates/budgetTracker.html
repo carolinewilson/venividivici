@@ -12,14 +12,14 @@
   <div class="progress-bar-indication">
     <span class="meter" style="width: {{ budgetTracker.calcPcSaved() }}%">
       <p>
-        {{ budgetTracker.calcPcSaved() }}% of the way there!
+        {{ budgetTracker.calcPcSaved() }}% saved
       </p>
     </span>
   </div>
 </section>
 
 <section>
-  <h3>To reach your savings goal before your trip <span class="highlight">{{ budgetTracker.timeFromNow }}</span> you need to be saving <span class="highlight">£{{ budgetTracker.weeklySavingGoal }}</span> per week.</h3>
+  <h3>To reach your savings goal before your trip <span class="important">{{ budgetTracker.timeFromNow }}</span> you need to be saving <span class="important">£{{ budgetTracker.weeklySavingGoal }}</span> per week.</h3>
 </section>
 
 <section>
