@@ -6,7 +6,6 @@ RegisterController.$inject = ['$auth', '$state', '$window', 'User','TripService'
 function RegisterController($auth, $state, $window, User, TripService, Trip) {
 
   const register = this;
-
   register.user = {};
 
   function submit() {
@@ -43,7 +42,6 @@ LoginController.$inject = ['$auth', '$state', '$window','TripService', 'Trip'];
 function LoginController($auth, $state, $window, TripService, Trip) {
 
   const login = this;
-
   login.credentials = {};
 
   function submit() {
@@ -74,9 +72,8 @@ function LoginController($auth, $state, $window, TripService, Trip) {
 
   function authenticate(service) {
     $auth.authenticate(service, () => {
-      console.log();
-      $state.go('home');
     });
+    $state.go('home');
   }
 
   login.authenticate = authenticate;

@@ -3,8 +3,6 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const secret = require('../config/tokens').secret;
 
-
-
 function facebook(req, res) {
   request.get({
     url: 'https://graph.facebook.com/v2.5/oauth/access_token',
