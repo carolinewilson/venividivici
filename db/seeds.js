@@ -16,14 +16,14 @@ User.create([{
   username: 'Caroline',
   email: 'caroline@gmail.com',
   preferredAirport: 'LGW',
-  profilePic: 'http://orig15.deviantart.net/3a07/f/2009/343/2/8/el_conquistador_by_wredwrat.jpg',
+  profilePic: '../../images/caroline.jpg',
   password: 'password' ,
   passwordConfirmation: 'password'
 },{
   username: 'Dara',
   email: 'dara@gmail.com',
   preferredAirport: 'LGW',
-  profilePic: 'http://orig15.deviantart.net/3a07/f/2009/343/2/8/el_conquistador_by_wredwrat.jpg',
+  profilePic: '../../images/kittyme.jpg',
   password: 'password' ,
   passwordConfirmation: 'password'
 },{
@@ -45,12 +45,12 @@ User.create([{
     user: userId1,
     closestAirport: 'Kilimanjaro International Airport',
     airportCode: 'JRO',
-    mainImage: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Uhuru_Peak_Mt._Kilimanjaro_2.JPG',
+    mainImage: '../../images/kilimanjaro_peak.JPG',
     images: [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Mount_Kilimanjaro.jpg/1280px-Mount_Kilimanjaro.jpg',
-      'http://www.nationalgeographicexpeditions.com/assets/images/1761/itinerary-header.jpg',
-      'http://www.kili-tanzanitesafaris.com/Mount%20Kilimanjaro.jpg',
-      'http://www.wdwradio.com/wp-content/uploads/2014/12/kilimanjaro-safaris.jpg',
+      '../../images/kilimanjaro_mountain.jpg',
+      '../../images/kilimanjaro_elephants.jpg',
+      '../../images/kilimanjaro_giraffe.jpg',
+      '../../images/kilimanjaro-safaris.jpg',
       '../../images/kilimanjaro_camping.jpg'
     ],
     attractions: [
@@ -63,13 +63,13 @@ User.create([{
     user: userId2,
     airportCode: 'PUQ',
     closestAirport: 'Presidente Carlos Ibáñez del Campo International Airport',
-    mainImage: 'http://i.imgur.com/Y6qMZTX.jpg',
+    mainImage: '../../images/patagonia_main.jpg',
     images: [
-      'http://www.kevandemgoglobal.com/wp-content/uploads/2015/10/Marble-Caves-Chile-7.jpg',
-      'https://s-media-cache-ak0.pinimg.com/originals/b2/01/64/b20164db11285787efd6a8b74ace7010.jpg',
+      '../../images/patagonia_1.jpg',
+      '../../images/patagonia_2.jpg',
       '../../images/patagonia.jpeg',
-      'http://www.lovethesepics.com/wp-content/uploads/2011/06/Patagonia-Chile-looks-like-something-off-a-postcard-.-.-.-or-out-of-a-dream.jpg',
-      'http://www.knowmadadventures.com/wp-content/uploads/2013/06/tourist-sites-in-chile.jpg'
+      '../../images/patagonia_3.jpg',
+      '../../images/patagonia_4.jpg'
     ],
     attractions: [
       'Parque Nacional Los Glaciares, Reserva Faunística Península Valdés'
@@ -81,13 +81,13 @@ User.create([{
     user: userId3,
     airportCode: 'VVO',
     closestAirport: 'Vladivostok International Airport',
-    mainImage: 'https://c2.staticflickr.com/8/7569/15827512311_c35380bd6b_b.jpg',
+    mainImage: '../../images/kam_main.jpg',
     images: [
-      'http://bow-businesstravel.com/wp-content/gallery/dont-miss-kamchatka/Ice-cave.jpeg',
-      'http://selfiedestination.com/wp-content/uploads/2016/10/31-Kamchatka-Ice-Cave-Russia.jpg   ',
-      'https://magingalagadngsining.files.wordpress.com/2015/10/6e04033e519120aafef753396380af53.jpg',
-      'http://67.media.tumblr.com/a8dcfb5beb06a89ad94a643b9117924a/tumblr_ml5nmqaNnO1rw872io4_1280.jpg',
-      'http://www.56thparallel.com/wp-content/uploads/2015/12/Mutnovsky-Ice-cave-tour-Kamchatka-614x316.jpg'
+      '../../images/kam.jpg',
+      '../../images/kam_1.jpeg',
+      '../../images/kam_2.jpg',
+      '../../images/kam_3.jpg',
+      '../../images/kam_4.jpg'
     ],
     attractions: [
       'Volcanos, Kamchatka Ice Caves'
@@ -101,12 +101,11 @@ User.create([{
     airportCode: 'FAO',
     mainImage: '../../images/praia-da-marinha.jpg',
     images: [
-      'http://viralaholic.com/wp-content/uploads/2016/02/a5d4e5fc45b23249c145b1c5eea5291e.jpg',
-      'http://3.bp.blogspot.com/-48RFfRpcL8o/VDV-bXHQjfI/AAAAAAAAGtg/Cu0RTuG8c3U/s1600/Heart-Sea-Arch-Portugal.jpg',
-      'http://www.messagez.com/wp-content/gallery/portugal/the-algarve-paradise-entrance-photography-by-messagez-com_.jpg',
-      'http://www.messagez.com/wp-content/gallery/portugal/the-heart-of-algarve-portugal-photography-2-by-messagez-com_.jpg',
-      'http://seepicz.com/wp-content/uploads/2013/09/f12525828f4833e6657ed20c290007c7.jpg',
-      'http://seepicz.com/wp-content/uploads/2013/12/aeea73be78ddb60e88fb3ac46e6b82b6.jpg'
+      '../../images/portugal_1.jpg',
+      '../../images/portugal_2.jpg',
+      '../../images/portugal_3.jpg',
+      '../../images/portugal_4.jpg',
+      '../../images/portugal_5.jpg'
     ],
     attractions: [
       'Natural rock formations'
@@ -118,14 +117,13 @@ User.create([{
     user: userId2,
     closestAirport: 'Domodedovo International Airport',
     airportCode: 'DME',
-    mainImage: 'http://hdpic.org/wp-content/uploads/2015/02/Moscow-Red-Square-Cool-Background-Beautiful-Free-Wallpaper.jpg',
+    mainImage: '../../images/moscow_main.jpg',
     images: [
-      'https://s-media-cache-ak0.pinimg.com/originals/a5/f9/fb/a5f9fb5ce7d9e003656ccd776874326e.jpg',
-      'https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/5807/SITours/private-walking-tour-moscow-including-the-kremlin-in-moscow-123597.jpg',
-      'http://www.telegraph.co.uk/content/dam/Travel/leadAssets/24/44/Moscow_2444972a-large.jpg',
-      'https://kremlintour.com/sites/default/files/grand-kremlin-palace-interior-andreyevsky-hall.jpg',
-      'http://www.angelfire.com/pa/ImperialRussian/news/images/k16.jpg',
-      ''
+      '../../images/moscow_1.jpg',
+      '../../images/moscow_2.jpg',
+      '../../images/moscow_3.jpg',
+      '../../images/moscow_4.jpg',
+      '../../images/moscow_5.jpg'
     ],
     attractions: [
       'St Basil\'s Cathedral, Red Square, Kremlin, Kolomenskoye'
@@ -137,14 +135,13 @@ User.create([{
     user: userId3,
     closestAirport: 'Santorini (Thira) National Airport',
     airportCode: 'JTR',
-    mainImage: 'http://athensgreecenow.com/_imagery/2015-05-28/Oia-Santorini-Greece-Europe-980.jpg',
+    mainImage: '../../images/santorini_main.jpg',
     images: [
-      'http://newmedia.thomson.co.uk/live/vol/2/64d817a84d630cab43a5ac6b79fa6fba0afa8265/1080x608/web/EUROPEMEDITERRANEANGREECESANTORINIDES_000939OIARES_003226.jpg',
-      'http://farm8.staticflickr.com/7455/10972582665_df3dfc9da0_z.jpg',
-      'http://newmedia.thomson.co.uk/live/vol/2/52cc3f6fec397e0666e1db66a520003376ad3fdd/1080x608/web/EUROPEMEDITERRANEANGREECESANTORINIDES_000939IMEROVIGLI.jpg',
-      'http://www.fomithea.com/wp-content/uploads/2011/09/santorini-greece-photo-4.jpg',
-      'http://bb901.com/wp-content/uploads/2014/10/Santorini-Greece-22-Jan-post.jpg',
-      'http://cdni.condenast.co.uk/646x430/s_v/santorini_cnt_18nov09_iStock_b_1.jpg'
+      '../../images/santorini_1.jpg',
+      '../../images/santorini_2.jpg',
+      '../../images/santorini_3.jpg',
+      '../../images/santorini_4.jpg',
+      '../../images/santorini_5.jpg'
     ],
     attractions: [
       'Beaches, Boutiques, Sunsets'

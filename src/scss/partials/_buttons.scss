@@ -1,13 +1,13 @@
 button {
-  margin: 20px;
+  margin: 10px;
   width: 50%;
   background: $brand-light-blue;
   border: 2px solid $brand-light-blue;
   height: 40px;
   border-radius: 500px;
   text-align: center;
-  color: #FBFBFB;
-  font-size: 18px;
+  color: white;
+  font-size: 14px;
   cursor: pointer;
   outline:none;
   padding: 5px;
@@ -19,7 +19,6 @@ button {
     color: $brand-light-blue;
   }
 }
-
 input{
   cursor: text;
 }
