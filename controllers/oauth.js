@@ -22,7 +22,6 @@ function facebook(req, res) {
       json: true
     });
   }).then((profile) => {
-
     // find or create a user
     User.findOne({ email: profile.email }, (err, user) => {
       if(err) return res.status(500).json({ error: err });
@@ -32,7 +31,7 @@ function facebook(req, res) {
           facebookId: profile.id,
           profilePic: profile.picture.data.url,
           email: profile.email,
-          username: `${profile.name} ${profile.id}`
+          username: `${profile.name}`
         });
       } else {
         user.facebookId = profile.id;

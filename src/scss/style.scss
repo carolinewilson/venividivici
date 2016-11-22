@@ -33,8 +33,31 @@ h3 {
   line-height: 40px;
 }
 button {
-  width: 100%;
+  margin: 20px;
+  width: 50%;
+  background: $brand-dark-blue;
+  border: 2px solid $brand-dark-blue;
+  height: 40px;
+  border-radius: 500px;
+  text-align: center;
+  color: #FBFBFB;
+  font-size: 18px;
+  cursor: pointer;
+  outline:none;
+  padding: 5px;
+  @include appearance(none);
+  @include box-sizing(initial);
+  @include transition(all 0.5s ease);
+  &:hover{
+    background: transparent;
+    color: $brand-dark-blue;
+  }
 }
+
+input{
+  cursor: text;
+}
+
 main {
   margin-top: 60px;
 }
@@ -281,8 +304,12 @@ footer {
 }
 
 .usersInfo {
+  @include span-columns(12);
+  @include omega(1n);
+  text-align: center;
+
   img {
-    width: 300px;
+    width: 100px;
     border-radius: 100%;
   }
 }

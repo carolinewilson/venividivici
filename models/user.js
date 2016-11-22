@@ -2,7 +2,7 @@ const mongoose  = require('mongoose');
 const bcrypt    = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, unique: true, required: true },
+  username: { type: String, required: true },
   email: { type: String, unique: true, required: true },
   profilePic: { type: String, default: 'http://www.freeiconspng.com/uploads/profile-icon-9.png' },
   preferredAirport: { type: String , default: 'London Heathrow' },
