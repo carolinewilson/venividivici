@@ -1,5 +1,5 @@
 <div class="mini-hero" style="background-image:url('../../images/palms.jpeg')">
-  <h1>Budget Planner</h1>
+  <h1>Your {{ budgetPlanner.newTrip.location }} Budget</h1>
 </div>
 <section>
   <div class="budgetSetup">
@@ -37,7 +37,7 @@
 
           <div ng-if="!budgetPlanner.newTrip.flightCost">
             <button type="submit" name="button">Find flights</button>
-            <p ng-if="budgetPlanner.newTrip.noFlightsMsg && !budgetPlanner.newTrip.flightCost">{{ budgetPlanner.newTrip.noFlightsMsg }}</p>
+            <p class="important" ng-if="budgetPlanner.newTrip.noFlightsMsg && !budgetPlanner.newTrip.flightCost">{{ budgetPlanner.newTrip.noFlightsMsg }}</p>
           </div>
           <button type="submit" name="button" ng-if="budgetPlanner.newTrip.flightCost">Update flights</button>
         </form>
@@ -54,7 +54,7 @@
         <h2>Flight Cost</h2>
         <input ng-if="budgetPlanner.newTrip.flightCost" ng-model="budgetPlanner.newTrip.flightCost" type="text" name="flightCost" disabled="true">
         <input ng-if="!budgetPlanner.newTrip.flightCost" ng-model="budgetPlanner.newTrip.flightCost" type="text" name="flightCost">
-        <div ng-if="budgetPlanner.newTrip.flightCost">
+        <div ng-if="budgetPlanner.newTrip.flightCost" class="important">
           <label>Flights found<span ng-if="budgetPlanner.newTrip.carrier"> with {{ budgetPlanner.newTrip.carrier }}</span></label>
           <p>Leaving {{ budgetPlanner.newTrip.outboundLeg }} and returning {{ budgetPlanner.newTrip.inboundLeg }}</p>
         </div>
