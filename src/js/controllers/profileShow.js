@@ -22,7 +22,7 @@ function ProfileShowController(User, $state, Trip, $auth, Location, $window, Tri
         $window.localStorage.removeItem('userId');
         // $auth.getPayload()._id
         TripService.deleteTrip();
-        $state.go('login');
+        $state.go('home');
       });
   }
 
