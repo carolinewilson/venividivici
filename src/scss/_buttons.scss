@@ -1,7 +1,7 @@
 button {
   width: 150px;
-  background:  #0B3954;
-  border: 2px solid #0B3954;
+  background:  $brand-darker-blue;
+  border: 2px solid $brand-darker-blue;
   height: 40px;
   border-radius: 500px;
   text-align: center;
@@ -15,9 +15,10 @@ button {
   @include transition(all 0.5s ease);
   &:hover{
     background: transparent;
-    color: #0B3954;
+    color: $brand-darker-blue;
   }
 }
+
 
 input{
   cursor: text;
