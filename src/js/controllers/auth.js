@@ -74,6 +74,8 @@ function LoginController($auth, $state, $window, TripService, Trip) {
     $auth
       .authenticate(service)
       .then((data) => {
+        // console.log('auth data --> ',data);
+        $window.localStorage.setItem('userId', data.data.user._id);
         const tripData = TripService.getTrip();
         // console.log(data);
         if (tripData) {
