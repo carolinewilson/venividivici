@@ -1,9 +1,9 @@
 angular.module('travelApp')
   .controller('ProfileShowController', ProfileShowController);
 
-ProfileShowController.$inject = ['User', '$state', 'Trip', '$auth', 'Location'];
+ProfileShowController.$inject = ['User', '$state', 'Trip', '$auth', 'Location', '$window', 'TripService'];
 
-function ProfileShowController(User, $state, Trip, $auth, Location) {
+function ProfileShowController(User, $state, Trip, $auth, Location, $window, TripService) {
 
   const profileShow = this;
 
@@ -16,5 +16,16 @@ function ProfileShowController(User, $state, Trip, $auth, Location) {
     profileShow.locations = Location.query({user: user._id});
   });
 
+  function logout() {
+    $auth.logout()
+      .then(() => {
+        $window.localStorage.removeItem('userId');
+        // $auth.getPayload()._id
+        TripService.deleteTrip();
+        $state.go('login');
+      });
+  }
+
+  profileShow.logout = logout;
 
 }
