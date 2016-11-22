@@ -2,6 +2,7 @@
 @import "neat/neat";
 @import "base/base";
 @import "partials/carousel";
+@import "partials/brandColours";
 @import "buttons";
 
 // @import "partials/forms";
@@ -12,6 +13,9 @@
   margin: 100px auto;
 }
 
+.error {
+  color: $brand-red;
+}
 body {
   background-color: ffffff;
   position: relative;

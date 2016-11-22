@@ -27,10 +27,12 @@ function RegisterController($auth, $state, $window, User, TripService, Trip) {
           });
           return $state.go('usersShow', { id: res.data.user._id });
         }
+        register.err = false;
 
         $state.go('home');
       }, err => {
         console.log(err);
+        register.err = true;
       });
   }
 
@@ -48,13 +50,13 @@ function LoginController($auth, $state, $window, TripService, Trip) {
     $auth
       .login(login.credentials)
       .then((data) => {
+        login.err = false;
         const payload = $auth.getPayload();
         $window.localStorage.setItem('userId', payload._id);
 
         const tripData = TripService.getTrip();
-        console.log(data);
+        // console.log(data);
         if (tripData) {
-
           tripData.user = data.data.user._id;
 
           Trip.save(tripData, (res) => {
@@ -64,6 +66,9 @@ function LoginController($auth, $state, $window, TripService, Trip) {
         }
 
         $state.go('home');
+      }, (error) => {
+        console.log(error);
+        login.err = true;
       });
   }
 

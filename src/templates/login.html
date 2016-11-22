@@ -1,7 +1,10 @@
-
 <div class="loginSection">
   <div class="loginForm">
     <a ui-sref="home"><img src="images/closeicon.png"></a>
+    <div class="error" ng-if="login.err">
+      <p>Hmm... we don't seem to have an account with that information. 🤔</p>
+        <p>Double check your password and try again.</h3>
+    </div>
     <h1>Log in</h1>
     <form novalidate ng-submit="login.submit()">
       <div>

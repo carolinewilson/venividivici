@@ -1,6 +1,10 @@
 
 <div class="registerSection">
   <div class="registerForm">
+    <div class="error" ng-if="register.err">
+      <p>Oh dear... there was a problem creating your account 🤔</p>
+      <p>Check your details and try again.</h3>
+    </div>
     <h1>Start discovering today</h1>
     <form novalidate ng-submit="register.submit()">
       <div>
