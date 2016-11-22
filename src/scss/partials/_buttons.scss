@@ -1,8 +1,8 @@
 button {
   margin: 20px;
   width: 50%;
-  background: $brand-dark-blue;
-  border: 2px solid $brand-dark-blue;
+  background: $brand-light-blue;
+  border: 2px solid $brand-light-blue;
   height: 40px;
   border-radius: 500px;
   text-align: center;
@@ -16,7 +16,7 @@ button {
   @include transition(all 0.5s ease);
   &:hover{
     background: transparent;
-    color: $brand-dark-blue;
+    color: $brand-light-blue;
   }
 }
 
