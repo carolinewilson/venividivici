@@ -30,7 +30,7 @@ User.create([{
   username: 'Marco',
   email: 'marco@gmail.com',
   preferredAirport: 'LGW',
-  profilePic: 'http://orig15.deviantart.net/3a07/f/2009/343/2/8/el_conquistador_by_wredwrat.jpg',
+  profilePic: '../../images/marco.jpg',
   password: 'password' ,
   passwordConfirmation: 'password'
 }], (err, user) => {
@@ -156,13 +156,13 @@ User.create([{
     user: userId1,
     closestAirport: 'Keflavik International Airport',
     airportCode: 'KEF',
-    mainImage: 'http://www.bluelagoon.com/images/new-node/blue-lagoon-price.jpg',
+    mainImage: '../../images/iceland.jpg',
     images: [
-      'http://www.amazingplacesonearth.com/wp-content/uploads/2014/11/Blue-Lagoon.jpg',
-      'http://cdn.lightgalleries.net/4d9f494ad02b8/images/photographer-burlington-vermont-vt-assignment-commercial-photojournalist-monica-donovan-places-01IMG_5974-1.jpg',
-      'http://imgc.allpostersimages.com/images/P-473-488-90/27/2791/CCGOD00Z/posters/people-swim-in-the-blue-lagoon-spa-in-grindavik-iceland.jpg',
-      'http://www.traveleralmanac.com/wp-content/uploads/2016/01/Blue-Lagoon-Iceland-1024x682.jpg',
-      'http://www.thegoldenscope.com/wp-content/uploads/2014/02/fjallsc3a1rlc3b3n-glacier-lake-iceland-resized.jpg'
+      '../../images/iceland-1.jpg',
+      '../../images/iceland-2.jpg',
+      '../../images/iceland-3.jpg',
+      '../../images/iceland-4.jpg',
+      '../../images/iceland-5.jpg'
     ],
     attractions: [
       'Blue Lagoon Thermal Pools, Stunning landscapes'
@@ -174,13 +174,13 @@ User.create([{
     user: userId1,
     closestAirport: 'Siem Reap International Airport',
     airportCode: 'REP',
-    mainImage: 'http://www.trazeetravel.com/wp-content/uploads/2015/03/Angkor-Wat-Siem-Reap-Cambodia-%C2%A9-Lakhesis-Dreamstime1.jpg',
+    mainImage: '../../images/cambodia.jpg',
     images: [
-      'http://cdn4.i-scmp.com/sites/default/files/styles/landscape/public/images/methode/2016/08/11/0dd04594-5d2b-11e6-82a1-e6803dbb30ea_1280x720.jpg?itok=eO9dtMoc',
-      'http://static.asiawebdirect.com/m/bangkok/portals/cambodia/homepage/angkor-wat/allParagraphs/0110/image/angkor-wat-gate.jpg',
-      'http://s.ngm.com/2009/07/angkor/img/01-angkor-wat-615.jpg',
-      'https://images2.alphacoders.com/481/481029.jpg',
-      'http://www.treybarrow.com/Angkor%20Wat,%20Cambodia/photos/1%20Angkor%20Wat.jpg'
+      '../../images/cambodia-1.jpg',
+      '../../images/cambodia-2.jpg',
+      '../../images/cambodia-3.jpg',
+      '../../images/cambodia-4.jpg',
+      '../../images/cambodia-5.jpg'
     ],
     attractions: [
       'Angkor Wat, Temples, Architecture'
@@ -192,13 +192,13 @@ User.create([{
     user: userId2,
     closestAirport: 'Cairo International Airport',
     airportCode: 'CAI',
-    mainImage: 'http://4.bp.blogspot.com/-1M77CUpsnDc/U00rHCnQ2KI/AAAAAAAAuWs/1al_uBHJBSY/s1600/white+desert+egypt+2.jpg',
+    mainImage: '../../images/white-desert.jpg',
     images: [
-      'http://whenonearth.net/wp-content/uploads/2014/09/332146xcitefun-white-desert-3.jpg',
-      'http://elitetourclub.com/blog/wp-content/uploads/2012/04/White-Black-Desert-1.jpg',
-      'http://www.willgoto.com/pictures/b/Egypt_White_Desert_in_the_Western_Desert.jpg',
-      'http://whenonearth.net/wp-content/uploads/2014/09/The-White-Desert.jpg',
-      'http://www.willgoto.com/images/Size3/Egypt_Farafra_White_desert_Desert_blanc_02_3029aea2dea84e19ba73954ae8bd46a1.jpg'
+      '../../images/white-desert-1.jpg',
+      '../../images/white-desert-2.jpg',
+      '../../images/white-desert-3.jpg',
+      '../../images/white-desert-4.jpg',
+      '../../images/white-desert-5.jpg'
     ],
     attractions: [
       'White Desert, Camping under the stars'
@@ -210,13 +210,13 @@ User.create([{
     user: userId3,
     closestAirport: 'Salt Lake City',
     airportCode: 'SLC',
-    mainImage: 'http://onlyfreewallpaper.com/walls/paria-canyon-wide.jpg',
+    mainImage: '../../images/paria-canyon.jpg',
     images: [
-      'https://s-media-cache-ak0.pinimg.com/originals/e2/2f/6a/e22f6a0a299c34cb9839174e98b6b30c.jpg',
-      'http://www.dreamlandtours.net/wp-content/uploads/2012/01/Dolly-Rock.jpg',
-      'https://mowryjournal.files.wordpress.com/2015/02/coyote-buttes.jpg?w=1000&h=667',
-      'http://photos2.meetupstatic.com/photos/event/1/3/8/600_319860312.jpeg',
-      'https://media.deseretdigital.com/file/73781d3667?crop=top:0|left:0|width:1260|height:670|gravity:Center&quality=55&resize=width:1260&order=resize,crop&c=14&a=4021ecc8'
+      '../../images/paria-canyon-1.jpg',
+      '../../images/paria-canyon-2.jpg',
+      '../../images/paria-canyon-3.jpg',
+      '../../images/paria-canyon-4.jpeg',
+      '../../images/paria-canyon-5.jpeg'
     ],
     attractions: [
       'Dolly Rock'
@@ -228,13 +228,13 @@ User.create([{
     user: userId1,
     closestAirport: 'Amman',
     airportCode: 'AMM',
-    mainImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Petra_Monastary.jpg',
+    mainImage: '../../images/petra_monastary.jpg',
     images: [
-      'https://c2.staticflickr.com/4/3597/3483325690_ae3773d0c0_b.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/0/0f/Petra-9.JPG',
-      'https://c1.staticflickr.com/3/2106/5748356313_e3d389c8d4_b.jpg ',
-      'https://c1.staticflickr.com/3/2814/12302529396_bdf00af33e_b.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/6/61/The_monastery_in_petra_jordan-other.jpg'
+      '../../images/petra_monastary_1.jpg',
+      '../../images/petra_monastary_2.JPG',
+      '../../images/petra_monastary_3.jpg',
+      '../../images/petra_monastary_4.jpg',
+      '../../images/petra_monastary_5.jpg'
     ],
     attractions: [
       'Ancient city, Tombs'
