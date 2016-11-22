@@ -6,14 +6,14 @@
 </section>
 
 <section>
-  <div>
     <h1>{{ adventurersShow.user.username }}'s Discoveries</h1>
-    <div class="imagesGrid" ng-repeat="location in adventurersShow.locations" style="background-image:url('{{ location.mainImage }}')">
-      <a ui-sref="locationsShow({ id: location._id })">
-      <div class="overlay rule">
-        <h2>{{ location.locationName }}</h2>
-      </div>
-      </a>
-    </div>
-  </div>
+    <ul class='gridContainer'>
+      <li class="imagesGrid" ng-repeat="location in adventurersShow.locations" style="background-image:url('{{ location.mainImage }}')">
+        <a ui-sref="locationsShow({ id: location._id })">
+          <div class="overlay">
+            <h2>{{ location.locationName }}</h2>
+          </div>
+        </a>
+      </li>
+    </ul>
 </section>

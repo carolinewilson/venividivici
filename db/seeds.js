@@ -242,6 +242,42 @@ User.create([{
     ],
     bestTime: 'September to June',
     description: 'Nationally known for its beauty, the Paria Canyon has towering walls streaked with desert varnish, huge red rock amphitheaters, sandstone arches, wooded terraces, and hanging gardens. The 3,000-foot escarpment known as the Vermilion Cliffs dominates the remainder of the wilderness with its thick Navajo sandstone face, steep, boulder-strewn slopes, rugged arroyos and stark overall appearance. Some of the best slot canyon hiking opportunities on the Colorado Plateau are found here. Deer and desert bighorn sheep inhabit the area.'
+  },{
+    locationName: 'Seyðisfjörður, Iceland',
+    user: userId1,
+    closestAirport: '',
+    airportCode: '',
+    mainImage: '../../images/seydisfjordur-iceland.jpeg',
+    images: [
+      '',
+      '',
+      '',
+      '',
+      ''
+    ],
+    attractions: [
+      ''
+    ],
+    bestTime: '',
+    description: 'A place of singing waterfalls and peculiar characters, Seydisfjordur is a welcoming town booming with creativity and rich in history. Inhabited by about 700 people the town acts as one big family, and a friendly one at that.'
+  },{
+    locationName: '',
+    user: userId1,
+    closestAirport: '',
+    airportCode: '',
+    mainImage: '',
+    images: [
+      '',
+      '',
+      '',
+      '',
+      ''
+    ],
+    attractions: [
+      ''
+    ],
+    bestTime: '',
+    description: ''
   }], (err, locations) => {
     if(err) return console.log('error creating locations', err);
     console.log(`${locations.length} locations created`);
