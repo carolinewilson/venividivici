@@ -33,9 +33,9 @@ function BudgetTrackerController(Trip, $state, $scope, $window) {
   }
 
   // Update goals
-  $scope.$watchGroup([
+  $scope.$watch(
     () => budgetTracker.trip.totalSavings
-  ],() => {
+  ,() => {
     calcSavingsGoals();
   });
 
