@@ -59,7 +59,7 @@ function LoginController($auth, $state, $window, TripService, Trip) {
 
           Trip.save(tripData, (res) => {
             console.log('saved trip! ', res);
-            $state.go('budgetTracker', { id: res._id });
+            return $state.go('budgetTracker', { id: res._id });
           });
         }
 
@@ -71,9 +71,22 @@ function LoginController($auth, $state, $window, TripService, Trip) {
   }
 
   function authenticate(service) {
-    $auth.authenticate(service, () => {
-    });
-    $state.go('home');
+    $auth
+      .authenticate(service)
+      .then((data) => {
+        const tripData = TripService.getTrip();
+        // console.log(data);
+        if (tripData) {
+          tripData.user = data.data.user._id;
+
+          Trip.save(tripData, (res) => {
+            console.log('saved trip! ', res);
+            return $state.go('budgetTracker', { id: res._id });
+          });
+        }
+
+        $state.go('home');
+      });
   }
 
   login.authenticate = authenticate;
