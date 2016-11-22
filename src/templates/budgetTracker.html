@@ -22,18 +22,17 @@
 
 <section>
   <div class="twoCol">
-    <h2>Saved so far</h2>
-    <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
-  </div>
-  <div class="twoCol">
     <h2>Total Cost</h2>
     <p>£{{ budgetTracker.trip.flightCost + budgetTracker.trip.expenses + budgetTracker.trip.accomCost }}</p>
   </div>
+  <div class="twoCol">
+    <h2>Saved so far</h2>
+    <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
+  </div>
+  <!-- <hr> -->
 </section>
 
-
-  <hr>
-<section>
+<section class="budget-tracker">
   <div class="twoCol">
     <div>
       <h2>Flights</h2>
