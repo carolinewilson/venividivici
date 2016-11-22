@@ -23,7 +23,7 @@ User.create([{
   username: 'Dara',
   email: 'dara@gmail.com',
   preferredAirport: 'LGW',
-  profilePic: 'http://orig15.deviantart.net/3a07/f/2009/343/2/8/el_conquistador_by_wredwrat.jpg',
+  profilePic: '../../images/kittyme.jpg',
   password: 'password' ,
   passwordConfirmation: 'password'
 },{
