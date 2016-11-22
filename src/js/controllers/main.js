@@ -8,6 +8,7 @@ function MainController($auth, $state, $window, TripService, $rootScope) {
   main.isLoggedIn = $auth.isAuthenticated;
   main.userId = $window.localStorage.getItem('userId');
 
+
   const protectedStates = ['locationsNew', 'locationsEdit', 'budgetTracker', 'profileShow', 'profileEdit'];
   function secureState(e, toState) {
     if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {

@@ -21,6 +21,7 @@
     "satellizer": "^0.15.5",
     "normalize-strings": "normalize#^1.1.0",
     "moment": "^2.16.0",
-    "angular-chart.js": "^1.0.3"
+    "angular-chart.js": "^1.0.3",
+    "ngMessage": "ng-message#^1.0.5-beta.1"
   }
 }
