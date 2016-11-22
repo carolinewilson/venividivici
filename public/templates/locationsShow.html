@@ -3,7 +3,7 @@
 </div>
 <section id="locationsShow">
   <div class="info">
-    <p>{{ locationsShow.location.description}}</p>
+    <p class="description">{{ locationsShow.location.description}}</p>
   </div>
   <div class="info">
     <div class="threeCol">
@@ -11,7 +11,7 @@
       <p>{{ locationsShow.location.closestAirport}}</p>
     </div>
     <div class="threeCol">
-      <h2>Attactions</h2>
+      <h2>Attractions</h2>
       <p ng-repeat="attraction in locationsShow.location.attractions">{{ attraction }}</p>
     </div>
     <div class="threeCol">
@@ -26,9 +26,9 @@
       <button ui-sref="budgetPlanner({id: locationsShow.location._id})">Live the dream</button>
     </div>
 
-    <div>
-      <p class="twoCol" style="text-align:left;"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
-      <p class="twoCol" style="text-align:right;">Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border-radius:100px;"/></p>
+    <div class="discovery">
+      <div class="twoCol suggest"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></div>
+      <div class="twoCol by">Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border-radius:100px;"/></div>
     </div>
   </div>
 </section>
@@ -43,5 +43,6 @@
   </div>
 </section>
 <section ng-if="locationsShow.center">
+  <h2 style="text-align: center;">Map</h2>
   <google-map center="locationsShow.center"></google-map>
 </section>

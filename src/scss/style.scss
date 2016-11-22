@@ -22,6 +22,9 @@
 a {
   color: black;
 }
+p {
+  line-height: 30px;
+}
 h1, h2, h3, button {
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -179,10 +182,16 @@ footer {
   }
 }
 
+.description {
+  letter-spacing: 1px;
+  text-align: justify;
+  text-indent: 50px;
+}
+
 .hero-image {
   background-position: center;
   background-size: cover;
-  height: 600px;
+  height: 660px;
   position: relative;
   margin-top: -60px;
   h1 {
@@ -421,6 +430,19 @@ footer {
 .budget-col-middle {
   padding: 0 20px;
 }
+
+.discovery {
+  position: relative;
+  .suggest {
+    float: left;
+    margin-top: 47px;
+  }
+  .by{
+    float:right;
+    margin-top: 20px;
+  }
+}
+
 .important {
   color: $brand-red;
   font-weight: bold;
