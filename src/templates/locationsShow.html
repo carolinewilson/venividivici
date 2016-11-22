@@ -26,8 +26,8 @@
     </div>
 
     <div>
-      <p class="twoCol"><strong>Discovered by</strong> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border: 1px black solid; border-radius:100px;"/><a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a></p>
-      <p class="twoCol"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
+      <p class="twoCol" style="text-align:left;"><a class="heading" a ui-sref="locationsEdit({id: locationsShow.location._id})">Suggest an edit</a></p>
+      <p class="twoCol" style="text-align:right;">Discovered by <a ui-sref="adventurersShow({ id: locationsShow.location.user._id })" ui-sref-active="active">{{ locationsShow.location.user.username }}</a> <img ng-src="{{ locationsShow.location.user.profilePic }}" alt="profilePic" height="40px" style="border-radius:100px;"/></p>
     </div>
   </div>
 </section>
@@ -41,5 +41,6 @@
     </div>
   </div>
 </section>
-
-<google-map center="locationsShow.center"></google-map>
+<section ng-if="locationsShow.center">
+  <google-map center="locationsShow.center"></google-map>
+</section>

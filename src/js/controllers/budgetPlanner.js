@@ -1,12 +1,11 @@
 angular.module('travelApp')
   .controller('BudgetPlannerController', BudgetPlannerController);
 
-BudgetPlannerController.$inject= ['Location','Trip','$state', 'FlightService', '$auth', 'TripService', '$window', '$scope'];
-function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, TripService, $window, $scope) {
+BudgetPlannerController.$inject= ['Location','Trip','User','$state', 'FlightService', '$auth', 'TripService', '$window', '$scope'];
+function BudgetPlannerController(Location, Trip, User, $state, FlightService, $auth, TripService, $window, $scope) {
   const budgetPlanner = this;
-
   const moment = $window.moment;
-  
+
   budgetPlanner.isLoggedIn = $auth.isAuthenticated;
   budgetPlanner.newTrip = {};
   budgetPlanner.location = Location.get($state.params);
@@ -16,14 +15,19 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
       origin: 'LGW',
       destination: location.closestAirport,
       destAirportCode: location.airportCode,
+      suggestedDate: location.bestTime,
       duration: 7,
-      flightCost: 0,
-      accomCost: 0,
-      expenses: 0,
-      totalSavings: 0,
-      totalCost: 0
+      totalSavings: 0
     };
   });
+
+  if (budgetPlanner.isLoggedIn()) {
+    const userId = $auth.getPayload()._id;
+    User.get({ id: userId }, (user) => {
+      const airport = user.preferredAirportCode;
+      budgetPlanner.newTrip.origin = airport;
+    });
+  }
 
   // Update pie chart
   $scope.$watchGroup([
@@ -50,7 +54,7 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     const tripDuration = parseFloat(budgetPlanner.newTrip.duration);
 
     budgetPlanner.newTrip.returnDate = moment(budgetPlanner.newTrip.departDate).add(tripDuration, 'days').format('YYYY-MM-DD');
-    console.log(budgetPlanner.newTrip.returnDate);
+    // console.log(budgetPlanner.newTrip.returnDate);
 
     // budgetPlanner.newTrip.flightCost = 500;
     let flightFound = false;
@@ -67,15 +71,15 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
 
             if (quote) {
               // If flights found, update newTrip with price
-              console.log(successResponse);
+              // console.log(successResponse);
               budgetPlanner.newTrip.flightCost = quote.MinPrice;
               budgetPlanner.newTrip.outboundLeg = moment(quote.OutboundLeg.DepartureDate).format('Do MMM');
               budgetPlanner.newTrip.inboundLeg = moment(quote.InboundLeg.DepartureDate).format('Do MMM');
               budgetPlanner.newTrip.carrier = carrier.Name;
               return flightFound = true;
             } else {
-              budgetPlanner.newTrip.noFlightsMsg = 'We can\'t find flights for these dates. Try a different date.';
-              console.log('no flights found');
+              budgetPlanner.newTrip.noFlightsMsg = 'We can\'t find flights for these dates. Try a different month.';
+              // console.log('no flights found');
             }
           },
           errorResponse => {
@@ -87,6 +91,10 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
 
       budgetPlanner.newTrip.departDate = moment(budgetPlanner.newTrip.departDate).add(1, 'days').format('YYYY-MM-DD');
       budgetPlanner.newTrip.returnDate = moment(budgetPlanner.newTrip.returnDate).add(1, 'days').format('YYYY-MM-DD');
+
+      budgetPlanner.newTrip.accomCost = 30 * budgetPlanner.newTrip.duration;
+      budgetPlanner.newTrip.expenses = 50 * budgetPlanner.newTrip.duration;
+
       i++;
     }
   }
@@ -105,14 +113,12 @@ function BudgetPlannerController(Location, Trip, $state, FlightService, $auth, T
     if (loggedIn) {
       budgetPlanner.newTrip.user = $window.localStorage.getItem('userId');
       Trip.save(budgetPlanner.newTrip, (data) => {
-        console.log('saved ', data);
+        // console.log('saved ', data);
         $state.go('budgetTracker', { id: data._id });
       });
     } else {
       // if user isn't logged in, add trip id to local storage
       TripService.saveTrip(budgetPlanner.newTrip);
-
-      alert('You need to be signed in to save a trip');
 
       // get them to sign in, then add reference to user id to trip (id from local storage)
       $state.go('register');

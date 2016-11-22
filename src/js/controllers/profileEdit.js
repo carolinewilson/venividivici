@@ -8,6 +8,12 @@ function ProfileEditController(User, $state) {
   profileEdit.profile = User.get($state.params);
 
   function update() {
+    if (profileEdit.profile.preferredAirport) {
+      const airport = profileEdit.profile.preferredAirport.split(',');
+      profileEdit.profile.preferredAirport = airport[0];
+      profileEdit.profile.preferredAirportCode = airport[1];
+    }
+
     User.update({ id: profileEdit.profile._id }, profileEdit.profile, () => {
       $state.go('profileShow', $state.params);
 

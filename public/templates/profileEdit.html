@@ -3,7 +3,7 @@
   <form ng-submit="profileEdit.update()">
 
   <div class="profileSignUpForm">
-    <a ui-sref="profileShow({ id: profileEdit.profile.id})"><img src="images/closeicon.png"></a>
+    <a ui-sref="profileShow({ id: profileEdit.profile.id})"><img class="closingIcon" src="images/closeicon.png"></a>
     <div class="divHeading">
       <h2>Edit profile</h2>
     </div>
@@ -22,6 +22,15 @@
     <div>
       <label>Your preferred Airport</label>
       <input type="text" name="airport" placeholder="Enter your preferred airport" ng-model="profileEdit.profile.preferredAirport">
+
+
+      <select ng-model="profileEdit.profile.preferredAirport" name="preferredAirport">
+        <option>-- London --</option>
+        <option value="London Heathrow,LHR">London Heathrow (LHR)</option>
+        <option value="London Gatwick,LGW">London Gatwick (LGW)</option>
+        <option value="London Luton,LTN">London Luton (LTN)</option>
+        <option value="London Stansted,LGW">London Stansted (LGW)</option>
+      </select>
     </div>
       <button>Update your profile</button>
     </div>

@@ -15,9 +15,12 @@
         </span>
       </div>
     </section>
+    <div class="oneCol">
+      <h3>To reach your savings goal before your trip <span class="highlight">{{ budgetTracker.timeFromNow }}</span> you need to be saving <span class="highlight">£{{ budgetTracker.weeklySavingGoal }}</span> per week.</h3>
+    </div>
     <section>
       <div class="twoCol">
-        <h3>Saved so far</h3>
+        <h2>Saved so far</h2>
         <input-revealer type="number" name="totalSavings" ng-model="budgetTracker.trip.totalSavings" on-submit="budgetTracker.save()"></input-revealer>
       </div>
       <div class="twoCol">

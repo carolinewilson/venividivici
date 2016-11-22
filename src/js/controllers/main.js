@@ -1,11 +1,9 @@
 angular.module('travelApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$auth', '$state', '$window', 'TripService', 'UserService'];
-//MainController.$inject = ['$auth', '$state', '$rootScope'];
-//function MainController($auth, $state, $rootScope) {
+MainController.$inject = ['$auth', '$state', '$window', 'TripService', '$rootScope'];
 
-function MainController($auth, $state, $window, TripService, UserService) {
+function MainController($auth, $state, $window, TripService, $rootScope) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
@@ -24,18 +22,18 @@ function MainController($auth, $state, $window, TripService, UserService) {
   }
 
   // main.message = null;
-  // const protectedStates = ['filmsEdit', 'filmsNew'];
-  //
-  // function secureState(e, toState) {
-  //   main.message = null;
-  //   if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
-  //     e.preventDefault();
-  //     $state.go('login');
-  //     main.message = 'You must be logged in to go there!';
-  //   }
-  // }
-  //
-  // $rootScope.$on('$stateChangeStart', secureState);
+  const protectedStates = ['locationsNew', 'locationsEdit', 'budgetTracker', 'profileShow', 'profileEdit'];
+
+  function secureState(e, toState) {
+    // main.message = null;
+    if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
+      e.preventDefault();
+      $state.go('login');
+      // main.message = 'You must be logged in to go there!';
+    }
+  }
+
+  $rootScope.$on('$stateChangeStart', secureState);
 
   main.logout = logout;
 
