@@ -22,4 +22,11 @@ function LocationsShowController(Location, $state, User, MapService) {
   });
 
 
+  function bigImage(image) {
+    console.log(image);
+    locationsShow.showCarousel = true;
+
+  }
+  locationsShow.bigImage = bigImage;
+
 }

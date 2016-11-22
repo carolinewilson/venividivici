@@ -226,6 +226,8 @@ footer {
   letter-spacing: 1px;
   text-align: justify;
   text-indent: 50px;
+  width: 80%;
+  margin: 60px auto;
 }
 
 .hero-image {
@@ -336,7 +338,7 @@ footer {
     position: relative;
     min-height: 325px;
     &-left {
-      @include span-columns(8);
+      @include span-columns(6);
       background-position: center;
       background-size: cover;
       position: absolute;
@@ -355,8 +357,9 @@ footer {
       }
     }
     &-right {
-      @include span-columns(4);
-      @include shift(8);
+      @include span-columns(6);
+      @include shift(6);
+
       @media screen and (max-width: 767px) {
         @include span-columns(12);
         @include shift(0);
@@ -475,10 +478,12 @@ footer {
   .suggest {
     float: left;
     margin-top: 47px;
+    text-align: left;
   }
   .by{
     float:right;
     margin-top: 20px;
+    text-align: right;
   }
 }
 

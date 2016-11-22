@@ -1,6 +1,7 @@
 <div class="hero-image" style="background-image:url('{{ locationsShow.location.mainImage }}')">
   <h1>Welcome to {{ locationsShow.location.locationName }}</h1>
 </div>
+<!-- <carousel images="locationsShow.location.images" delay="5000"></carousel> -->
 <section id="locationsShow">
   <div class="info">
     <p class="description">{{ locationsShow.location.description}}</p>
@@ -34,11 +35,11 @@
 </section>
 <section>
   <div class="images">
-    <div class="images-left tooltip-item" style="background-image:url('{{locationsShow.location.images[0]}}')">
+    <div class="images-left tooltip-item" ng-click="locationsShow.bigImage({ image: locationsShow.location.images[0]})" style="background-image:url('{{locationsShow.location.images[0]}}')">
       <!-- <img ng-src="{{locationsShow.location.images[0]}}"></a> -->
     </div>
     <div class="images-right">
-      <div ng-repeat="image in locationsShow.location.images.slice(1,5) track by $index"  class="images-right-img" style="background-image:url({{ image }})"></div>
+      <div ng-repeat="image in locationsShow.location.images.slice(1,5) track by $index"  class="images-right-img" ng-click="locationsShow.bigImage(image)" style="background-image:url({{ image }})"></div>
     </div>
   </div>
 </section>
