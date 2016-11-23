@@ -21,10 +21,11 @@ function RegisterController($auth, $state, $window, User, TripService, Trip) {
 
         if (tripData) {
           tripData.user = res.data.user._id;
-          Trip.save(tripData, () => {
-            // console.log('saved trip! ', res);
+          Trip.save(tripData, (trip) => {
+            console.log('saved trip! ', res);
+            return $state.go('budgetTracker', { id: trip._id });
           });
-          return $state.go('usersShow', { id: res.data.user._id });
+          // return $state.go('budgetTracker', { id: res.data.user._id });
         }
         register.err = false;
 
@@ -47,19 +48,19 @@ function LoginController($auth, $state, $window, TripService, Trip) {
   function submit() {
     $auth
       .login(login.credentials)
-      .then((data) => {
+      .then((res) => {
         login.err = false;
         const payload = $auth.getPayload();
         $window.localStorage.setItem('userId', payload._id);
 
         const tripData = TripService.getTrip();
-        // console.log(data);
+        // console.log(res);
         if (tripData) {
-          tripData.user = data.data.user._id;
+          tripData.user = res.data.user._id;
 
-          Trip.save(tripData, (res) => {
-            console.log('saved trip! ', res);
-            return $state.go('budgetTracker', { id: res._id });
+          Trip.save(tripData, (trip) => {
+            console.log('saved trip! ', trip);
+            return $state.go('budgetTracker', { id: trip._id });
           });
         }
 
