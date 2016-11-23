@@ -55,7 +55,7 @@
         <input ng-if="budgetPlanner.newTrip.flightCost" ng-model="budgetPlanner.newTrip.flightCost" type="text" name="flightCost" disabled="true">
         <input ng-if="!budgetPlanner.newTrip.flightCost" ng-model="budgetPlanner.newTrip.flightCost" type="text" name="flightCost">
         <div ng-if="budgetPlanner.newTrip.flightCost" class="important">
-          <label>Flights found<span ng-if="budgetPlanner.newTrip.carrier"> with {{ budgetPlanner.newTrip.carrier }}</span></label>
+          <label>Flights found<span ng-if="budgetPlanner.newTrip.carrier"> with {{ budgetPlanner.newTrip.carrier }} via <em><a href="https://www.skyscanner.net/">Skyscanner</a></em></span></label>
           <p>Leaving {{ budgetPlanner.newTrip.outboundLeg }} and returning {{ budgetPlanner.newTrip.inboundLeg }}</p>
         </div>
         <h2>Accommodation Cost</h2>
