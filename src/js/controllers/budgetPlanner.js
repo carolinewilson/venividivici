@@ -12,7 +12,7 @@ function BudgetPlannerController(Location, Trip, User, $state, FlightService, $a
 
   Location.get($state.params, (location) => {
     budgetPlanner.newTrip = {
-      origin: 'LGW',
+      origin: 'LHR',
       destination: location.closestAirport,
       destAirportCode: location.airportCode,
       suggestedDate: location.bestTime,
