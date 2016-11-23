@@ -4,7 +4,7 @@ const bcrypt    = require('bcrypt');
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, unique: true, required: true },
-  profilePic: { type: String, default: 'http://www.freeiconspng.com/uploads/profile-icon-9.png' },
+  profilePic: { type: String, default: '../../images/defaultuserimage.png' },
   preferredAirport: { type: String , default: 'London Heathrow' },
   preferredAirportCode: { type: String , default: 'LHR' },
   passwordHash: { type: String },
