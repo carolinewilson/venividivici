@@ -2,15 +2,13 @@
 A collaborate project designed to bring a more inspirational approach to travel planning. This application can be for both discovery and budgeting. A MEAN stack application complete with authentication, Facebook OAuth, and a RESTful API.
 
 Use the app [here](http://veni-vidi-vici-cw.herokuapp.com/).
-![Veni Vidi Vici](https://veni-vidi-vici.herokuapp.com/images/veni-multi-screen.jpg)
 
+![Veni Vidi Vici](https://veni-vidi-vici-cw.herokuapp.com/images/veni-multi-screen.png)
 ##The Build
 The app used JWT authentication and was built using the MEAN stack with Bourbon for responsive CSS. The app is mobile responsive but the budget planner and tracker features are best experienced on a tablet or desktop device.
 
 My role in our team of 3 was predominantly focused on the backend authentication and database modelling. On the frontend, I was responsible for building the budgeting features of the app, including Skyscanner API integration, in-place form editing, and maintenance of the user flow should they be interrupted by the registration form.
-
-![Veni Vidi Vici Budget Planner](http://veni-vidi-vici-cw.herokuapp.com/images/budget-planner.jpg)
- 
+![Veni Vidi Vici Budget Planner](http://veni-vidi-vici-cw.herokuapp.com/images/budget-planner.png)
 ##The Idea
 We wanted to create an collaborative platform that allowed users to discover and share beautiful travel destinations, and learn how much it would really cost to get there.
 
@@ -23,5 +21,4 @@ Users can edit and save their budget should they so wish. Saving the plan enable
 Users with an account are then able to share their travel discoveries with other users to keep the community and selection of destinations growing. 
 
 Further development is planned to introduce a moderation stage whereby new locations are reviewed before publish to the site.
-
-![Veni Vidi Vici Budget Tracker](http://veni-vidi-vici-cw.herokuapp.com/images/budget-tracker.jpg)
+![Veni Vidi Vici Budget Tracker](http://veni-vidi-vici-cw.herokuapp.com/images/budget-tracker.png)
