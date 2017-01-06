@@ -1,9 +1,16 @@
-# Veni Vidi Vici
+#Veni Vidi Vici
 A collaborate project designed to bring a more inspirational approach to travel planning. This application can be for both discovery and budgeting. A MEAN stack application complete with authentication, Facebook OAuth, and a RESTful API.
 
-Use the app [here](http://veni-vidi-vici-cw.herokuapp.com/).
+Use the app [here](http://veni-vidi-vici-cw.herokuapp.com/)
 
 ![Veni Vidi Vici](https://veni-vidi-vici-cw.herokuapp.com/images/veni-multi-screen.png)
+##Contributors
+
+* [Caroline Wilson](https://github.com/carolinewilson/venividivici-cw)
+* [Dara De Casa] (https://github.com/miss-d-coder10)
+* [Marco Servidio] (https://github.com/servidiomarco)
+
+This repo has been cloned from the group version. You can view the code base for the original group verion [here](https://github.com/carolinewilson/Veni-Vidi-Vici) & the hosted app [here](veni-vidi-vici.herokuapp.com/).
 ##The Build
 The app used JWT authentication and was built using the MEAN stack with Bourbon for responsive CSS. The app is mobile responsive but the budget planner and tracker features are best experienced on a tablet or desktop device.
 
