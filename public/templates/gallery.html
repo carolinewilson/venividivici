@@ -1,0 +1,21 @@
+<section>
+  <h1>Discovery Gallery</h1>
+  <div class="gallery">
+    <ul class='gridContainer'>
+      <li class="imagesGrid" ng-if="main.isLoggedIn()" style="background-image:url('../../images/addsign.png')">
+        <a ui-sref="locationsNew()">
+          <div class="overlay">
+            <h2 class="dark">Share your discovery</h2>
+          </div>
+        </a>
+      </li>
+      <li class="imagesGrid" ng-repeat="location in locationsIndex.all" style="background-image:url('{{location.mainImage}}')">
+        <a ui-sref="locationsShow({ id: location._id })">
+          <div class="overlay">
+            <h2>{{ location.locationName }}</h2>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -28,7 +28,11 @@ function Router($stateProvider, $urlRouterProvider){
     })
     .state('home', {
       url: '/',
-      templateUrl: '/templates/home.html',
+      templateUrl: '/templates/home.html'
+    })
+    .state('gallery', {
+      url: '/gallery',
+      templateUrl: '/templates/gallery.html',
       controller: 'LocationsIndexController as locationsIndex'
     })
     .state('locationsShow', {

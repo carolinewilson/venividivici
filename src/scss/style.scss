@@ -241,12 +241,18 @@ footer {
   text-indent: 50px;
   width: 90%;
   margin: 60px auto;
-}
 
+  &.intro {
+    text-indent: 0;
+  }
+}
+.gallery {
+  margin-top: 50px;
+}
 .hero-image {
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 80vh;
   position: relative;
   margin-top: -60px;
   h1 {
