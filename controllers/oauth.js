@@ -8,8 +8,8 @@ function facebook(req, res) {
     url: 'https://graph.facebook.com/v2.5/oauth/access_token',
     qs: {
       code: req.body.code,
-      client_id: process.env.FACEBOOK_APP_PROJECT3_ID,
-      client_secret: process.env.FACEBOOK_APP_PROJECT3_SECRET,
+      client_id: process.env.FACEBOOK_APP_CW_ID,
+      client_secret: process.env.FACEBOOK_APP_CW_SECRET,
       redirect_uri: req.body.redirectUri
     },
     json: true
